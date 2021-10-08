@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.utils
+package com.debanshu777.snapchatUIComposeClone.common.utils
 
 sealed class Screens(val route: String) {
     object CamaraScreen: Screens("camara")

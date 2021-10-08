@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.utils
+package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

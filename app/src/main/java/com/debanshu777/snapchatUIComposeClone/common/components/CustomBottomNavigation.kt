@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.components
+package com.debanshu777.snapchatUIComposeClone.common.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.debanshu777.snapchatUIComposeClone.features.navigation.domain.model.BottomNavItem
+import com.debanshu777.snapchatUIComposeClone.common.domain.model.BottomNavItem
 
 @ExperimentalMaterialApi
 @Composable

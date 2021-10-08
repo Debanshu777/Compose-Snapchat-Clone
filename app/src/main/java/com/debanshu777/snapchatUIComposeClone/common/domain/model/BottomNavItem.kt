@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.domain.model
+package com.debanshu777.snapchatUIComposeClone.common.domain.model
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector

@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.components
+package com.debanshu777.snapchatUIComposeClone.common.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

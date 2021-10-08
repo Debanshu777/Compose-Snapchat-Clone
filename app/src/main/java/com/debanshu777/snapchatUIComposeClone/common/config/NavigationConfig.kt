@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.navigation.utils
+package com.debanshu777.snapchatUIComposeClone.common.config
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CameraAlt
@@ -7,7 +7,8 @@ import androidx.compose.material.icons.outlined.Group
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.ui.graphics.Color
-import com.debanshu777.snapchatUIComposeClone.features.navigation.domain.model.BottomNavItem
+import com.debanshu777.snapchatUIComposeClone.common.domain.model.BottomNavItem
+import com.debanshu777.snapchatUIComposeClone.common.utils.Screens
 
 fun navigationConfig():List<BottomNavItem> {
     return listOf(
