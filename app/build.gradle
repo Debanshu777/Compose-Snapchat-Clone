@@ -61,4 +61,24 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    // Compose dependencies
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-rc01"
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha10"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+
+    // Camara
+    def camerax_version = "1.0.2"
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    implementation "androidx.camera:camera-view:1.0.0-alpha29"
+
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-permission:0.19.0"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.19.0"
 }
