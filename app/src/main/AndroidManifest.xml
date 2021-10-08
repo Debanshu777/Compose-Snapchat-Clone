@@ -11,7 +11,7 @@
         android:theme="@style/Theme.ComposeCameraX"
         android:allowBackup="true">
         <activity
-            android:name="com.debanshu777.snapchatUIComposeClone.MainActivity"
+            android:name="com.debanshu777.snapchatUIComposeClone.features.navigation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeCameraX.NoActionBar">
