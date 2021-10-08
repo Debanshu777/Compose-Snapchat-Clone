@@ -14,7 +14,7 @@ private val DarkColorPalette = darkColors(
 )
 
 @Composable
-fun ComposeSnapChatUITheme(darkTheme: Boolean = true, content: @Composable() () -> Unit) {
+fun ComposeSnapChatUITheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colors = DarkColorPalette,
         typography = Typography,
