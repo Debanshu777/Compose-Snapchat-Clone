@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id "org.jmailen.kotlinter" version "3.6.0"
 }
 
 android {
@@ -9,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.debanshu777.snapchatuicompose"
-        minSdk 21
+        minSdk 23
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -39,7 +38,6 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
     }
     packagingOptions {
         resources {
