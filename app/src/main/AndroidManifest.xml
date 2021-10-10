@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.debanshu777.snapchatUIComposeClone">
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
