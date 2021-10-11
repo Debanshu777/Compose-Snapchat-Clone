@@ -1,12 +1,9 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.presentation.components
 
 import android.net.Uri
-import android.util.Log
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.FrameLayout
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.exoplayer2.C
@@ -32,13 +29,11 @@ fun VideoPlayer(uri: Uri) {
                     context,
                     Util.getUserAgent(context, context.packageName)
                 )
-
-                Log.e("Tag",uri.toString())
                 val source = ProgressiveMediaSource.Factory(dataSourceFactory)
                     .createMediaSource(MediaItem.fromUri(uri))
-                    //.createMediaSource(uri)
 
-                this.prepare(source)
+                setMediaSource(source)
+                prepare()
             }
     }
 
