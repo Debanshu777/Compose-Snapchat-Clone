@@ -17,7 +17,10 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 @ExperimentalPermissionsApi
 @Composable
 fun Navigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screens.CamaraScreen.route) {
+    NavHost(
+        navController = navController,
+        startDestination = Screens.CamaraScreen.route
+    ) {
         composable(Screens.SnapMapScreen.route) {
             SnapMapScreen()
         }
