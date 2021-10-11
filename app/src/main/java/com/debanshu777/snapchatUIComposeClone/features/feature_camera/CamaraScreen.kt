@@ -1,24 +1,28 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_camera
 
-import android.Manifest
-import androidx.camera.core.ExperimentalGetImage
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
+import android.Manifest
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Surface
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import com.debanshu777.snapchatUIComposeClone.common.utils.FeatureThatRequiresCameraPermission
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+@ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
 fun CamaraScreen() {
+    val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     Surface(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp)),
@@ -27,14 +31,16 @@ fun CamaraScreen() {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-//            Spacer(modifier = Modifier.height(10.dp))
-//            Button(onClick = {
-//                camaraPermissionState.launchPermissionRequest()
-//            }) {
-//                Text(text = "Permissions")
-//            }
-//            Spacer(modifier = Modifier.height(20.dp))
-            CamaraOpen()
+            FeatureThatRequiresCameraPermission (
+                navigateToSettingsScreen = {}
+            )
+            SimpleCameraPreview(
+                modifier = Modifier.fillMaxSize(),
+                context = context,
+                lifecycleOwner = lifecycleOwner,
+                onMediaCaptured = { url -> }
+            )
+
+            }
         }
     }
-}

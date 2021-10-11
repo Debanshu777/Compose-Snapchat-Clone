@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -12,6 +13,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.Spotlig
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+@ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
 fun Navigation(navController: NavHostController) {

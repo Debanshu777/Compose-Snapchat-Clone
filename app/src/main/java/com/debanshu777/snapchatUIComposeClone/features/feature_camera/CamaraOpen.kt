@@ -34,19 +34,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @Composable
-fun CamaraOpen(){
-    val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
-
-    SimpleCameraPreview(
-        modifier = Modifier.fillMaxSize(),
-        context = context,
-        lifecycleOwner = lifecycleOwner,
-        onMediaCaptured = { url -> }
-    )
-}
-
-@Composable
 fun SimpleCameraPreview(
     modifier: Modifier = Modifier,
     context: Context,
@@ -70,12 +57,6 @@ fun SimpleCameraPreview(
             factory = { ctx ->
                 val previewView = PreviewView(ctx)
                 cameraProviderFuture.addListener({
-//                    val imageAnalysis = ImageAnalysis.Builder()
-//                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-//                        .build()
-//                        .apply {
-//                            setAnalyzer(executor, FaceAnalyzer())
-//                        }
                     imageCapture = ImageCapture.Builder()
                         .setTargetRotation(previewView.display.rotation)
                         .build()

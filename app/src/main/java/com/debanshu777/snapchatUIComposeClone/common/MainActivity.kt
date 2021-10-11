@@ -3,6 +3,7 @@ package com.debanshu777.snapchatUIComposeClone.common
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.material.ExperimentalMaterialApi
@@ -20,6 +21,7 @@ import com.google.android.material.shape.Shapeable
 import java.util.*
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalAnimationApi
     @ExperimentalPermissionsApi
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
