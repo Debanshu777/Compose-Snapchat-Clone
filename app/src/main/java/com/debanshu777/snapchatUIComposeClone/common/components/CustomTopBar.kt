@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
+import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -12,11 +13,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
 @Composable
 fun CustomTopBar(
     modifier: Modifier=Modifier,
+    topBarItem: TopBarItem
 ){
     TopAppBar(
         contentPadding= PaddingValues(10.dp),
@@ -24,27 +30,43 @@ fun CustomTopBar(
         elevation= 0.dp,
         backgroundColor = Color.Transparent,
         content = {
-            Row() {
-                Box(
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .background(Color(0x4FFFFFFF))
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-                Box(
-                    contentAlignment= Alignment.Center,
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .background(Color(0x4FFFFFFF))
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier=Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.weight(0.5f)
                 ) {
-                    Icon(
-                        modifier = Modifier.size(25.dp),
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "Search",
+                    Box(
+                        modifier = Modifier
+                            .size(40.dp)
+                            .clip(CircleShape)
+                            .background(topBarItem.backgroundTintForIcon)
                     )
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .size(40.dp)
+                            .clip(CircleShape)
+                            .background(topBarItem.backgroundTintForIcon)
+                    ) {
+                        Icon(
+                            modifier = Modifier.size(25.dp),
+                            imageVector = Icons.Default.Search,
+                            contentDescription = "Search",
+                            tint = topBarItem.iconTint
+                        )
+                    }
                 }
+                Text(
+                    modifier = Modifier.weight(1.5f).padding(start = 50.dp),
+                    textAlign= TextAlign.Start ,
+                    text = topBarItem.name,
+                    color=topBarItem.textColor,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 22.sp
+                )
             }
         }
     )
