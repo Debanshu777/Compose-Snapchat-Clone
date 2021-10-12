@@ -1,0 +1,94 @@
+package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ChatBubbleOutline
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+@Composable
+fun ChatItem(
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row {
+            Box(
+                modifier = Modifier
+                    .size(55.dp)
+                    .clip(CircleShape)
+                    .background(color = Color.DarkGray)
+            )
+            Spacer(modifier = Modifier.width(20.dp))
+            Column {
+                Text(
+                    text = "Debanshu Datta",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.W600,
+                    color = Color.Black
+                )
+                Row(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(10.dp)
+                        ),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(10.dp)
+                            .clip(RoundedCornerShape(3.dp))
+                            .background(color = Color.Red)
+                    )
+                    Spacer(modifier = Modifier.width(5.dp))
+                    Text(
+                        text = "New Snap",
+                        fontWeight=FontWeight.W400,
+                        color = Color.Red
+                    )
+                    Spacer(Modifier.width(10.dp))
+                    Box(
+                        modifier = Modifier
+                            .size(5.dp)
+                            .clip(CircleShape)
+                            .background(color = Color.Gray)
+                    )
+                    Spacer(Modifier.width(10.dp))
+                    Text(text = "1mo", color = Color.Gray)
+                }
+            }
+        }
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Divider(
+                modifier = Modifier
+                    .background(color = Color(0xFFE4E4E4))
+                    .height(40.dp)
+                    .width(0.5.dp),
+            )
+            Icon(
+                modifier = Modifier.size(45.dp).padding(start = 20.dp),
+                imageVector = Icons.Outlined.ChatBubbleOutline,
+                contentDescription = "",
+                tint = Color(0xFFE4E4E4)
+            )
+        }
+    }
+    Divider(color=Color(0xFFE4E4E4), thickness = 0.2.dp)
+}
