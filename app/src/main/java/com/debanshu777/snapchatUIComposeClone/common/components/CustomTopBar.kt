@@ -15,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
@@ -30,13 +31,10 @@ fun CustomTopBar(
         elevation= 0.dp,
         backgroundColor = Color.Transparent,
         content = {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier=Modifier.fillMaxWidth()
+            Box(
+               modifier=Modifier.fillMaxSize().align(Alignment.CenterVertically)
             ) {
-                Row(
-                    modifier = Modifier.weight(0.5f)
-                ) {
+                Row{
                     Box(
                         modifier = Modifier
                             .size(40.dp)
@@ -60,8 +58,8 @@ fun CustomTopBar(
                     }
                 }
                 Text(
-                    modifier = Modifier.weight(1.5f).padding(start = 50.dp),
-                    textAlign= TextAlign.Start ,
+                    modifier = Modifier.fillMaxSize().padding(top=5.dp),
+                    textAlign= TextAlign.Center ,
                     text = topBarItem.name,
                     color=topBarItem.textColor,
                     fontWeight = FontWeight.Bold,
