@@ -6,7 +6,7 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.User
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 
 data class Story(
-    val user: User,
+    val userId: Long,
     val timeStamp:Long,
     val contentType: ContentType,
     val media:Image,
