@@ -2,50 +2,133 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_chat.data.dataSo
 
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
+import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastContentTimeType
 
-fun DummyDataChatViewList(): List<ChatView>{
+fun dummyDataChatViewList(): List<ChatView>{
     return listOf(
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "John Doe",
             senderUserId = 1234,
-            lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
         ),
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "Jane Doe",
             senderUserId = 1234,
             lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Hour,
+            lastContentTime = "3",
         ),
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "Jimmy Doe",
             senderUserId = 1234,
-            lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
+            lastContentType = ContentType.video,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+        //2nd test case
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
         ),
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "Jane Doe",
             senderUserId = 1234,
             lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=true,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Hour,
+            lastContentTime = "3",
         ),
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "Jimmy Doe",
             senderUserId = 1234,
-            lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
+            lastContentType = ContentType.video,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
         ),
         ChatView(
-            sender = "Debanshu Datta",
+            sender = "Jimmy Doe",
             senderUserId = 1234,
-            lastContentType = ContentType.image,
-            isChatUnseen = false,
-            lastChat = "Hi there"
-        )
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+        // 3rd test
+        ChatView(
+            sender = "Jimmy Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.video,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=true,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+        ChatView(
+            sender = "Jimmy Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=true,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+        ChatView(
+            sender = "Jimmy Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.video,
+            isChatUnseenBySender = true,
+            isLastContentSendToSender=true,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+        ChatView(
+            sender = "Jimmy Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = true,
+            isLastContentSendToSender=true,
+            isChatOpened=true,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Week,
+            lastContentTime = "4",
+        ),
+
     )
 }
