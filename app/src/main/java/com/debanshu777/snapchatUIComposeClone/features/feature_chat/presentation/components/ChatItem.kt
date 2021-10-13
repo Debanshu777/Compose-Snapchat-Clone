@@ -1,0 +1,201 @@
+package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components
+
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.outlined.CameraAlt
+import androidx.compose.material.icons.outlined.ChatBubbleOutline
+import androidx.compose.material.icons.outlined.Send
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
+import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
+
+@Composable
+fun ChatItem(
+    modifier: Modifier = Modifier,
+    item: ChatView
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row {
+            Box(
+                modifier = Modifier
+                    .size(55.dp)
+                    .clip(CircleShape)
+                    .background(color = Color.DarkGray)
+            )
+            Spacer(modifier = Modifier.width(20.dp))
+            Column {
+                Text(
+                    text = item.sender,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.W600,
+                    color = Color.Black
+                )
+                Row(
+                    modifier = Modifier.clip(RoundedCornerShape(10.dp)),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    if(!item.isChatOpened && !item.isLastContentSendToSender) {
+                        Box(
+                            modifier = Modifier
+                                .size(10.dp)
+                                .clip(RoundedCornerShape(3.dp))
+                                .background(color = giveColor(item))
+                        )
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Text(
+                            text = "New Snap",
+                            fontWeight = FontWeight.W400,
+                            color = giveColor(item)
+                        )
+                    }
+                    if(!item.isChatOpened && item.isLastContentSendToSender) {
+                        Box(
+                            modifier = Modifier
+                                .size(10.dp)
+                                .clip(RoundedCornerShape(3.dp))
+                                .background(color = giveColor(item))
+                        )
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Text(
+                            text = "New Snap",
+                            fontWeight = FontWeight.W400,
+                            color = giveColor(item)
+                        )
+                    }
+                    if(item.isChatOpened && !item.isLastContentSendToSender){
+                        if(item.lastContentType!=ContentType.chat) {
+                            Box(
+                                modifier = Modifier
+                                    .size(10.dp)
+                                    .clip(RoundedCornerShape(3.dp))
+                                    .border(border = BorderStroke(1.dp, giveColor(item)))
+                            )
+                        }else{
+                            Icon(
+                                modifier=Modifier.size(14.dp),
+                                imageVector = Icons.Outlined.Send,
+                                contentDescription = "",
+                                tint= giveColor(item)
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Text(
+                            text = "Opened",
+                            fontWeight = FontWeight.W400,
+                            color = Color.Gray
+                        )
+                    }
+                    if(item.isChatOpened && item.isLastContentSendToSender){
+                        if(item.isChatUnseenBySender) {
+                            if(item.lastContentType !=ContentType.chat) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(10.dp)
+                                        .clip(RoundedCornerShape(3.dp))
+                                        .background(color = giveColor(item))
+                                )
+                            }else{
+                                Icon(
+                                    modifier=Modifier.size(14.dp),
+                                    imageVector = Icons.Default.Send,
+                                    contentDescription = "",
+                                    tint= giveColor(item)
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(5.dp))
+                            Text(
+                                text = "Delivered",
+                                fontWeight = FontWeight.W400,
+                                color = Color.Gray
+                            )
+                        }else{
+                            if(item.lastContentType !=ContentType.chat) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(10.dp)
+                                        .clip(RoundedCornerShape(3.dp))
+                                        .border(border = BorderStroke(1.dp, giveColor(item)))
+                                )
+                            }else{
+                                Icon(
+                                    modifier=Modifier.size(14.dp),
+                                    imageVector = Icons.Outlined.Send,
+                                    contentDescription = "",
+                                    tint= giveColor(item)
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(5.dp))
+                            Text(
+                                text = "Opened",
+                                fontWeight = FontWeight.W400,
+                                color = Color.Gray
+                            )
+                        }
+
+                    }
+                    Spacer(Modifier.width(10.dp))
+                    Box(
+                        modifier = Modifier
+                            .size(5.dp)
+                            .clip(CircleShape)
+                            .background(color = Color.Gray)
+                    )
+                    Spacer(Modifier.width(10.dp))
+                    Text(text = item.lastContentTime+item.lastContentTimeType.timeType, color = Color.Gray)
+                }
+            }
+        }
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            if(!item.isChatOpened) Divider(
+                modifier = Modifier
+                    .background(color = Color(0xFFE4E4E4))
+                    .height(40.dp)
+                    .width(0.5.dp),
+            )
+            Icon(
+                modifier = Modifier
+                    .size(45.dp)
+                    .padding(start = 20.dp,end= 5.dp),
+                imageVector = if(item.isChatOpened)
+                    Icons.Outlined.CameraAlt
+                else
+                    Icons.Outlined.ChatBubbleOutline,
+                contentDescription = "",
+                tint = Color(0xFF7E7C7C)
+            )
+            Spacer(modifier = Modifier.width(5.dp))
+        }
+    }
+    Divider(color=Color(0xFFE4E4E4), thickness = 0.2.dp)
+}
+
+fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.image)
+    Color.Red
+else {
+    if (item.lastContentType == ContentType.video)
+        Color.Magenta
+    else
+        Color.Blue
+}

@@ -6,7 +6,7 @@ object DummySpotlightData {
     val spotlight = listOf(
         Spotlight(
             id = 1,
-            video = "lake.mp4",
+            video = "icecream.mp4",
             userImage = "https://generated.photos/vue-static/home/hero/4.png",
             userName = "Farhan Roy",
             isLiked = true,
@@ -26,7 +26,7 @@ object DummySpotlightData {
         ),
         Spotlight(
             id = 3,
-            video = "icecream.mp4",
+            video = "soap-bubbles.mp4",
             userImage = "https://generated.photos/vue-static/home/hero/3.png",
             userName = "Christian Juned",
             isLiked = true,
@@ -36,7 +36,7 @@ object DummySpotlightData {
         ),
         Spotlight(
             id = 4,
-            video = "soap-bubbles.mp4",
+            video = "lake.mp4",
             userImage = "https://generated.photos/vue-static/home/hero/6.png",
             userName = "Cak Jhon",
             isLiked = true,
