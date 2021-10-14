@@ -1,10 +1,12 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.features.feature_camera.CamaraScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.ChatScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
@@ -13,6 +15,8 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.Spotlig
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+@ExperimentalFoundationApi
+@ExperimentalCoilApi
 @ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
