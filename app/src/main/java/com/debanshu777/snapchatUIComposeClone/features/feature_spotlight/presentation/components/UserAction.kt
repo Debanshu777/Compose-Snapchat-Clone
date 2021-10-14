@@ -11,6 +11,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 
 @Composable
 fun UserAction(
@@ -21,7 +22,7 @@ fun UserAction(
         tint = Color.White,
         modifier = Modifier
             .clip(CircleShape)
-            .background(color = Color.DarkGray)
+            .background(color = ThemeColors.DARK_TRANSPARENT)
             .padding(10.dp)
             .size(28.dp),
         contentDescription = null

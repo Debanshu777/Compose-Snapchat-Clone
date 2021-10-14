@@ -21,6 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.horizontalPadding
 
@@ -70,9 +71,9 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
         // Audio
         Row(
             modifier = Modifier
-                .background(color = Color.DarkGray)
-                .padding(10.dp)
-                .clip(RoundedCornerShape(10.dp)),
+                .clip(RoundedCornerShape(10.dp))
+                .background(color = ThemeColors.DARK_TRANSPARENT)
+                .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
         ) {
