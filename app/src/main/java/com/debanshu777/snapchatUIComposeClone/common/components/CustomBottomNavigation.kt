@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.BottomNavItem
 
 @ExperimentalMaterialApi
@@ -29,15 +30,16 @@ fun CustomBottomNavigation(
         items.forEach { item ->
             val selected = item.route == backStackEntry.value?.destination?.route
             BottomNavigationItem(
+                modifier=Modifier.padding(10.dp),
                 selected = selected,
                 onClick = { onItemClick(item) },
                 selectedContentColor =item.onSelectedColor,
-                unselectedContentColor = Color.Gray,
+                unselectedContentColor = ThemeColors.LIGHT_ICON_TINT,
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
                         if (item.onSelectedBatchVisible){
                             BadgeBox(
-                                backgroundColor = if(selected) item.onSelectedColor else Color.Gray
+                                backgroundColor = item.onSelectedColor,
                             ) {
                                 Icon(
                                     modifier = Modifier.size(30.dp),
@@ -47,7 +49,7 @@ fun CustomBottomNavigation(
                             }
                         }else{
                             if(selected && item.name=="Camara"){
-                                CustomCamaraOnSelectItem(item.icon,item.onSelectedColor)
+                                CustomCamaraOnSelectItem(item.onSelectIcon,item.onSelectedColor)
                             }else {
                                 Icon(
                                     modifier = Modifier.size(30.dp),

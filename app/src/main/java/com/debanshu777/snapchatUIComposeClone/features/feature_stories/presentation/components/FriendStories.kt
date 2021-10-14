@@ -16,6 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 
 @Composable
 fun FriendStories(){
@@ -46,7 +47,7 @@ fun StoryItem(){
         Box(
             modifier= Modifier
                 .border(
-                    BorderStroke(2.dp, color = Color.Magenta),
+                    BorderStroke(2.dp, color = ThemeColors.PURPLE),
                     CircleShape
                 )
                 .size(80.dp),
