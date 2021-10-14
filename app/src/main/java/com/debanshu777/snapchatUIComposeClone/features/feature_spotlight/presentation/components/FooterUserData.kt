@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.presentation.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -19,9 +20,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.horizontalPadding
-import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
 fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
@@ -34,7 +35,8 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
         ) {
-            GlideImage(imageModel = spotlight.userImage,
+            Image(
+                painter = rememberImagePainter(spotlight.userImage),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(28.dp)

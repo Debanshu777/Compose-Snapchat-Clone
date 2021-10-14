@@ -1,8 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -10,10 +8,8 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.outlined.CameraAlt
 import androidx.compose.material.icons.outlined.ChatBubbleOutline
-import androidx.compose.material.icons.outlined.Send
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -54,105 +50,7 @@ fun ChatItem(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    if(!item.isChatOpened && !item.isLastContentSendToSender) {
-                        Box(
-                            modifier = Modifier
-                                .size(10.dp)
-                                .clip(RoundedCornerShape(3.dp))
-                                .background(color = giveColor(item))
-                        )
-                        Spacer(modifier = Modifier.width(5.dp))
-                        Text(
-                            text = "New Snap",
-                            fontWeight = FontWeight.W400,
-                            color = giveColor(item)
-                        )
-                    }
-                    if(!item.isChatOpened && item.isLastContentSendToSender) {
-                        Box(
-                            modifier = Modifier
-                                .size(10.dp)
-                                .clip(RoundedCornerShape(3.dp))
-                                .background(color = giveColor(item))
-                        )
-                        Spacer(modifier = Modifier.width(5.dp))
-                        Text(
-                            text = "New Snap",
-                            fontWeight = FontWeight.W400,
-                            color = giveColor(item)
-                        )
-                    }
-                    if(item.isChatOpened && !item.isLastContentSendToSender){
-                        if(item.lastContentType!=ContentType.chat) {
-                            Box(
-                                modifier = Modifier
-                                    .size(10.dp)
-                                    .clip(RoundedCornerShape(3.dp))
-                                    .border(border = BorderStroke(1.dp, giveColor(item)))
-                            )
-                        }else{
-                            Icon(
-                                modifier=Modifier.size(14.dp),
-                                imageVector = Icons.Outlined.Send,
-                                contentDescription = "",
-                                tint= giveColor(item)
-                            )
-                        }
-                        Spacer(modifier = Modifier.width(5.dp))
-                        Text(
-                            text = "Opened",
-                            fontWeight = FontWeight.W400,
-                            color = Color.Gray
-                        )
-                    }
-                    if(item.isChatOpened && item.isLastContentSendToSender){
-                        if(item.isChatUnseenBySender) {
-                            if(item.lastContentType !=ContentType.chat) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(10.dp)
-                                        .clip(RoundedCornerShape(3.dp))
-                                        .background(color = giveColor(item))
-                                )
-                            }else{
-                                Icon(
-                                    modifier=Modifier.size(14.dp),
-                                    imageVector = Icons.Default.Send,
-                                    contentDescription = "",
-                                    tint= giveColor(item)
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(5.dp))
-                            Text(
-                                text = "Delivered",
-                                fontWeight = FontWeight.W400,
-                                color = Color.Gray
-                            )
-                        }else{
-                            if(item.lastContentType !=ContentType.chat) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(10.dp)
-                                        .clip(RoundedCornerShape(3.dp))
-                                        .border(border = BorderStroke(1.dp, giveColor(item)))
-                                )
-                            }else{
-                                Icon(
-                                    modifier=Modifier.size(14.dp),
-                                    imageVector = Icons.Outlined.Send,
-                                    contentDescription = "",
-                                    tint= giveColor(item)
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(5.dp))
-                            Text(
-                                text = "Opened",
-                                fontWeight = FontWeight.W400,
-                                color = Color.Gray
-                            )
-                        }
-
-                    }
+                    ChatTypeItem(item)
                     Spacer(Modifier.width(10.dp))
                     Box(
                         modifier = Modifier

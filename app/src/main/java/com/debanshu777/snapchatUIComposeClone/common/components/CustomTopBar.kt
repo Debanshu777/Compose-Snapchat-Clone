@@ -29,10 +29,16 @@ fun CustomTopBar(
         contentPadding= PaddingValues(10.dp),
         modifier = modifier,
         elevation= 0.dp,
-        backgroundColor = Color.Transparent,
+        backgroundColor =
+            if(topBarItem.isBackgroundTransparent)
+                Color.Transparent
+            else
+                Color.White,
         content = {
             Box(
-               modifier=Modifier.fillMaxSize().align(Alignment.CenterVertically)
+               modifier= Modifier
+                   .fillMaxSize()
+                   .align(Alignment.CenterVertically),
             ) {
                 Row{
                     Box(
@@ -58,13 +64,22 @@ fun CustomTopBar(
                     }
                 }
                 Text(
-                    modifier = Modifier.fillMaxSize().padding(top=5.dp),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 5.dp),
                     textAlign= TextAlign.Center ,
                     text = topBarItem.name,
                     color=topBarItem.textColor,
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp
                 )
+                Box(
+                    Modifier.align(Alignment.TopEnd)
+                ) {
+                    if(topBarItem.isAvailable) {
+                        CustomAction(topBarItem)
+                    }
+                }
             }
         }
     )

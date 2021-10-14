@@ -81,7 +81,6 @@ fun SimpleCameraPreview(
                 .clip(RoundedCornerShape(15.dp))
                 .background(Color.Transparent, RoundedCornerShape(15.dp))
                 .padding(8.dp)
-                .padding(bottom = 50.dp)
                 .align(Alignment.BottomCenter)
         ) {
             IconButton(
