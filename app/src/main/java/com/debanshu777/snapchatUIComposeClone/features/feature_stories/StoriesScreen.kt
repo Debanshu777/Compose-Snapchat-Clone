@@ -4,12 +4,10 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -18,10 +16,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.DiscoverView
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.FriendStories
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.RectangularStoryView
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.SubscriptionView
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
 
 @ExperimentalFoundationApi
 @ExperimentalCoilApi
@@ -32,9 +29,9 @@ fun StoriesScreen() {
     val cols =5
     Box(
         modifier = Modifier
+            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
             .background(Color.White)
-            .fillMaxSize()
-            .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp)),
+            .fillMaxSize(),
     ) {
         LazyColumn(
             modifier = Modifier.padding(start=10.dp)
@@ -57,7 +54,9 @@ fun StoriesScreen() {
             items(elements/2){ row ->
                 Row {
                         RectangularStoryView(
-                            shadowHeight=160,
+                            shadowHeight=230f,
+                            height=200.dp,
+                            isLarge=true,
                             modifier= Modifier
                                 .height(280.dp)
                                 .width(200.dp)
@@ -65,7 +64,9 @@ fun StoriesScreen() {
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
                     RectangularStoryView(
-                        shadowHeight=160,
+                        shadowHeight=230f,
+                        height=200.dp,
+                        isLarge=true,
                         modifier= Modifier
                             .height(280.dp)
                             .width(200.dp)

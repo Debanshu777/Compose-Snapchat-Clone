@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation
+package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,6 +18,7 @@ import coil.Coil
 import coil.ImageLoader
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
 
 
 @ExperimentalCoilApi
@@ -36,7 +37,9 @@ fun SubscriptionView(){
         LazyRow{
             items(5){index->
                 RectangularStoryView(
-                    shadowHeight=160,
+                    shadowHeight=100f,
+                    height=160.dp,
+                    isLarge = false,
                     modifier= Modifier
                         .height(160.dp)
                         .width(110.dp)
@@ -48,24 +51,3 @@ fun SubscriptionView(){
     }
 }
 
-@ExperimentalCoilApi
-@Composable
-fun RectangularStoryView(shadowHeight:Long,modifier:Modifier){
-    val gradient = Brush.verticalGradient(
-        colors = listOf(Color.Black, Color.Transparent),
-        startY = shadowHeight.toFloat()/3,
-        endY = shadowHeight.toFloat()
-    )
-    Image(
-        modifier=modifier,
-        painter = rememberImagePainter(
-            data="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
-            builder = {
-                crossfade(true)
-            }
-        ),
-        contentScale=ContentScale.Crop,
-        contentDescription = "",
-    )
-
-}
