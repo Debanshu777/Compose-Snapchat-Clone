@@ -11,35 +11,48 @@ fun topBarConfig(route:String): TopBarItem {
             textColor = Color.White,
             backgroundTintForIcon = Color.DarkGray,
             iconTint = Color.White,
-            route = Screens.SnapMapScreen.route
+            route = Screens.SnapMapScreen.route,
+            isBackgroundTransparent = true,
+            isAvailable = true,
+            lastAction="Setting"
         ),
         TopBarItem(
             name = "Chat",
             textColor = Color.Black,
             backgroundTintForIcon = Color(0xFF999898),
             iconTint = Color.DarkGray,
-            route = Screens.ChatScreen.route
+            route = Screens.ChatScreen.route,
+            isAvailable = true,
+            lastAction="More Action"
         ),
         TopBarItem(
             name = "",
             textColor = Color.White,
             backgroundTintForIcon = Color.DarkGray,
             iconTint = Color.White,
-            route = Screens.CamaraScreen.route
+            route = Screens.CamaraScreen.route,
+            isBackgroundTransparent = true,
+            isAvailable = true,
+            lastAction="Camara Rotate"
         ),
         TopBarItem(
             name = "Stories",
             textColor = Color.Black,
             backgroundTintForIcon = Color(0xFF999898),
             iconTint = Color.DarkGray,
-            route = Screens.StoriesScreen.route
+            route = Screens.StoriesScreen.route,
+            isAvailable = true,
+            lastAction="More Action"
         ),
         TopBarItem(
             name = "Spotlight",
             textColor = Color.White,
             backgroundTintForIcon = Color.DarkGray,
             iconTint = Color.White,
-            route = Screens.SpotlightScreen.route
+            route = Screens.SpotlightScreen.route,
+            isBackgroundTransparent = true,
+            isAvailable = false,
+            lastAction="None"
         )
     )
     return listOfTopBarConfig.find { it.route == route }!!
