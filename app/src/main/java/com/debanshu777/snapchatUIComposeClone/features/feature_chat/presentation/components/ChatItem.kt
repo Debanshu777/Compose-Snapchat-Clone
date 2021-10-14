@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 
@@ -44,7 +45,7 @@ fun ChatItem(
                     text = item.sender,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.W600,
-                    color = Color.Black
+                    color = ThemeColors.DARK_TINT_TEXT
                 )
                 Row(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
@@ -56,10 +57,13 @@ fun ChatItem(
                         modifier = Modifier
                             .size(5.dp)
                             .clip(CircleShape)
-                            .background(color = Color.Gray)
+                            .background(color = ThemeColors.LIGHT_TINT_TEXT)
                     )
                     Spacer(Modifier.width(10.dp))
-                    Text(text = item.lastContentTime+item.lastContentTimeType.timeType, color = Color.Gray)
+                    Text(
+                        text = item.lastContentTime+item.lastContentTimeType.timeType,
+                        color = ThemeColors.LIGHT_TINT_TEXT
+                    )
                 }
             }
         }
@@ -68,20 +72,20 @@ fun ChatItem(
         ) {
             if(!item.isChatOpened) Divider(
                 modifier = Modifier
-                    .background(color = Color(0xFFE4E4E4))
+                    .background(color = ThemeColors.LIGHTER_ICON_TINT)
                     .height(40.dp)
                     .width(0.5.dp),
             )
             Icon(
                 modifier = Modifier
-                    .size(45.dp)
+                    .size(50.dp)
                     .padding(start = 20.dp,end= 5.dp),
                 imageVector = if(item.isChatOpened)
                     Icons.Outlined.CameraAlt
                 else
                     Icons.Outlined.ChatBubbleOutline,
                 contentDescription = "",
-                tint = Color(0xFF7E7C7C)
+                tint = ThemeColors.LIGHTER_ICON_TINT
             )
             Spacer(modifier = Modifier.width(5.dp))
         }
@@ -90,10 +94,10 @@ fun ChatItem(
 }
 
 fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.image)
-    Color.Red
+    ThemeColors.RED
 else {
     if (item.lastContentType == ContentType.video)
-        Color.Magenta
+        ThemeColors.PURPLE
     else
-        Color.Blue
+        ThemeColors.BLUE
 }

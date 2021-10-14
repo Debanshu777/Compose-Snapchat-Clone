@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 
@@ -72,7 +73,7 @@ fun ChatTypeItem(item:ChatView){
         Text(
             text = "Opened",
             fontWeight = FontWeight.W400,
-            color = Color.Gray
+            color = ThemeColors.LIGHT_TINT_TEXT
         )
     }
     if(item.isChatOpened && item.isLastContentSendToSender){
@@ -96,7 +97,7 @@ fun ChatTypeItem(item:ChatView){
             Text(
                 text = "Delivered",
                 fontWeight = FontWeight.W400,
-                color = Color.Gray
+                color = ThemeColors.LIGHT_TINT_TEXT
             )
         }else{
             if(item.lastContentType != ContentType.chat) {
@@ -118,7 +119,7 @@ fun ChatTypeItem(item:ChatView){
             Text(
                 text = "Opened",
                 fontWeight = FontWeight.W400,
-                color = Color.Gray
+                color = ThemeColors.LIGHT_TINT_TEXT
             )
         }
 
