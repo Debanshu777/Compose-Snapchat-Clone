@@ -26,7 +26,6 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Preview
 fun StoriesScreen() {
     val elements =5
-    val cols =5
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))

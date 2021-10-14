@@ -21,8 +21,8 @@ fun ChatScreen() {
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
-            .fillMaxSize()
-            .background(color = Color.White).padding(top=60.dp),
+            .background(color = Color.White)
+            .fillMaxSize(),
     ) {
         LazyColumn{
             items(chatList.size) { index->

@@ -7,5 +7,8 @@ data class TopBarItem(
     val textColor: Color,
     val iconTint: Color,
     val backgroundTintForIcon: Color,
-    val route: String
+    val route: String,
+    val isBackgroundTransparent:Boolean = false,
+    val isAvailable: Boolean,
+    val lastAction: String = "None"
 )
