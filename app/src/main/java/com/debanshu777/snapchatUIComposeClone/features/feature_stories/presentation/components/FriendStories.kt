@@ -16,7 +16,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
 @Composable
 fun FriendStories(){
@@ -24,7 +25,7 @@ fun FriendStories(){
       modifier = Modifier.padding(top=70.dp)
     ) {
         Text(
-            text = "Friends",
+            text = Messages.FRIENDS_SUB_HEADING,
             color = Color.Black,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold

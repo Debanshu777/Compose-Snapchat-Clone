@@ -26,11 +26,6 @@ import java.time.format.TextStyle
 @ExperimentalCoilApi
 @Composable
 fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: Modifier){
-//    val gradient = Brush.verticalGradient(
-//        colors = listOf(Color.Black, Color.Transparent),
-//        startY = shadowHeight,
-//        endY = shadowHeight.toFloat()
-//    )
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(5.dp),

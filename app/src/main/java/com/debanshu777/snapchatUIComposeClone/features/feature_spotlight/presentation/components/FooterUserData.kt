@@ -21,7 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.horizontalPadding
 

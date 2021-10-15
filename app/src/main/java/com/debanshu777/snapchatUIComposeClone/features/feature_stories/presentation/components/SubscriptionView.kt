@@ -18,6 +18,7 @@ import coil.Coil
 import coil.ImageLoader
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
 
 
@@ -28,7 +29,7 @@ fun SubscriptionView(){
        modifier = Modifier.padding(top= 20.dp)
     ) {
         Text(
-            text = "Subscriptions",
+            text = Messages.SUBSCRIPTION_SUB_HEADING,
             color = Color.Black,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,

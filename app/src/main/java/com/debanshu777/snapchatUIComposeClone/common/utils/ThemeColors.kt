@@ -1,4 +1,4 @@
-package com.debanshu777.snapchatUIComposeClone.common.config
+package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.ui.graphics.Color
 

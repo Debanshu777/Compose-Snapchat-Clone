@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
@@ -43,7 +44,7 @@ fun StoriesScreen() {
             }
             item{
                 Text(
-                    text = "Discover",
+                    text = Messages.DISCOVER_SUB_HEADING,
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,

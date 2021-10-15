@@ -8,12 +8,14 @@ import androidx.compose.material.icons.outlined.Group
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.PlayArrow
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.BottomNavItem
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.common.utils.Screens
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
 fun navigationConfig():List<BottomNavItem> {
     return listOf(
         BottomNavItem(
-            name="Snap Map",
+            name= Messages.SNAP_HEADING,
             route = Screens.SnapMapScreen.route,
             icon = Icons.Outlined.LocationOn,
             onSelectedBatchVisible = false,
@@ -21,7 +23,7 @@ fun navigationConfig():List<BottomNavItem> {
             onSelectIcon =  Icons.Outlined.LocationOn,
         ),
         BottomNavItem(
-            name="Chat",
+            name= Messages.CHAT_HEADING,
             route = Screens.ChatScreen.route,
             icon = Icons.Default.ChatBubbleOutline,
             onSelectedBatchVisible = true,
@@ -29,7 +31,7 @@ fun navigationConfig():List<BottomNavItem> {
             onSelectIcon = Icons.Default.ChatBubbleOutline,
         ),
         BottomNavItem(
-            name="Camara",
+            name= Messages.CAMARA_HEADING,
             route = Screens.CamaraScreen.route,
             icon = Icons.Outlined.CameraAlt,
             onSelectedBatchVisible = false,
@@ -37,7 +39,7 @@ fun navigationConfig():List<BottomNavItem> {
             onSelectIcon =  Icons.Default.CameraAlt,
         ),
         BottomNavItem(
-            name="Stories",
+            name= Messages.STORIES_HEADING,
             route = Screens.StoriesScreen.route,
             icon = Icons.Outlined.Group,
             onSelectedBatchVisible = true,
@@ -45,7 +47,7 @@ fun navigationConfig():List<BottomNavItem> {
             onSelectIcon =  Icons.Outlined.Group,
         ),
         BottomNavItem(
-            name="Spotlight",
+            name= Messages.SPOTLIGHT_HEADING,
             route = Screens.SpotlightScreen.route,
             icon = Icons.Outlined.PlayArrow,
             onSelectedBatchVisible = false,
