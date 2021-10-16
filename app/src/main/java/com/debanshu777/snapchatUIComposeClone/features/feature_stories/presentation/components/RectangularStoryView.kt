@@ -36,11 +36,10 @@ fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: 
                 painter = rememberImagePainter(
                     data="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
                     builder = {
-                        crossfade(true)
+
                     }
                 ),
-                contentScale= ContentScale.Crop,
-                contentDescription = "",
+                contentDescription = "Hello",
             )
             Box(modifier = Modifier
                 .fillMaxSize()
