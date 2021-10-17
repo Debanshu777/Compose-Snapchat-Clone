@@ -21,11 +21,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
 import java.time.format.TextStyle
 
 @ExperimentalCoilApi
 @Composable
-fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: Modifier){
+fun RectangularStoryView(
+    shadowHeight:Float,
+    isLarge:Boolean,
+    height:Dp,
+    modifier: Modifier,
+    subscription: Subscription
+){
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(5.dp),
@@ -34,12 +41,13 @@ fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: 
         Box(Modifier.height(height)) {
             Image(
                 painter = rememberImagePainter(
-                    data="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
+                    data=subscription.coverImageURL,
                     builder = {
 
                     }
                 ),
-                contentDescription = "Hello",
+                contentScale= ContentScale.Crop,
+                contentDescription = "Content",
             )
             Box(modifier = Modifier
                 .fillMaxSize()
@@ -60,7 +68,7 @@ fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: 
                 contentAlignment = Alignment.BottomStart
             ) {
                 Text(
-                    text = "Losing Carbon for 5 Secs Is Worse Than You Think",
+                    text = subscription.title,
                     maxLines = 4,
                     color=Color.White,
                     fontWeight= FontWeight.W800,

@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
@@ -27,6 +28,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Preview
 fun StoriesScreen() {
     val elements =5
+    val subscriptionList= MockDataSubscription()
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
@@ -51,30 +53,63 @@ fun StoriesScreen() {
                     modifier = Modifier.padding(bottom = 10.dp,top= 20.dp)
                 )
             }
-            items(elements/2){ row ->
-                Row {
+            if(subscriptionList.size%2 == 0) {
+                items(subscriptionList.size / 2) { row ->
+                    Row {
                         RectangularStoryView(
-                            shadowHeight=230f,
-                            height=200.dp,
-                            isLarge=true,
-                            modifier= Modifier
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2)],
+                            modifier = Modifier
                                 .height(280.dp)
                                 .width(200.dp)
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
-                    RectangularStoryView(
-                        shadowHeight=230f,
-                        height=200.dp,
-                        isLarge=true,
-                        modifier= Modifier
-                            .height(280.dp)
-                            .width(200.dp)
-                            .padding(end = 10.dp,bottom = 10.dp)
-                            .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
-                    )
-                }
+                        RectangularStoryView(
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2) + 1],
+                            modifier = Modifier
+                                .height(280.dp)
+                                .width(200.dp)
+                                .padding(end = 10.dp, bottom = 10.dp)
+                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                        )
+                    }
 
+                }
+            }else{
+                items(subscriptionList.size / 2 + 1 ) { row ->
+                    Row {
+                        RectangularStoryView(
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2)],
+                            modifier = Modifier
+                                .height(280.dp)
+                                .width(200.dp)
+                                .padding(end = 10.dp, bottom = 10.dp)
+                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                        )
+                        if(row*2+1 < subscriptionList.size) {
+                            RectangularStoryView(
+                                shadowHeight = 230f,
+                                height = 200.dp,
+                                isLarge = true,
+                                subscription = subscriptionList[(row * 2) + 1],
+                                modifier = Modifier
+                                    .height(280.dp)
+                                    .width(200.dp)
+                                    .padding(end = 10.dp, bottom = 10.dp)
+                                    .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                            )
+                        }
+                    }
+                }
             }
         }
     }

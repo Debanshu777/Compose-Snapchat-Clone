@@ -9,6 +9,6 @@ data class Story(
     val userId: Long,
     val timeStamp:Long,
     val contentType: ContentType,
-    val media:Image,
+    val mediaURL:String,
     val snapDurationType: SnapDurationType
 )
