@@ -36,7 +36,7 @@ fun StoriesScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn(
-            modifier = Modifier.padding(start=10.dp)
+            modifier = Modifier.padding(start=10.dp).fillMaxWidth()
         ) {
             item{
                 FriendStories()
@@ -62,8 +62,8 @@ fun StoriesScreen() {
                             isLarge = true,
                             subscription = subscriptionList[(row * 2)],
                             modifier = Modifier
-                                .height(280.dp)
-                                .width(200.dp)
+                                .height(300.dp)
+                                .fillMaxWidth(0.5f)
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
@@ -73,8 +73,8 @@ fun StoriesScreen() {
                             isLarge = true,
                             subscription = subscriptionList[(row * 2) + 1],
                             modifier = Modifier
-                                .height(280.dp)
-                                .width(200.dp)
+                                .height(300.dp)
+                                .fillMaxWidth()
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
@@ -90,8 +90,8 @@ fun StoriesScreen() {
                             isLarge = true,
                             subscription = subscriptionList[(row * 2)],
                             modifier = Modifier
-                                .height(280.dp)
-                                .width(200.dp)
+                                .height(300.dp)
+                                .fillMaxWidth(0.5f)
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
@@ -102,8 +102,8 @@ fun StoriesScreen() {
                                 isLarge = true,
                                 subscription = subscriptionList[(row * 2) + 1],
                                 modifier = Modifier
-                                    .height(280.dp)
-                                    .width(200.dp)
+                                    .height(300.dp)
+                                    .fillMaxWidth()
                                     .padding(end = 10.dp, bottom = 10.dp)
                                     .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                             )

@@ -1,6 +1,5 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components
 
-import androidx.annotation.Px
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,7 +13,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -22,7 +20,6 @@ import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
-import java.time.format.TextStyle
 
 @ExperimentalCoilApi
 @Composable
@@ -34,7 +31,7 @@ fun RectangularStoryView(
     subscription: Subscription
 ){
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier,
         shape = RoundedCornerShape(5.dp),
         elevation=5.dp
     ){
@@ -50,7 +47,7 @@ fun RectangularStoryView(
                 contentDescription = "Content",
             )
             Box(modifier = Modifier
-                .fillMaxSize()
+                .matchParentSize()
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(

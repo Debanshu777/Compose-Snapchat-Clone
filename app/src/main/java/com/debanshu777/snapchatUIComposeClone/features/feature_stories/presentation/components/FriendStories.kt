@@ -60,11 +60,11 @@ fun StoryItem(stories:FriendsStory){
                     BorderStroke(2.dp, color = ThemeColors.PURPLE),
                     CircleShape
                 )
-                .size(80.dp),
+                .size(70.dp),
             contentAlignment = Alignment.Center
         ){
             Image(
-                modifier=Modifier.padding(5.dp).clip(CircleShape).size(80.dp),
+                modifier=Modifier.padding(5.dp).clip(CircleShape).size(70.dp),
                 painter = rememberImagePainter(
                     data=stories.thumbnail,
                     builder = {
