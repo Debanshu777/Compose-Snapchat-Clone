@@ -11,7 +11,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
 @Composable
 fun UserAction(

@@ -18,6 +18,8 @@ import coil.Coil
 import coil.ImageLoader
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
 
 
@@ -27,18 +29,20 @@ fun SubscriptionView(){
     Column(
        modifier = Modifier.padding(top= 20.dp)
     ) {
+        val subscriptionList= MockDataSubscription()
         Text(
-            text = "Subscriptions",
+            text = Messages.SUBSCRIPTION_SUB_HEADING,
             color = Color.Black,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             modifier =Modifier.padding(bottom = 10.dp)
         )
         LazyRow{
-            items(5){index->
+            items(subscriptionList.size){index->
                 RectangularStoryView(
                     shadowHeight=100f,
                     height=160.dp,
+                    subscription=subscriptionList[index],
                     isLarge = false,
                     modifier= Modifier
                         .height(160.dp)

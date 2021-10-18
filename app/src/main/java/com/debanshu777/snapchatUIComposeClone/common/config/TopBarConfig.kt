@@ -2,12 +2,14 @@ package com.debanshu777.snapchatUIComposeClone.common.config
 
 import androidx.compose.ui.graphics.Color
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.common.utils.Screens
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
 fun topBarConfig(route:String): TopBarItem {
     val listOfTopBarConfig= listOf(
         TopBarItem(
-            name = "Snap Map",
+            name = Messages.SNAP_HEADING,
             textColor = ThemeColors.LIGHT_ICON_TINT,
             backgroundTintForIcon = ThemeColors.DARK_TRANSPARENT,
             iconTint = ThemeColors.LIGHT_ICON_TINT,
@@ -17,7 +19,7 @@ fun topBarConfig(route:String): TopBarItem {
             lastAction="Setting"
         ),
         TopBarItem(
-            name = "Chat",
+            name = Messages.CHAT_HEADING,
             textColor = Color.Black,
             backgroundTintForIcon = ThemeColors.LIGHT_TRANSPARENT,
             iconTint = ThemeColors.DARK_ICON_TINT,
@@ -36,7 +38,7 @@ fun topBarConfig(route:String): TopBarItem {
             lastAction="Camara Rotate"
         ),
         TopBarItem(
-            name = "Stories",
+            name = Messages.STORIES_HEADING,
             textColor = Color.Black,
             backgroundTintForIcon = ThemeColors.LIGHT_TRANSPARENT,
             iconTint = ThemeColors.DARK_ICON_TINT,
@@ -45,7 +47,7 @@ fun topBarConfig(route:String): TopBarItem {
             lastAction="More Action"
         ),
         TopBarItem(
-            name = "Spotlight",
+            name = Messages.SPOTLIGHT_HEADING,
             textColor = ThemeColors.LIGHT_ICON_TINT,
             backgroundTintForIcon = ThemeColors.DARK_TRANSPARENT,
             iconTint = ThemeColors.LIGHT_ICON_TINT,
