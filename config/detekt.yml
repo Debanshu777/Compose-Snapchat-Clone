@@ -42,9 +42,6 @@ console-reports:
 output-reports:
   active: true
   exclude:
-  # - 'TxtOutputReport'
-  # - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
 
 comments:
   active: true
@@ -740,3 +737,7 @@ style:
     active: true
   VarCouldBeVal:
     active: true
+  WildcardImport:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']
+    excludeImports: ['java.util.*', 'kotlinx.android.synthetic.*']
