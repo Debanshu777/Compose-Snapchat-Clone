@@ -16,11 +16,12 @@ import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.components.CustomBottomNavigation
 import com.debanshu777.snapchatUIComposeClone.common.components.CustomTopBar
-import com.debanshu777.snapchatUIComposeClone.common.utils.Navigation
 import com.debanshu777.snapchatUIComposeClone.common.config.navigationConfig
+import com.debanshu777.snapchatUIComposeClone.common.utils.Navigation
 import com.debanshu777.snapchatUIComposeClone.common.utils.TopBarFormatter
 import com.debanshu777.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+
 
 class MainActivity : ComponentActivity() {
     @ExperimentalFoundationApi

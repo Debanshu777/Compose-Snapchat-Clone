@@ -3,9 +3,8 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -19,8 +18,8 @@ import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 
 @ExperimentalFoundationApi
 @ExperimentalCoilApi

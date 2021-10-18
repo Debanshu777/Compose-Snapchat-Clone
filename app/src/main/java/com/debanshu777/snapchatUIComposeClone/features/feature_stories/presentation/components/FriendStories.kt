@@ -2,7 +2,6 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presenta
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
