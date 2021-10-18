@@ -5,15 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import coil.annotation.ExperimentalCoilApi
@@ -25,8 +21,6 @@ import com.debanshu777.snapchatUIComposeClone.common.config.navigationConfig
 import com.debanshu777.snapchatUIComposeClone.common.utils.TopBarFormatter
 import com.debanshu777.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.android.material.shape.Shapeable
-import java.util.*
 
 class MainActivity : ComponentActivity() {
     @ExperimentalFoundationApi

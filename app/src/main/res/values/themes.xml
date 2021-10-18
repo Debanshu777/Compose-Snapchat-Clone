@@ -10,8 +10,9 @@
         <item name="colorSecondaryVariant">@color/DarkGray</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/transparent</item>-->
         <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="Theme.AppSplash" parent="Theme.MaterialComponents.Light.NoActionBar">

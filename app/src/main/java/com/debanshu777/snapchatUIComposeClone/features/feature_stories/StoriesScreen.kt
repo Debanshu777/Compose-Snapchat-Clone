@@ -27,7 +27,6 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Composable
 @Preview
 fun StoriesScreen() {
-    val elements =5
     val subscriptionList= MockDataSubscription()
     Box(
         modifier = Modifier
@@ -36,7 +35,7 @@ fun StoriesScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn(
-            modifier = Modifier.padding(start=10.dp).fillMaxWidth()
+            modifier = Modifier.padding(start=10.dp,top=30.dp).fillMaxWidth()
         ) {
             item{
                 FriendStories()
