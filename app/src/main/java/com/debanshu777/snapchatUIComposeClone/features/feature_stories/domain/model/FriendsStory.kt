@@ -4,8 +4,8 @@ import android.media.Image
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.User
 
 data class FriendsStory(
-    val user: User,
+    val userName: String,
     val stories: List<Story>,
     val storyCount:Int,
-    val thumbnail: Image
+    val thumbnail: String
 )

@@ -16,6 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
+import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
@@ -26,6 +28,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Preview
 fun StoriesScreen() {
     val elements =5
+    val subscriptionList= MockDataSubscription()
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
@@ -33,7 +36,7 @@ fun StoriesScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn(
-            modifier = Modifier.padding(start=10.dp)
+            modifier = Modifier.padding(start=10.dp).fillMaxWidth()
         ) {
             item{
                 FriendStories()
@@ -43,37 +46,70 @@ fun StoriesScreen() {
             }
             item{
                 Text(
-                    text = "Discover",
+                    text = Messages.DISCOVER_SUB_HEADING,
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(bottom = 10.dp,top= 20.dp)
                 )
             }
-            items(elements/2){ row ->
-                Row {
+            if(subscriptionList.size%2 == 0) {
+                items(subscriptionList.size / 2) { row ->
+                    Row {
                         RectangularStoryView(
-                            shadowHeight=230f,
-                            height=200.dp,
-                            isLarge=true,
-                            modifier= Modifier
-                                .height(280.dp)
-                                .width(200.dp)
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2)],
+                            modifier = Modifier
+                                .height(300.dp)
+                                .fillMaxWidth(0.5f)
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
-                    RectangularStoryView(
-                        shadowHeight=230f,
-                        height=200.dp,
-                        isLarge=true,
-                        modifier= Modifier
-                            .height(280.dp)
-                            .width(200.dp)
-                            .padding(end = 10.dp,bottom = 10.dp)
-                            .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
-                    )
-                }
+                        RectangularStoryView(
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2) + 1],
+                            modifier = Modifier
+                                .height(300.dp)
+                                .fillMaxWidth()
+                                .padding(end = 10.dp, bottom = 10.dp)
+                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                        )
+                    }
 
+                }
+            }else{
+                items(subscriptionList.size / 2 + 1 ) { row ->
+                    Row {
+                        RectangularStoryView(
+                            shadowHeight = 230f,
+                            height = 200.dp,
+                            isLarge = true,
+                            subscription = subscriptionList[(row * 2)],
+                            modifier = Modifier
+                                .height(300.dp)
+                                .fillMaxWidth(0.5f)
+                                .padding(end = 10.dp, bottom = 10.dp)
+                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                        )
+                        if(row*2+1 < subscriptionList.size) {
+                            RectangularStoryView(
+                                shadowHeight = 230f,
+                                height = 200.dp,
+                                isLarge = true,
+                                subscription = subscriptionList[(row * 2) + 1],
+                                modifier = Modifier
+                                    .height(300.dp)
+                                    .fillMaxWidth()
+                                    .padding(end = 10.dp, bottom = 10.dp)
+                                    .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                            )
+                        }
+                    }
+                }
             }
         }
     }

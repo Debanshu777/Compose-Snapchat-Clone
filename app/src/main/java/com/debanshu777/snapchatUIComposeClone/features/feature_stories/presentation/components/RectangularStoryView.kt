@@ -1,6 +1,5 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components
 
-import androidx.annotation.Px
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,41 +13,41 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
-import java.time.format.TextStyle
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
 
 @ExperimentalCoilApi
 @Composable
-fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: Modifier){
-//    val gradient = Brush.verticalGradient(
-//        colors = listOf(Color.Black, Color.Transparent),
-//        startY = shadowHeight,
-//        endY = shadowHeight.toFloat()
-//    )
+fun RectangularStoryView(
+    shadowHeight:Float,
+    isLarge:Boolean,
+    height:Dp,
+    modifier: Modifier,
+    subscription: Subscription
+){
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier,
         shape = RoundedCornerShape(5.dp),
         elevation=5.dp
     ){
         Box(Modifier.height(height)) {
             Image(
                 painter = rememberImagePainter(
-                    data="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
+                    data=subscription.coverImageURL,
                     builder = {
-                        crossfade(true)
+
                     }
                 ),
                 contentScale= ContentScale.Crop,
-                contentDescription = "",
+                contentDescription = "Content",
             )
             Box(modifier = Modifier
-                .fillMaxSize()
+                .matchParentSize()
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
@@ -66,7 +65,7 @@ fun RectangularStoryView(shadowHeight:Float,isLarge:Boolean,height:Dp,modifier: 
                 contentAlignment = Alignment.BottomStart
             ) {
                 Text(
-                    text = "Losing Carbon for 5 Secs Is Worse Than You Think",
+                    text = subscription.title,
                     maxLines = 4,
                     color=Color.White,
                     fontWeight= FontWeight.W800,

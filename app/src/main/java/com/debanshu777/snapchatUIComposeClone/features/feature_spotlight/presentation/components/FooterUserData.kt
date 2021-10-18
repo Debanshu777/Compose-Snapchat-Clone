@@ -3,7 +3,6 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.presen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -17,11 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.debanshu777.snapchatUIComposeClone.common.config.ThemeColors
+import coil.transform.CircleCropTransformation
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.horizontalPadding
 
@@ -36,16 +35,23 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
         ) {
-            Image(
-                painter = rememberImagePainter(spotlight.userImage),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(28.dp)
-                    .background(color = Color.Gray, shape = CircleShape)
-                    .clip(CircleShape),
-                contentDescription = null
-            )
-
+            Box(
+                modifier=Modifier.height(28.dp).width(28.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                val painter = rememberImagePainter(
+                    data = "https://avatars.githubusercontent.com/u/50791485?v=4",
+                    builder = {
+                        transformations(
+                            CircleCropTransformation()
+                        )
+                    }
+                )
+                Image(
+                    painter = painter,
+                    contentDescription = null,
+                )
+            }
             Spacer(modifier = Modifier.width(horizontalPadding))
             Text(
                 text = "@${spotlight.userName}",
