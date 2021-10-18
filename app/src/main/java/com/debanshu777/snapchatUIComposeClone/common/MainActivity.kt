@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import coil.annotation.ExperimentalCoilApi
+import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.components.CustomBottomNavigation
 import com.debanshu777.snapchatUIComposeClone.common.components.CustomTopBar
 import com.debanshu777.snapchatUIComposeClone.common.utils.Navigation
@@ -35,6 +36,7 @@ class MainActivity : ComponentActivity() {
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_ComposeCameraX)
         setContent {
             ComposeSnapChatUITheme{
                 val navController = rememberNavController()

@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.AppSplash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/app_splash_screen</item>
+        <item name="android:statusBarColor">@color/Yellow</item>
+    </style>
+
     <style name="Theme.ComposeCameraX.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
