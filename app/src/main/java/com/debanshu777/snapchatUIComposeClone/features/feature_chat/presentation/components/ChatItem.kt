@@ -16,12 +16,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
+import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastContentTimeType
 
+@Preview
+@Composable
+fun ChatItemPreview(){
+    ChatItem(
+        modifier=Modifier
+            .background(color=Color.White)
+            .padding(10.dp),
+        item =
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
+    ))
+}
 @Composable
 fun ChatItem(
     modifier: Modifier = Modifier,
@@ -79,7 +101,7 @@ fun ChatItem(
             Icon(
                 modifier = Modifier
                     .size(50.dp)
-                    .padding(start = 20.dp,end= 5.dp),
+                    .padding(start = 20.dp, end = 5.dp),
                 imageVector = if(item.isChatOpened)
                     Icons.Outlined.CameraAlt
                 else

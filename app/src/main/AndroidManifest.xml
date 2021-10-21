@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash"
         android:allowBackup="true">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="${GMP_KEY}"
+            />
         <activity
             android:name="com.debanshu777.snapchatUIComposeClone.common.MainActivity"
             android:exported="true"
