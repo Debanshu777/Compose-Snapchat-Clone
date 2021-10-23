@@ -29,22 +29,32 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(
-        modifier=Modifier.clip(RoundedCornerShape(
-                bottomStart = 5.dp,
-                bottomEnd = 5.dp))
+        modifier= Modifier
+            .clip(
+                RoundedCornerShape(
+                    bottomStart = 5.dp,
+                    bottomEnd = 5.dp
+                )
+            )
             .padding(bottom = 55.dp)
-            .background(color= Color.Black),
+            .background(color = Color.Black),
         navController = navController,
         startDestination = Screens.CamaraScreen.route
     ) {
         composable(Screens.SnapMapScreen.route) {
-            SnapMapScreen()
+            FeaturesThatRequireLocationPermission(
+                navigateToSettingsScreen = {},
+                content= {SnapMapScreen()}
+            )
         }
         composable(Screens.ChatScreen.route) {
             ChatScreen()
         }
         composable(Screens.CamaraScreen.route) {
-            CamaraScreen()
+            FeatureThatRequiresCameraPermission (
+                navigateToSettingsScreen = {},
+                content = { CamaraScreen() }
+            )
         }
         composable(Screens.StoriesScreen.route) {
             StoriesScreen()
