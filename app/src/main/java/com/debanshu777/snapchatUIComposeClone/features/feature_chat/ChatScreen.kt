@@ -10,11 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.data.dataSource.dummyDataChatViewList
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components.ChatItem
 
 @Composable
+@Preview
 fun ChatScreen() {
     val chatList= dummyDataChatViewList()
     Box(

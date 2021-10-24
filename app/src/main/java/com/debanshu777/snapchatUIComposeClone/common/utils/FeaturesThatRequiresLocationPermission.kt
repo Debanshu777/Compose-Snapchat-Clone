@@ -1,6 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
-import androidx.compose.animation.ExperimentalAnimationApi
+import android.Manifest
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -16,17 +16,16 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionRequired
 import com.google.accompanist.permissions.rememberPermissionState
 
-@ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
-fun FeatureThatRequiresCameraPermission(
+fun FeaturesThatRequireLocationPermission(
     navigateToSettingsScreen: () -> Unit,
     content: @Composable ()->Unit
-) {
+){
     var doNotShowRationale by rememberSaveable { mutableStateOf(false) }
-    val cameraPermissionState = rememberPermissionState(android.Manifest.permission.CAMERA)
+    val locationPermissionState = rememberPermissionState(Manifest.permission.ACCESS_COARSE_LOCATION)
     PermissionRequired(
-        permissionState = cameraPermissionState,
+        permissionState = locationPermissionState,
         permissionNotGrantedContent = {
             if (doNotShowRationale) {
                 Text("Feature not available")
@@ -36,12 +35,12 @@ fun FeatureThatRequiresCameraPermission(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text="The camera is important for this app. Please grant the permission."
+                        text="The location is important for this app. Please grant the permission."
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row {
                         Button(onClick = {
-                            cameraPermissionState.launchPermissionRequest()
+                            locationPermissionState.launchPermissionRequest()
                         }) {
                             Text("Allow")
                         }
@@ -59,7 +58,7 @@ fun FeatureThatRequiresCameraPermission(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text ="Camera permission denied. See this FAQ with information about why we " +
+                    text ="Location permission denied. See this FAQ with information about why we " +
                             "need this permission. Please, grant us access on the Settings screen."
                 )
                 Spacer(modifier = Modifier.height(8.dp))
@@ -68,6 +67,7 @@ fun FeatureThatRequiresCameraPermission(
                 }
             }
         },
-        content=content
+        content = content
+
     )
 }

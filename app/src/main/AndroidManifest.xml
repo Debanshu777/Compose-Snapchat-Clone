@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.debanshu777.snapchatUIComposeClone">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -12,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash"
         android:allowBackup="true">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="${GMP_KEY}"
+            />
         <activity
             android:name="com.debanshu777.snapchatUIComposeClone.common.MainActivity"
             android:exported="true"
