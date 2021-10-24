@@ -141,7 +141,7 @@ fun rememberMapLifecycleObserver(mapView: MapView): LifecycleEventObserver =
         }
     }
 
-private  fun getDeviceLocation(context:Context):LatLng{
+private  fun getDeviceLocation(context:Context){
     val fusedLocationClient
     : FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
 

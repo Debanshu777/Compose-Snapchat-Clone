@@ -6,7 +6,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CameraAlt
 import androidx.compose.material.icons.outlined.ChatBubbleOutline
@@ -15,10 +14,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeText
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
@@ -28,8 +30,8 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastC
 @Composable
 fun ChatItemPreview(){
     ChatItem(
-        modifier=Modifier
-            .background(color=Color.White)
+        modifier= Modifier
+            .background(color = Color.White)
             .padding(10.dp),
         item =
         ChatView(
@@ -44,11 +46,14 @@ fun ChatItemPreview(){
             lastContentTime = "1",
     ))
 }
+
+
 @Composable
 fun ChatItem(
     modifier: Modifier = Modifier,
     item: ChatView
 ) {
+    val configuration = LocalConfiguration.current
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -57,23 +62,25 @@ fun ChatItem(
         Row {
             Box(
                 modifier = Modifier
-                    .size(55.dp)
+                    .size(53.25.dp)
                     .clip(CircleShape)
                     .background(color = Color.DarkGray)
             )
             Spacer(modifier = Modifier.width(20.dp))
             Column {
-                Text(
+                AutoSizeText(
+                    factor=0.85f,
                     text = item.sender,
-                    fontSize = 20.sp,
+                    textColor = ThemeColors.DARK_TINT_TEXT ,
                     fontWeight = FontWeight.W600,
-                    color = ThemeColors.DARK_TINT_TEXT
+                    textStyle = TextStyle(fontSize = 20.sp),
+                    configuration = configuration
                 )
                 Row(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    ChatTypeItem(item)
+                    ChatTypeItem(item,configuration)
                     Spacer(Modifier.width(10.dp))
                     Box(
                         modifier = Modifier
@@ -82,9 +89,12 @@ fun ChatItem(
                             .background(color = ThemeColors.LIGHT_TINT_TEXT)
                     )
                     Spacer(Modifier.width(10.dp))
-                    Text(
+                    AutoSizeText(
+                        factor=0.85f,
                         text = item.lastContentTime+item.lastContentTimeType.timeType,
-                        color = ThemeColors.LIGHT_TINT_TEXT
+                        textColor = ThemeColors.LIGHT_TINT_TEXT,
+                        textStyle = TextStyle(fontSize = 14.sp),
+                        configuration = configuration
                     )
                 }
             }
@@ -112,7 +122,7 @@ fun ChatItem(
             Spacer(modifier = Modifier.width(5.dp))
         }
     }
-    Divider(color=Color(0xFFE4E4E4), thickness = 0.2.dp)
+    Divider(color=Color(0xFFE4E4E4), thickness = 0.1.dp)
 }
 
 fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.image)
