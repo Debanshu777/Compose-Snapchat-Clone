@@ -25,7 +25,7 @@ fun CustomTopBar(
     topBarItem: TopBarItem
 ){
     TopAppBar(
-        contentPadding= PaddingValues(top=30.dp, start=10.dp, end=10.dp),
+        contentPadding= PaddingValues(top=10.dp, start=10.dp, end=10.dp),
         modifier = modifier,
         elevation= 0.dp,
         backgroundColor =

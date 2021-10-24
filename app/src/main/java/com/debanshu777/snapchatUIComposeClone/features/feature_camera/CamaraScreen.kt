@@ -12,7 +12,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
-import com.debanshu777.snapchatUIComposeClone.common.utils.FeatureThatRequiresCameraPermission
 import com.debanshu777.snapchatUIComposeClone.features.feature_camera.presentation.components.SimpleCameraPreview
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
@@ -29,9 +28,7 @@ fun CamaraScreen() {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-                FeatureThatRequiresCameraPermission (
-                    navigateToSettingsScreen = {}
-                )
+
                 SimpleCameraPreview(
                     modifier = Modifier.fillMaxSize(),
                     context = context,
