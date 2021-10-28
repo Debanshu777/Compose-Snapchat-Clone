@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -9,21 +10,23 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.outlined.Send
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeText
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 
 @Composable
-fun ChatTypeItem(item:ChatView){
+fun ChatTypeItem(item:ChatView,configuration: Configuration){
     if(!item.isChatOpened && !item.isLastContentSendToSender) {
         Box(
             modifier = Modifier
@@ -32,11 +35,18 @@ fun ChatTypeItem(item:ChatView){
                 .background(color = giveColor(item))
         )
         Spacer(modifier = Modifier.width(5.dp))
-        Text(
+        AutoSizeText(
+            factor=0.85f,
             text = "New Snap",
-            fontWeight = FontWeight.W400,
-            color = giveColor(item)
-        )
+            textColor = giveColor(item),
+            fontWeight=FontWeight.W400,
+            textStyle = TextStyle(fontSize = 14.sp),
+            configuration = configuration)
+//        Text(
+//            text = "New Snap",
+//            fontWeight = FontWeight.W400,
+//            color = giveColor(item)
+//        )
     }
     if(!item.isChatOpened && item.isLastContentSendToSender) {
         Box(
@@ -46,11 +56,18 @@ fun ChatTypeItem(item:ChatView){
                 .background(color = giveColor(item))
         )
         Spacer(modifier = Modifier.width(5.dp))
-        Text(
+        AutoSizeText(
+            factor=0.85f,
             text = "New Snap",
-            fontWeight = FontWeight.W400,
-            color = giveColor(item)
-        )
+            textColor = giveColor(item),
+            fontWeight=FontWeight.W400,
+            textStyle = TextStyle(fontSize = 14.sp),
+            configuration = configuration)
+//        Text(
+//            text = "New Snap",
+//            fontWeight = FontWeight.W400,
+//            color = giveColor(item)
+//        )
     }
     if(item.isChatOpened && !item.isLastContentSendToSender){
         if(item.lastContentType!= ContentType.chat) {
@@ -69,11 +86,18 @@ fun ChatTypeItem(item:ChatView){
             )
         }
         Spacer(modifier = Modifier.width(5.dp))
-        Text(
+        AutoSizeText(
+            factor=0.85f,
             text = "Opened",
-            fontWeight = FontWeight.W400,
-            color = ThemeColors.LIGHT_TINT_TEXT
-        )
+            textColor = ThemeColors.LIGHT_TINT_TEXT,
+            fontWeight=FontWeight.W400,
+            textStyle = TextStyle(fontSize = 14.sp),
+            configuration = configuration)
+//        Text(
+//            text = "Opened",
+//            fontWeight = FontWeight.W400,
+//            color = ThemeColors.LIGHT_TINT_TEXT
+//        )
     }
     if(item.isChatOpened && item.isLastContentSendToSender){
         if(item.isChatUnseenBySender) {
@@ -93,11 +117,18 @@ fun ChatTypeItem(item:ChatView){
                 )
             }
             Spacer(modifier = Modifier.width(5.dp))
-            Text(
+            AutoSizeText(
+                factor=0.85f,
                 text = "Delivered",
-                fontWeight = FontWeight.W400,
-                color = ThemeColors.LIGHT_TINT_TEXT
-            )
+                textColor = ThemeColors.LIGHT_TINT_TEXT,
+                fontWeight=FontWeight.W400,
+                textStyle = TextStyle(fontSize = 14.sp),
+                configuration = configuration)
+//            Text(
+//                text = "Delivered",
+//                fontWeight = FontWeight.W400,
+//                color = ThemeColors.LIGHT_TINT_TEXT
+//            )
         }else{
             if(item.lastContentType != ContentType.chat) {
                 Box(
@@ -115,11 +146,18 @@ fun ChatTypeItem(item:ChatView){
                 )
             }
             Spacer(modifier = Modifier.width(5.dp))
-            Text(
+            AutoSizeText(
+                factor=0.85f,
                 text = "Opened",
-                fontWeight = FontWeight.W400,
-                color = ThemeColors.LIGHT_TINT_TEXT
-            )
+                textColor = ThemeColors.LIGHT_TINT_TEXT,
+                fontWeight=FontWeight.W400,
+                textStyle = TextStyle(fontSize = 14.sp),
+                configuration = configuration)
+//            Text(
+//                text = "Opened",
+//                fontWeight = FontWeight.W400,
+//                color = ThemeColors.LIGHT_TINT_TEXT
+//            )
         }
 
     }

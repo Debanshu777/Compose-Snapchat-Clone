@@ -19,12 +19,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
+import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeIcon
+import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import java.util.*
 
+@ExperimentalMaterialApi
 @Composable
 fun SimpleCameraPreview(
     modifier: Modifier = Modifier,
@@ -32,6 +36,7 @@ fun SimpleCameraPreview(
     lifecycleOwner: LifecycleOwner,
     onMediaCaptured: (Uri?) -> Unit
 ) {
+    val configuration = LocalConfiguration.current
     val cameraProviderFuture = remember { ProcessCameraProvider.getInstance(context) }
     var imageCapture: ImageCapture? by remember { mutableStateOf(null) }
     var preview by remember { mutableStateOf<Preview?>(null) }
@@ -95,11 +100,15 @@ fun SimpleCameraPreview(
                     }
                 }
             ) {
-                Icon(
-                    imageVector = Icons.Default.Filter,
-                    contentDescription = "",
-                    modifier = Modifier.size(30.dp),
-                    tint = Color.White
+                AutoSizeIcon(
+                    size = 1.dp,
+                    icon = Icons.Default.Filter,
+                    factor=15f,
+                    tint=ThemeColors.LIGHT_ICON_TINT,
+                    badgeColor = ThemeColors.RED,
+                    configuration = configuration,
+                    contentDescription = "Memories",
+                    isBadge = true,
                 )
             }
             Spacer(modifier = Modifier.width(20.dp))
@@ -112,7 +121,7 @@ fun SimpleCameraPreview(
                     .background(Color.Transparent, CircleShape)
                     .shadow(4.dp, CircleShape)
                     .clip(CircleShape)
-                    .border(5.dp, Color.White, CircleShape),
+                    .border(5.dp, ThemeColors.LIGHT_ICON_TINT, CircleShape),
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
             ) {
 
@@ -135,11 +144,14 @@ fun SimpleCameraPreview(
                     )
                 }
             ) {
-                Icon(
-                    imageVector=Icons.Default.InsertEmoticon,
-                    contentDescription = "",
-                    modifier = Modifier.size(30.dp),
-                    tint = Color.White
+                AutoSizeIcon(
+                    size = 1.dp,
+                    icon = Icons.Default.InsertEmoticon,
+                    factor=15f,
+                    tint=ThemeColors.LIGHT_ICON_TINT,
+                    badgeColor = Color.White,
+                    configuration = configuration,
+                    contentDescription = "Filters",
                 )
             }
         }
