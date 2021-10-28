@@ -1,13 +1,20 @@
 package com.debanshu777.snapchatUIComposeClone.common.components
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -22,6 +29,7 @@ fun CustomBottomNavigation(
     modifier: Modifier =Modifier,
     onItemClick: (BottomNavItem)-> Unit
 ){
+    val configuration = LocalConfiguration.current
     val backStackEntry =navController.currentBackStackEntryAsState()
     BottomNavigation(
         modifier = modifier,
@@ -30,7 +38,7 @@ fun CustomBottomNavigation(
         items.forEach { item ->
             val selected = item.route == backStackEntry.value?.destination?.route
             BottomNavigationItem(
-                modifier=Modifier.padding(10.dp),
+                modifier=Modifier.padding(),
                 selected = selected,
                 onClick = { onItemClick(item) },
                 selectedContentColor =item.onSelectedColor,
@@ -38,23 +46,31 @@ fun CustomBottomNavigation(
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
                         if (item.onSelectedBatchVisible){
-                            BadgeBox(
-                                backgroundColor = item.onSelectedColor,
-                            ) {
-                                Icon(
-                                    modifier = Modifier.size(30.dp),
-                                    imageVector = item.icon,
-                                    contentDescription = item.name
-                                )
-                            }
+                            AutoSizeIcon(
+                                size = 1.dp,
+                                icon = item.icon,
+                                factor=15f,
+                                iconColor = item.onSelectedColor,
+                                configuration = configuration,
+                                contentDescription = item.name,
+                                isBadge = true,
+                            )
                         }else{
                             if(selected && item.name=="Camara"){
-                                CustomCamaraOnSelectItem(item.onSelectIcon,item.onSelectedColor)
+                                CustomCamaraOnSelectItem(
+                                    item.onSelectIcon,
+                                    item.onSelectedColor,
+                                    configuration,
+                                    item.name
+                                )
                             }else {
-                                Icon(
-                                    modifier = Modifier.size(30.dp),
-                                    imageVector = item.icon,
-                                    contentDescription = item.name
+                                AutoSizeIcon(
+                                    size = 1.dp,
+                                    icon = item.icon,
+                                    factor=15f,
+                                    iconColor = item.onSelectedColor,
+                                    configuration = configuration,
+                                    contentDescription = item.name,
                                 )
                             }
                         }
