@@ -28,7 +28,7 @@ fun ChatScreen() {
         LazyColumn{
             items(chatList.size) { index->
                 ChatItem(
-                    modifier=Modifier.padding(10.dp),
+                    modifier=Modifier.padding(top=5.dp,bottom=5.dp,start=10.dp,end=10.dp),
                     chatList[index]
                 )
             }
