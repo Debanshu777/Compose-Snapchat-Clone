@@ -3,7 +3,7 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
+@ExperimentalMaterialApi
 @Composable
 fun CustomTopBar(
     modifier: Modifier=Modifier,
@@ -57,11 +58,14 @@ fun CustomTopBar(
                             .clip(CircleShape)
                             .background(topBarItem.backgroundTintForIcon)
                     ) {
-                        Icon(
-                            modifier = Modifier.size(25.dp),
-                            imageVector = Icons.Default.Search,
+                        AutoSizeIcon(
+                            size = 1.dp,
+                            icon = Icons.Default.Search,
+                            factor=17f,
+                            tint= topBarItem.iconTint,
+                            badgeColor = Color.White,
+                            configuration = configuration,
                             contentDescription = "Search",
-                            tint = topBarItem.iconTint
                         )
                     }
                 }
@@ -81,7 +85,7 @@ fun CustomTopBar(
                     Modifier.align(Alignment.TopEnd)
                 ) {
                     if(topBarItem.isAvailable) {
-                        CustomAction(topBarItem)
+                        CustomAction(topBarItem,configuration)
                     }
                 }
             }

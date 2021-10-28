@@ -34,7 +34,7 @@ fun CustomCamaraOnSelectItem(
             size = 1.dp,
             icon = iconImage,
             factor=15f,
-            iconColor = color,
+            badgeColor = color,
             configuration = configuration,
             contentDescription = description,
         )

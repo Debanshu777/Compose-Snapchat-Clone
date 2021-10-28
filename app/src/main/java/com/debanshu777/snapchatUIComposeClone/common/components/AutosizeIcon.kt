@@ -17,9 +17,10 @@ import androidx.compose.ui.unit.Dp
 fun AutoSizeIcon(
     modifier: Modifier = Modifier,
     size: Dp,
+    tint:Color?=null,
     factor:Float=1f,
     icon:ImageVector,
-    iconColor: Color,
+    badgeColor: Color,
     configuration: Configuration,
     isBadge: Boolean=false,
     contentDescription:String,
@@ -29,19 +30,37 @@ fun AutoSizeIcon(
 
     if(isBadge) {
         BadgeBox(
-            backgroundColor = iconColor,
+            backgroundColor = badgeColor,
         ) {
+            if (tint != null) {
+                Icon(
+                    modifier = modifier.size(size * factorValue),
+                    imageVector = icon,
+                    tint=tint,
+                    contentDescription = contentDescription
+                )
+            }else{
+                Icon(
+                    modifier = modifier.size(size * factorValue),
+                    imageVector = icon,
+                    contentDescription = contentDescription
+                )
+            }
+        }
+    }else {
+        if (tint != null) {
+            Icon(
+                modifier = modifier.size(size * factorValue),
+                imageVector = icon,
+                tint=tint,
+                contentDescription = contentDescription
+            )
+        }else{
             Icon(
                 modifier = modifier.size(size * factorValue),
                 imageVector = icon,
                 contentDescription = contentDescription
             )
         }
-    }else {
-            Icon(
-                modifier = modifier.size(size * factorValue),
-                imageVector = icon,
-                contentDescription = contentDescription
-            )
         }
 }

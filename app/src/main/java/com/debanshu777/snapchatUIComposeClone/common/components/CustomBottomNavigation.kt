@@ -50,7 +50,7 @@ fun CustomBottomNavigation(
                                 size = 1.dp,
                                 icon = item.icon,
                                 factor=15f,
-                                iconColor = item.onSelectedColor,
+                                badgeColor = item.onSelectedColor,
                                 configuration = configuration,
                                 contentDescription = item.name,
                                 isBadge = true,
@@ -68,7 +68,7 @@ fun CustomBottomNavigation(
                                     size = 1.dp,
                                     icon = item.icon,
                                     factor=15f,
-                                    iconColor = item.onSelectedColor,
+                                    badgeColor = item.onSelectedColor,
                                     configuration = configuration,
                                     contentDescription = item.name,
                                 )
