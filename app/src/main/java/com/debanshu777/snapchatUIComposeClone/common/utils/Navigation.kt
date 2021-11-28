@@ -5,6 +5,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,6 +23,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.Spotlig
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @ExperimentalCoilApi
 @ExperimentalAnimationApi
