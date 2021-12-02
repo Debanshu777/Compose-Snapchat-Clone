@@ -32,8 +32,9 @@ fun FeatureThatRequiresCameraPermission(
                 Text("Feature not available")
             } else {
                 Column(
-                    modifier = Modifier.padding(10.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    modifier = Modifier.padding(10.dp).height(150.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Bottom
                 ) {
                     Text(
                         text="The camera is important for this app. Please grant the permission."
