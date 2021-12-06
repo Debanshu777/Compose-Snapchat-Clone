@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -15,11 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeText
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
@@ -37,6 +40,7 @@ fun ChatItemPreview(){
         ChatView(
             sender = "John Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit1,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -64,8 +68,16 @@ fun ChatItem(
                 modifier = Modifier
                     .size(53.25.dp)
                     .clip(CircleShape)
-                    .background(color = Color.DarkGray)
-            )
+                    .background(color = Color.White)
+            ){
+                Image(
+                    modifier = Modifier
+                        .size(53.25.dp)
+                        .clip(CircleShape),
+                    painter = painterResource(item.senderImage),
+                    contentDescription = "Content description for visually bitmoji"
+                )
+            }
             Spacer(modifier = Modifier.width(20.dp))
             Column {
                 AutoSizeText(

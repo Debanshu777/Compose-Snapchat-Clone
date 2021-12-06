@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_chat.data.dataSource
 
+import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastContentTimeType
@@ -9,6 +10,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "John Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit1,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -20,6 +22,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jane Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit2,
             lastContentType = ContentType.image,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -31,6 +34,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit3,
             lastContentType = ContentType.video,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -43,6 +47,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "John Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit4,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -54,6 +59,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jane Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit3,
             lastContentType = ContentType.image,
             isChatUnseenBySender = false,
             isLastContentSendToSender=true,
@@ -65,6 +71,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bitmoji,
             lastContentType = ContentType.video,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -76,6 +83,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit1,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
@@ -88,6 +96,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit3,
             lastContentType = ContentType.video,
             isChatUnseenBySender = false,
             isLastContentSendToSender=true,
@@ -99,6 +108,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit4,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=true,
@@ -110,6 +120,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit3,
             lastContentType = ContentType.video,
             isChatUnseenBySender = true,
             isLastContentSendToSender=true,
@@ -121,6 +132,7 @@ fun dummyDataChatViewList(): List<ChatView>{
         ChatView(
             sender = "Jimmy Doe",
             senderUserId = 1234,
+            senderImage= R.drawable.bit1,
             lastContentType = ContentType.chat,
             isChatUnseenBySender = true,
             isLastContentSendToSender=true,
@@ -129,6 +141,55 @@ fun dummyDataChatViewList(): List<ChatView>{
             lastContentTimeType = LastContentTimeType.Week,
             lastContentTime = "4",
         ),
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            senderImage= R.drawable.bit2,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
+        ),
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            senderImage= R.drawable.bit1,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
+        ),
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            senderImage= R.drawable.bit2,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
+        ),
+        ChatView(
+            sender = "John Doe",
+            senderUserId = 1234,
+            senderImage= R.drawable.bit2,
+            lastContentType = ContentType.chat,
+            isChatUnseenBySender = false,
+            isLastContentSendToSender=false,
+            isChatOpened=false,
+            lastChat = "Hi there",
+            lastContentTimeType = LastContentTimeType.Month,
+            lastContentTime = "1",
+        ),
+
 
     )
 }

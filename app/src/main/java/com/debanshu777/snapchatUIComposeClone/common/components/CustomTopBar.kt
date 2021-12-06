@@ -1,5 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.common.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -13,11 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
 @ExperimentalMaterialApi
@@ -49,7 +52,15 @@ fun CustomTopBar(
                             .size(40.dp)
                             .clip(CircleShape)
                             .background(topBarItem.backgroundTintForIcon)
-                    )
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(40.dp)
+                                .clip(CircleShape),
+                            painter = painterResource(R.drawable.bitmoji),
+                            contentDescription = "Content description for visually bitmoji"
+                        )
+                    }
                     Spacer(modifier = Modifier.width(10.dp))
                     Box(
                         contentAlignment = Alignment.Center,

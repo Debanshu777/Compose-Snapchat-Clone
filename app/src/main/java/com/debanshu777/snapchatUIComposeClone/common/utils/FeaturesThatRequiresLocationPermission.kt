@@ -31,8 +31,9 @@ fun FeaturesThatRequireLocationPermission(
                 Text("Feature not available")
             } else {
                 Column(
-                    modifier = Modifier.padding(10.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    modifier = Modifier.padding(10.dp).height(150.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Bottom
                 ) {
                     Text(
                         text="The location is important for this app. Please grant the permission."
