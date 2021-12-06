@@ -3,6 +3,7 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain
 data class ChatView(
     val sender: String,
     val senderUserId: Long,
+    val senderImage: Int,
     val lastContentType: ContentType,
     val isChatUnseenBySender:Boolean,
     val isChatOpened:Boolean,
