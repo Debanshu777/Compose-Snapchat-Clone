@@ -30,6 +30,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
+import com.debanshu777.snapchatUIComposeClone.features.feature_snap_map.presentation.components.MapBottomNavigation
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.libraries.maps.CameraUpdateFactory
@@ -98,8 +99,11 @@ fun SnapMapScreen() {
                             Color(0x6F202020)
                         ),
                     ),
-                )
-            )
+                ),
+                contentAlignment = Alignment.BottomCenter,
+            ){
+                MapBottomNavigation()
+            }
         }
     }
 
