@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ComposeCameraX/app/src/main/res/drawable/app_splash_screen.xml" value="0.1" />
         <entry key="..\:/ComposeCameraX/app/src/main/res/drawable/ic_camara.xml" value="0.1828125" />
         <entry key="..\:/ComposeCameraX/app/src/main/res/drawable/splash_image.xml" value="0.1" />
         <entry key="..\:/ComposeCameraX/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1259259259259259" />
