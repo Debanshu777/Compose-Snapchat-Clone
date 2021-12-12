@@ -71,7 +71,7 @@ fun SnapMapScreen() {
                     map.setMapStyle(
                         MapStyleOptions.loadRawResourceStyle(
                             context, R.raw.style_json))
-                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(22.5,85.6),10f))
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(22.5726,88.3639),10f))
                 }
             }
             Box(modifier = Modifier
