@@ -1,11 +1,11 @@
 <h1 align="center">
-Snapchat Compose Clone
+Snapchat Compose Clone👻
 <br>
 <br>
 <img src="https://github.com/Debanshu777/Compose-Snapchat-Clone/blob/dev/imageAssets/SnapchatGif.gif" width=300 height=300/>
 </h1>
 <h1 align="center">
-  <img src="https://github.com/Debanshu777/Compose-Snapchat-Clone/blob/dev/imageAssets/bannerSnapchat.jpg" width=900 height=325/>
+  <img src="https://github.com/Debanshu777/Compose-Snapchat-Clone/blob/dev/imageAssets/bannerSnapchat.jpg" width=900 height=300/>
 </h1>
 
 ## Background🌟
