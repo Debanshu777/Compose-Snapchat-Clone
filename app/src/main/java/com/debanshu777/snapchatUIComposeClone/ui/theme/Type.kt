@@ -10,7 +10,7 @@ import com.debanshu777.snapchatUIComposeClone.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    defaultFontFamily = FontFamily(Font(R.font.avenir_next_lt_pro_lt)),
+    defaultFontFamily = FontFamily(Font(R.font.helvetica_neue_lt_std_roman)),
     body1 = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp

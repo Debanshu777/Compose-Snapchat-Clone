@@ -13,7 +13,7 @@ import com.debanshu777.snapchatUIComposeClone.R
 fun MapBottomNavigation(){
     Row(modifier = Modifier
         .fillMaxWidth()
-        .padding(start = 10.dp, end = 10.dp, bottom = 20.dp),
+        .padding(bottom = 20.dp),
             horizontalArrangement = Arrangement.SpaceBetween) {
         BottomOptionItem(text = "My Bitmoji", imageResource = R.drawable.bitmoji)
         BottomOptionItem(text = "Places", imageResource = R.drawable.places)
