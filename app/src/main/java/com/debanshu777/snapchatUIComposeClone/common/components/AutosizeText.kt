@@ -1,7 +1,6 @@
 package com.debanshu777.snapchatUIComposeClone.common.components
 
 import android.content.res.Configuration
-import android.util.Log
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,7 +20,6 @@ fun AutoSizeText(
     textStyle: TextStyle,
     configuration: Configuration
     ) {
-    Log.e("bro",(textStyle.fontSize*(configuration.fontScale*0.85)).toString())
     Text(
         text,
         modifier,

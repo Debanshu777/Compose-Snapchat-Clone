@@ -58,7 +58,6 @@ fun CustomBottomNavigation(
                         }else{
                             if(selected && item.name=="Camara"){
                                 CustomCamaraOnSelectItem(
-                                    item.onSelectIcon,
                                     item.onSelectedColor,
                                     configuration,
                                     item.name

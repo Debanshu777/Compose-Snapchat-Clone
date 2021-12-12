@@ -9,9 +9,9 @@
     <application
         android:usesCleartextTraffic="true"
         android:fullBackupOnly="true"
-        android:icon="@drawable/snapchat_app_logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/snapchat_app_logo_circle"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash"
         android:allowBackup="true">
