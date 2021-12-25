@@ -7,4 +7,5 @@ sealed class Screens(val route: String) {
     object SnapMapScreen: Screens("snapMap")
     object SpotlightScreen: Screens("spotlight")
     object StoriesScreen: Screens("stories")
+    object AuthenticationScreen: Screens("authentication")
 }
