@@ -2,7 +2,8 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.BadgeBox
+import androidx.compose.material.Badge
+import androidx.compose.material.BadgedBox
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
@@ -27,8 +28,8 @@ fun AutoSizeIcon(
 ) {
     val factorValue = configuration.screenWidthDp/factor
     if(isBadge) {
-        BadgeBox(
-            backgroundColor = badgeColor,
+        BadgedBox(
+            badge = { Badge (backgroundColor = badgeColor,) },
         ) {
             if (tint != null) {
                 Icon(
@@ -79,8 +80,8 @@ fun AutoSizeIconWithPainter(
 ) {
     val factorValue = configuration.screenWidthDp/factor
     if(isBadge) {
-        BadgeBox(
-            backgroundColor = badgeColor,
+        BadgedBox(
+            badge = { Badge (backgroundColor = badgeColor,) },
         ) {
             if (tint != null) {
                 Icon(
