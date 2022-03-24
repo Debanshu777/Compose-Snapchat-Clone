@@ -24,11 +24,7 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 
 class MainActivity : ComponentActivity() {
-    @ExperimentalFoundationApi
-    @ExperimentalCoilApi
-    @ExperimentalAnimationApi
-    @ExperimentalPermissionsApi
-    @ExperimentalMaterialApi
+    @OptIn(ExperimentalFoundationApi::class,ExperimentalCoilApi::class,ExperimentalAnimationApi::class,ExperimentalPermissionsApi::class,ExperimentalMaterialApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_ComposeCameraX)
