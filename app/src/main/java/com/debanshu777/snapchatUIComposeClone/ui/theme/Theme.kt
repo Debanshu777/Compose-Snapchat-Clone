@@ -13,6 +13,12 @@ private val DarkColorPalette = darkColors(
     onSurface = DarkGray
 )
 
+/**
+ * Compose snap chat ui theme
+ *
+ * @param content
+ * @receiver
+ */
 @Composable
 fun ComposeSnapChatUITheme(content: @Composable () -> Unit) {
     MaterialTheme(

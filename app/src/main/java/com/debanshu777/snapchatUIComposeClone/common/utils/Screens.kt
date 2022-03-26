@@ -1,5 +1,11 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
+/**
+ * Screens
+ *
+ * @property route
+ * @constructor Create empty Screens
+ */
 sealed class Screens(val route: String) {
     object CamaraScreen: Screens("camara")
     object ChatScreen: Screens("chat")

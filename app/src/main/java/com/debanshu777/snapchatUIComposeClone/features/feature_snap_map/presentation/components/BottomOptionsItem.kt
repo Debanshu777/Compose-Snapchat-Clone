@@ -19,6 +19,12 @@ import androidx.compose.ui.unit.sp
 import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeText
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
+/**
+ * Bottom option item
+ *
+ * @param text
+ * @param imageResource
+ */
 @Composable
 fun BottomOptionItem(
     text: String,

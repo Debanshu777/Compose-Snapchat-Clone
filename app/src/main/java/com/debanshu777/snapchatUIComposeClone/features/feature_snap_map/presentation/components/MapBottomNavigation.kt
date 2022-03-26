@@ -9,6 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.R
 
+/**
+ * Map bottom navigation
+ *
+ */
 @Composable
 fun MapBottomNavigation(){
     Row(modifier = Modifier

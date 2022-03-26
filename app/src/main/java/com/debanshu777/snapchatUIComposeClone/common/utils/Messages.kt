@@ -1,16 +1,20 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
+/**
+ * Constants that are required in the app
+ *
+ */
 object Messages {
     // Screen Headers
-    val STORIES_HEADING="Stories"
-    val SNAP_HEADING="Snap Map"
-    val CHAT_HEADING="Chat"
-    val SPOTLIGHT_HEADING="Spotlight"
-    val MEMORIES_HEADING="Memories"
-    val CAMARA_HEADING="Camara"
+    const val STORIES_HEADING="Stories"
+    const val SNAP_HEADING="Snap Map"
+    const val CHAT_HEADING="Chat"
+    const val SPOTLIGHT_HEADING="Spotlight"
+    const val MEMORIES_HEADING="Memories"
+    const val CAMARA_HEADING="Camara"
 
     // Sub Headers
-    val FRIENDS_SUB_HEADING="Friends"
-    val SUBSCRIPTION_SUB_HEADING="Subscription"
-    val DISCOVER_SUB_HEADING="Discover"
+    const val FRIENDS_SUB_HEADING="Friends"
+    const val SUBSCRIPTION_SUB_HEADING="Subscription"
+    const val DISCOVER_SUB_HEADING="Discover"
 }

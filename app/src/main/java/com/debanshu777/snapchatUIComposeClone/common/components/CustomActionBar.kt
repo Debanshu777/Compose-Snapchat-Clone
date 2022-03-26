@@ -18,9 +18,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
+/**
+ * Custom action bar
+ *
+ * @param topBarItem
+ * @param configuration
+ */
 @ExperimentalMaterialApi
 @Composable
-fun CustomAction(topBarItem:TopBarItem,configuration:Configuration){
+fun CustomActionBar(topBarItem:TopBarItem, configuration:Configuration){
     if(topBarItem.lastAction=="Setting"){
         Box(
             contentAlignment = Alignment.Center,

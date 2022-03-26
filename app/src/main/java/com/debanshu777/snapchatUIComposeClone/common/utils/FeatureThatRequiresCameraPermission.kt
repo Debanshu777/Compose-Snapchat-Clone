@@ -16,6 +16,14 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionRequired
 import com.google.accompanist.permissions.rememberPermissionState
 
+/**
+ * Feature that requires camera permission
+ *
+ * @param navigateToSettingsScreen
+ * @param content
+ * @receiver
+ * @receiver
+ */
 @ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
