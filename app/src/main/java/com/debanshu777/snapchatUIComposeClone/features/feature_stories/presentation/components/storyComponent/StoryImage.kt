@@ -9,6 +9,15 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 
+/**
+ * Story image
+ *
+ * @param pagerState
+ * @param onTap
+ * @param content
+ * @receiver
+ * @receiver
+ */
 @ExperimentalComposeUiApi
 @OptIn(ExperimentalPagerApi::class)
 @Composable

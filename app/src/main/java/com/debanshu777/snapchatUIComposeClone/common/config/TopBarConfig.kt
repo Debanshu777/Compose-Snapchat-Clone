@@ -6,6 +6,12 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.common.utils.Screens
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
+/**
+ * Top bar config
+ *
+ * @param route
+ * @return
+ */
 fun topBarConfig(route:String): TopBarItem {
     val listOfTopBarConfig= listOf(
         TopBarItem(

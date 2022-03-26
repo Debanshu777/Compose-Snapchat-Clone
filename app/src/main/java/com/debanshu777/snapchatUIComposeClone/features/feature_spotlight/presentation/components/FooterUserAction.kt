@@ -12,6 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Footer user action
+ *
+ * @param modifier
+ */
 @Composable
 fun FooterUserAction(modifier: Modifier) {
     Column(

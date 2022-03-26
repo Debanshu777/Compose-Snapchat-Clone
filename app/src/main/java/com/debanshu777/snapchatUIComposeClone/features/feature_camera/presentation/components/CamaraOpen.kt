@@ -28,6 +28,15 @@ import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeIcon
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import java.util.*
 
+/**
+ * Simple camera preview
+ *
+ * @param modifier
+ * @param context
+ * @param lifecycleOwner
+ * @param onMediaCaptured
+ * @receiver
+ */
 @ExperimentalMaterialApi
 @Composable
 fun SimpleCameraPreview(
@@ -114,7 +123,7 @@ fun SimpleCameraPreview(
             Spacer(modifier = Modifier.width(20.dp))
             Button(
                 onClick = {
-                    val imgCapture = imageCapture ?: return@Button
+                    imageCapture ?: return@Button
                 },
                 modifier = Modifier
                     .size(90.dp)

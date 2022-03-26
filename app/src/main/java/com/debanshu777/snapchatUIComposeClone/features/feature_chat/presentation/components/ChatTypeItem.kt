@@ -25,6 +25,12 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatView
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 
+/**
+ * Chat type item
+ *
+ * @param item
+ * @param configuration
+ */
 @Composable
 fun ChatTypeItem(item:ChatView,configuration: Configuration){
     if(!item.isChatOpened && !item.isLastContentSendToSender) {
@@ -42,11 +48,6 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
             fontWeight=FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
             configuration = configuration)
-//        Text(
-//            text = "New Snap",
-//            fontWeight = FontWeight.W400,
-//            color = giveColor(item)
-//        )
     }
     if(!item.isChatOpened && item.isLastContentSendToSender) {
         Box(
@@ -63,14 +64,9 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
             fontWeight=FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
             configuration = configuration)
-//        Text(
-//            text = "New Snap",
-//            fontWeight = FontWeight.W400,
-//            color = giveColor(item)
-//        )
     }
     if(item.isChatOpened && !item.isLastContentSendToSender){
-        if(item.lastContentType!= ContentType.chat) {
+        if(item.lastContentType!= ContentType.Chat) {
             Box(
                 modifier = Modifier
                     .size(10.dp)
@@ -93,15 +89,10 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
             fontWeight=FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
             configuration = configuration)
-//        Text(
-//            text = "Opened",
-//            fontWeight = FontWeight.W400,
-//            color = ThemeColors.LIGHT_TINT_TEXT
-//        )
     }
     if(item.isChatOpened && item.isLastContentSendToSender){
         if(item.isChatUnseenBySender) {
-            if(item.lastContentType != ContentType.chat) {
+            if(item.lastContentType != ContentType.Chat) {
                 Box(
                     modifier = Modifier
                         .size(10.dp)
@@ -124,13 +115,8 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
                 fontWeight=FontWeight.W400,
                 textStyle = TextStyle(fontSize = 14.sp),
                 configuration = configuration)
-//            Text(
-//                text = "Delivered",
-//                fontWeight = FontWeight.W400,
-//                color = ThemeColors.LIGHT_TINT_TEXT
-//            )
         }else{
-            if(item.lastContentType != ContentType.chat) {
+            if(item.lastContentType != ContentType.Chat) {
                 Box(
                     modifier = Modifier
                         .size(10.dp)
@@ -153,11 +139,6 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
                 fontWeight=FontWeight.W400,
                 textStyle = TextStyle(fontSize = 14.sp),
                 configuration = configuration)
-//            Text(
-//                text = "Opened",
-//                fontWeight = FontWeight.W400,
-//                color = ThemeColors.LIGHT_TINT_TEXT
-//            )
         }
 
     }

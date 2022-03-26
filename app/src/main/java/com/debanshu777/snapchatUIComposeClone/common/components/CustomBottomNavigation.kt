@@ -21,6 +21,15 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.BottomNavItem
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
+/**
+ * Custom bottom navigation
+ *
+ * @param items
+ * @param navController
+ * @param modifier
+ * @param onItemClick
+ * @receiver
+ */
 @ExperimentalMaterialApi
 @Composable
 fun CustomBottomNavigation(

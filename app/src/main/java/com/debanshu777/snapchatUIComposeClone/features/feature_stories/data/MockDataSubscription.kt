@@ -2,7 +2,7 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories.data
 
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
 
-fun MockDataSubscription():List<Subscription>{
+fun mockDataSubscription():List<Subscription>{
     return listOf(
         Subscription(
             title = "From Fendace to The Simpsons, the 11 most viral moments of SS22",

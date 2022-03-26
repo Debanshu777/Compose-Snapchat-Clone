@@ -23,6 +23,11 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.Spotlig
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+/**
+ * Navigation
+ *
+ * @param navController
+ */
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @ExperimentalCoilApi

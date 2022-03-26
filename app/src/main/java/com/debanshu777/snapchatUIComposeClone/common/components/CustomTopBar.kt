@@ -23,6 +23,12 @@ import androidx.compose.ui.unit.sp
 import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
+/**
+ * Custom top bar
+ *
+ * @param modifier
+ * @param topBarItem
+ */
 @ExperimentalMaterialApi
 @Composable
 fun CustomTopBar(
@@ -96,7 +102,7 @@ fun CustomTopBar(
                     Modifier.align(Alignment.TopEnd)
                 ) {
                     if(topBarItem.isAvailable) {
-                        CustomAction(topBarItem,configuration)
+                        CustomActionBar(topBarItem,configuration)
                     }
                 }
             }

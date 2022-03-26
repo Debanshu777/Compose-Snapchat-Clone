@@ -12,6 +12,15 @@ import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
 
+/**
+ * Stories
+ *
+ * @param numberOfPages
+ * @param modifier
+ * @param touchToPause
+ * @param content
+ * @receiver
+ */
 @OptIn(ExperimentalPagerApi::class, ExperimentalComposeUiApi::class)
 @Composable
 fun Stories(

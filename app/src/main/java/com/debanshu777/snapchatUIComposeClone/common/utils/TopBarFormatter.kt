@@ -4,7 +4,13 @@ package com.debanshu777.snapchatUIComposeClone.common.utils
 import com.debanshu777.snapchatUIComposeClone.common.config.topBarConfig
 import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 
-fun TopBarFormatter(route:String?):TopBarItem {
+/**
+ * Top bar formatter and route controller
+ *
+ * @param route
+ * @return
+ */
+fun topBarFormatter(route:String?):TopBarItem {
     return when(route){
         Screens.SnapMapScreen.route ->{
             topBarConfig(Screens.SnapMapScreen.route)
