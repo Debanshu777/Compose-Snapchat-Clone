@@ -12,6 +12,11 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.common.utils.Screens
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
+/**
+ * Navigation config
+ *
+ * @return
+ */
 fun navigationConfig():List<BottomNavItem> {
     return listOf(
         BottomNavItem(

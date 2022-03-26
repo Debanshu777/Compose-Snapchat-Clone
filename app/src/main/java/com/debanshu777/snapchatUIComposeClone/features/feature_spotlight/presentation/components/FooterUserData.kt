@@ -24,6 +24,12 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.horizontalPadding
 
+/**
+ * Footer user data
+ *
+ * @param spotlight
+ * @param modifier
+ */
 @Composable
 fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
     Column(

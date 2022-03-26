@@ -29,6 +29,10 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ChatV
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastContentTimeType
 
+/**
+ * Chat item preview
+ *
+ */
 @Preview
 @Composable
 fun ChatItemPreview(){
@@ -41,7 +45,7 @@ fun ChatItemPreview(){
             sender = "John Doe",
             senderUserId = 1234,
             senderImage= R.drawable.bit1,
-            lastContentType = ContentType.chat,
+            lastContentType = ContentType.Chat,
             isChatUnseenBySender = false,
             isLastContentSendToSender=false,
             isChatOpened=false,
@@ -52,6 +56,12 @@ fun ChatItemPreview(){
 }
 
 
+/**
+ * Chat item
+ *
+ * @param modifier
+ * @param item
+ */
 @Composable
 fun ChatItem(
     modifier: Modifier = Modifier,
@@ -137,10 +147,16 @@ fun ChatItem(
     Divider(color=Color(0xFFE4E4E4), thickness = 0.1.dp)
 }
 
-fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.image)
+/**
+ * Give color
+ *
+ * @param item
+ * @return
+ */
+fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.Image)
     ThemeColors.RED
 else {
-    if (item.lastContentType == ContentType.video)
+    if (item.lastContentType == ContentType.Video)
         ThemeColors.PURPLE
     else
         ThemeColors.BLUE

@@ -16,17 +16,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.mockDataSubscription
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.FriendStories
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.RectangularStoryView
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentation.components.SubscriptionView
 
+/**
+ * Stories screen
+ *
+ */
 @ExperimentalFoundationApi
 @ExperimentalCoilApi
 @Composable
 @Preview
 fun StoriesScreen() {
-    val subscriptionList= MockDataSubscription()
+    val subscriptionList= mockDataSubscription()
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))

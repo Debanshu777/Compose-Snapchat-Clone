@@ -17,6 +17,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.R
 
+/**
+ * Custom camara on select item
+ *
+ * @param color
+ * @param configuration
+ * @param description
+ */
 @ExperimentalMaterialApi
 @Composable
 fun CustomCamaraOnSelectItem(

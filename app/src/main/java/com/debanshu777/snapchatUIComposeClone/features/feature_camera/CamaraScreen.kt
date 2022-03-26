@@ -16,6 +16,10 @@ import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.features.feature_camera.presentation.components.SimpleCameraPreview
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+/**
+ * Camara screen
+ *
+ */
 @ExperimentalMaterialApi
 @ExperimentalAnimationApi
 @ExperimentalPermissionsApi

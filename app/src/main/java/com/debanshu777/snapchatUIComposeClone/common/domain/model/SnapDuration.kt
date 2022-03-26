@@ -1,6 +1,12 @@
 package com.debanshu777.snapchatUIComposeClone.common.domain.model
 
-sealed class SnapDurationType(val type:String){
-    object oneTime:SnapDurationType("oneTime")
-    object loop:SnapDurationType("loop")
+/**
+ * Snap duration type state
+ *
+ * @property type
+ * @constructor Create empty Snap duration type
+ */
+sealed class SnapDurationType(private val type:String){
+    object OneTime:SnapDurationType("oneTime")
+    object Loop:SnapDurationType("loop")
 }

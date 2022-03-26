@@ -22,12 +22,16 @@ import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataStories
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.mockDataStories
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.FriendsStory
 
+/**
+ * Friend stories
+ *
+ */
 @Composable
 fun FriendStories(){
-    val stories = MockDataStories()
+    val stories = mockDataStories()
     Column(
       modifier = Modifier.padding(top=70.dp)
     ) {
@@ -45,6 +49,11 @@ fun FriendStories(){
     }
 }
 
+/**
+ * Story item
+ *
+ * @param stories
+ */
 @Composable
 fun StoryItem(stories:FriendsStory){
     Column(

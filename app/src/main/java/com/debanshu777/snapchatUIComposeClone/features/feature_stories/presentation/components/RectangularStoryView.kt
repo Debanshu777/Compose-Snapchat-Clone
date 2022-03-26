@@ -24,6 +24,15 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
 
+/**
+ * Rectangular story view
+ *
+ * @param shadowHeight
+ * @param isLarge
+ * @param height
+ * @param modifier
+ * @param subscription
+ */
 @ExperimentalCoilApi
 @Composable
 fun RectangularStoryView(
