@@ -58,7 +58,7 @@ dokkaHtml.configure {
 }
 
 tasks.dokkaHtml.configure {
-    outputDirectory.set(file("../documentation/html"))
+    outputDirectory.set(file("../docs"))
 }
 
 dependencies {
