@@ -19,6 +19,11 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
+/**
+ * Video player
+ *
+ * @param uri
+ */
 @Composable
 fun VideoPlayer(uri: Uri) {
     val context = LocalContext.current

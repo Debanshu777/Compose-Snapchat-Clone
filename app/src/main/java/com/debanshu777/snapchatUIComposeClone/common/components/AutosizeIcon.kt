@@ -13,6 +13,19 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 
+/**
+ * Custom Element Auto size icon
+ *
+ * @param modifier
+ * @param size
+ * @param tint
+ * @param factor
+ * @param icon
+ * @param badgeColor
+ * @param configuration
+ * @param isBadge
+ * @param contentDescription
+ */
 @ExperimentalMaterialApi
 @Composable
 fun AutoSizeIcon(
@@ -29,7 +42,7 @@ fun AutoSizeIcon(
     val factorValue = configuration.screenWidthDp/factor
     if(isBadge) {
         BadgedBox(
-            badge = { Badge (backgroundColor = badgeColor,) },
+            badge = { Badge(backgroundColor = badgeColor) },
         ) {
             if (tint != null) {
                 Icon(
@@ -65,6 +78,19 @@ fun AutoSizeIcon(
 }
 
 
+/**
+ * Custom Element Auto size icon with painter
+ *
+ * @param modifier
+ * @param size
+ * @param tint
+ * @param factor
+ * @param painter
+ * @param badgeColor
+ * @param configuration
+ * @param isBadge
+ * @param contentDescription
+ */
 @ExperimentalMaterialApi
 @Composable
 fun AutoSizeIconWithPainter(
@@ -81,7 +107,7 @@ fun AutoSizeIconWithPainter(
     val factorValue = configuration.screenWidthDp/factor
     if(isBadge) {
         BadgedBox(
-            badge = { Badge (backgroundColor = badgeColor,) },
+            badge = { Badge(backgroundColor = badgeColor) },
         ) {
             if (tint != null) {
                 Icon(

@@ -16,6 +16,14 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionRequired
 import com.google.accompanist.permissions.rememberPermissionState
 
+/**
+ * Features that require location permission
+ *
+ * @param navigateToSettingsScreen
+ * @param content
+ * @receiver
+ * @receiver
+ */
 @ExperimentalPermissionsApi
 @Composable
 fun FeaturesThatRequireLocationPermission(

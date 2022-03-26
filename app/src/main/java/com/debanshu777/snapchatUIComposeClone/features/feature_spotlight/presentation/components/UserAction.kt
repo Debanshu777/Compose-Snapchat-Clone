@@ -13,6 +13,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 
+/**
+ * User action
+ *
+ * @param icon
+ */
 @Composable
 fun UserAction(
     icon: ImageVector,

@@ -25,7 +25,7 @@ fun SpotlightScreen() {
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart =10.dp))
             .background(color = Color.Black))
     {
-        LazyColumn(){
+        LazyColumn {
             items(spotlights.size) {index ->
                 Box(
                     modifier=Modifier

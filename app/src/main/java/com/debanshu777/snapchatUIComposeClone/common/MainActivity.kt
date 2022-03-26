@@ -18,7 +18,7 @@ import com.debanshu777.snapchatUIComposeClone.common.components.CustomBottomNavi
 import com.debanshu777.snapchatUIComposeClone.common.components.CustomTopBar
 import com.debanshu777.snapchatUIComposeClone.common.config.navigationConfig
 import com.debanshu777.snapchatUIComposeClone.common.utils.Navigation
-import com.debanshu777.snapchatUIComposeClone.common.utils.TopBarFormatter
+import com.debanshu777.snapchatUIComposeClone.common.utils.topBarFormatter
 import com.debanshu777.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
@@ -34,12 +34,12 @@ class MainActivity : ComponentActivity() {
                 val backStack = navController.currentBackStackEntryAsState()
                 Scaffold(
                         topBar= {
-                            Box(){
+                            Box {
                                 Navigation(navController = navController)
                                 CustomTopBar(
                                     modifier = Modifier
                                         .fillMaxWidth(),
-                                    topBarItem = TopBarFormatter(backStack.value?.destination?.route)
+                                    topBarItem = topBarFormatter(backStack.value?.destination?.route)
                                 )
                             }
 

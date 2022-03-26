@@ -16,16 +16,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import com.debanshu777.snapchatUIComposeClone.common.utils.Messages
-import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.MockDataSubscription
+import com.debanshu777.snapchatUIComposeClone.features.feature_stories.data.mockDataSubscription
 
 
+/**
+ * Subscription view
+ *
+ */
 @ExperimentalCoilApi
 @Composable
 fun SubscriptionView(){
     Column(
        modifier = Modifier.padding(top= 20.dp)
     ) {
-        val subscriptionList= MockDataSubscription()
+        val subscriptionList= mockDataSubscription()
         Text(
             text = Messages.SUBSCRIPTION_SUB_HEADING,
             color = Color.Black,

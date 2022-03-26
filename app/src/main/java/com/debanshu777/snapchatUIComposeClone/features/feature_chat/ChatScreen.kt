@@ -15,6 +15,10 @@ import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.data.dataSource.dummyDataChatViewList
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation.components.ChatItem
 
+/**
+ * Chat screen
+ *
+ */
 @Composable
 @Preview
 fun ChatScreen() {

@@ -9,6 +9,18 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
+/**
+ * Custom Element Auto size text
+ *
+ * @param modifier
+ * @param factor
+ * @param text
+ * @param textColor
+ * @param fontWeight
+ * @param textAlign
+ * @param textStyle
+ * @param configuration
+ */
 @Composable
 fun AutoSizeText(
     modifier:Modifier=Modifier,

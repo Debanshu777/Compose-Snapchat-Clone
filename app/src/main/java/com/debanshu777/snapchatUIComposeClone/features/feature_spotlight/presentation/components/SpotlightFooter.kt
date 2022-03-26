@@ -9,6 +9,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.domain.model.Spotlight
 
+/**
+ * Spotlight footer
+ *
+ * @param spotlight
+ */
 @Composable
 fun SpotlightFooter(spotlight: Spotlight) {
     Row(
