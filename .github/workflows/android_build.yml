@@ -24,7 +24,10 @@ jobs:
         run: chmod +x gradlew
       - name: Build Project
         run: ./gradlew assemble
-
+      - name: Access GMP_KEY
+        env:
+          GMP_KEY: $
+        run: echo GMP_KEY=\"GMP_KEY\" > ./local.properties
       - name: Run Tests
         run: ./gradlew test
 
