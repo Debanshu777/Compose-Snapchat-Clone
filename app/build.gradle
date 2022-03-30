@@ -84,19 +84,31 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
     implementation "androidx.camera:camera-view:$camerax_version"
 
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0"
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+
     // Accompanist
-    implementation "com.google.accompanist:accompanist-permissions:0.19.0"
-    implementation "com.google.accompanist:accompanist-pager:0.19.0"
+    implementation "com.google.accompanist:accompanist-permissions:0.23.1"
+    implementation "com.google.accompanist:accompanist-pager:0.23.1"
 
     //Map
-    implementation 'com.google.maps.android:android-maps-utils:2.2.3'
-    implementation "com.google.android.libraries.maps:maps:3.1.0-beta"
-    implementation "com.google.maps.android:maps-v3-ktx:2.2.0"
-    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    implementation "com.google.maps.android:maps-compose:2.0.0"
+    implementation "com.google.android.gms:play-services-maps:18.0.2"
 
     implementation 'com.google.android.exoplayer:exoplayer:2.17.1'
     implementation "io.coil-kt:coil-compose:1.4.0"
-
-    implementation 'com.google.android.gms:play-services-location:19.0.1'
-
 }
