@@ -20,9 +20,9 @@ data class ChatView(
     val senderUserId: Long,
     val senderImage: Int,
     val lastContentType: ContentType,
-    val isChatUnseenBySender:Boolean,
-    val isChatOpened:Boolean,
-    val isLastContentSendToSender:Boolean,
+    val isChatUnseenBySender: Boolean,
+    val isChatOpened: Boolean,
+    val isLastContentSendToSender: Boolean,
     val lastChat: String,
     val lastContentTime: String,
     val lastContentTimeType: LastContentTimeType

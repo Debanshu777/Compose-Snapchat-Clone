@@ -3,7 +3,12 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presenta
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
@@ -30,10 +35,10 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.mo
  *
  */
 @Composable
-fun FriendStories(){
+fun FriendStories() {
     val stories = mockDataStories()
     Column(
-      modifier = Modifier.padding(top=70.dp)
+        modifier = Modifier.padding(top = 70.dp)
     ) {
         Text(
             text = Messages.FRIENDS_SUB_HEADING,
@@ -41,8 +46,8 @@ fun FriendStories(){
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
-        LazyRow{
-            items(stories.size){index->
+        LazyRow {
+            items(stories.size) { index ->
                 StoryItem(stories[index])
             }
         }
@@ -55,14 +60,14 @@ fun FriendStories(){
  * @param stories
  */
 @Composable
-fun StoryItem(stories:FriendsStory){
+fun StoryItem(stories: FriendsStory) {
     Column(
         modifier = Modifier.padding(end = 15.dp, top = 10.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
-            modifier= Modifier
+            modifier = Modifier
                 .clip(CircleShape)
                 .border(
                     BorderStroke(2.dp, color = ThemeColors.PURPLE),
@@ -70,24 +75,24 @@ fun StoryItem(stories:FriendsStory){
                 )
                 .size(70.dp),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Image(
-                modifier=Modifier.padding(5.dp).clip(CircleShape).size(70.dp),
+                modifier = Modifier.padding(5.dp).clip(CircleShape).size(70.dp),
                 painter = rememberImagePainter(
-                    data=stories.thumbnail,
+                    data = stories.thumbnail,
                     builder = {
                         CircleCropTransformation()
                     }
                 ),
-                contentScale= ContentScale.Crop,
+                contentScale = ContentScale.Crop,
                 contentDescription = "Content",
             )
         }
         Text(
-            modifier=Modifier.width(70.dp),
-            fontSize=13.sp,
+            modifier = Modifier.width(70.dp),
+            fontSize = 13.sp,
             text = stories.userName,
-            color=Color.Black,
+            color = Color.Black,
             overflow = TextOverflow.Clip,
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.W300

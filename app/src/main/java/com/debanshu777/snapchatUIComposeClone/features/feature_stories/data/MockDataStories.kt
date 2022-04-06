@@ -4,12 +4,12 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.SnapDurationTy
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.ContentType
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.FriendsStory
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Story
-import java.util.*
+import java.util.Date
 
-fun mockDataStories():List<FriendsStory>{
+fun mockDataStories(): List<FriendsStory> {
     return listOf(
         FriendsStory(
-            userName= "John Doe",
+            userName = "John Doe",
             stories = listOf(
                 Story(
                     userId = 1234,
@@ -23,7 +23,7 @@ fun mockDataStories():List<FriendsStory>{
             thumbnail = "https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG"
         ),
         FriendsStory(
-            userName= "Jean Doe",
+            userName = "Jean Doe",
             stories = listOf(
                 Story(
                     userId = 1235,
@@ -37,7 +37,7 @@ fun mockDataStories():List<FriendsStory>{
             thumbnail = "https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmVydGljYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
         ),
         FriendsStory(
-            userName= "Alice Doe",
+            userName = "Alice Doe",
             stories = listOf(
                 Story(
                     userId = 1236,
@@ -51,7 +51,7 @@ fun mockDataStories():List<FriendsStory>{
             thumbnail = "https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dmVydGljYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
         ),
         FriendsStory(
-            userName= "Allen Doe",
+            userName = "Allen Doe",
             stories = listOf(
                 Story(
                     userId = 1237,
@@ -65,7 +65,7 @@ fun mockDataStories():List<FriendsStory>{
             thumbnail = "https://i.pinimg.com/736x/33/08/8a/33088a684f8af83e6b6be61828190a7b.jpg"
         ),
         FriendsStory(
-            userName= "Ellen Doe",
+            userName = "Ellen Doe",
             stories = listOf(
                 Story(
                     userId = 1237,
@@ -79,7 +79,7 @@ fun mockDataStories():List<FriendsStory>{
             thumbnail = "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmVydGljYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
         ),
         FriendsStory(
-            userName= "Mark Doe",
+            userName = "Mark Doe",
             stories = listOf(
                 Story(
                     userId = 1237,
