@@ -2,7 +2,14 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_authentication
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
@@ -21,11 +28,10 @@ import com.debanshu777.snapchatUIComposeClone.R
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 import com.debanshu777.snapchatUIComposeClone.features.feature_authentication.presentation.components.CustomButton
 
-
 @ExperimentalUnitApi
 @Preview
 @Composable
-fun AuthenticationView(){
+fun AuthenticationView() {
     Column(
         modifier = Modifier
             .background(ThemeColors.YELLOW)
@@ -38,7 +44,8 @@ fun AuthenticationView(){
                 .width(50.dp)
                 .align(Alignment.CenterHorizontally),
             painter = painterResource(R.drawable.snapchat_splash_logo),
-                contentDescription ="snapchat_logo" )
+            contentDescription = "snapchat_logo"
+        )
         Image(
             modifier = Modifier
                 .height(150.dp)
@@ -46,23 +53,24 @@ fun AuthenticationView(){
                 .clip(CircleShape)
                 .background(ThemeColors.LIGHT_ICON_TINT)
                 .align(Alignment.CenterHorizontally),
-            painter = painterResource(R.drawable.bitmoji), contentDescription ="user_bitmoji" )
+            painter = painterResource(R.drawable.bitmoji), contentDescription = "user_bitmoji"
+        )
         Text(text = "thedebanshu", fontWeight = FontWeight.Medium)
-        Text(text = "Remove account", color=ThemeColors.BLUE ,fontSize = 9.sp)
+        Text(text = "Remove account", color = ThemeColors.BLUE, fontSize = 9.sp)
         CustomButton()
         BottomSwitch()
     }
 }
 
 @Composable
-fun BottomSwitch(){
+fun BottomSwitch() {
     Row(
-        modifier=Modifier.fillMaxWidth().padding(20.dp),
+        modifier = Modifier.fillMaxWidth().padding(20.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
-            modifier=Modifier.padding(20.dp).weight(0.5f),
+            modifier = Modifier.padding(20.dp).weight(0.5f),
             text = "Sign Up",
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center,
@@ -75,7 +83,7 @@ fun BottomSwitch(){
                 .width(1.dp),
         )
         Text(
-            modifier=Modifier.padding(20.dp).weight(0.5f),
+            modifier = Modifier.padding(20.dp).weight(0.5f),
             text = "Switch Account",
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center,

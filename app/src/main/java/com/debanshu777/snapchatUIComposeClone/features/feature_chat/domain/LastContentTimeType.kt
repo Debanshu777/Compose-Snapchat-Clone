@@ -6,8 +6,8 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain
  * @property timeType
  * @constructor Create empty Last content time type
  */
-sealed class LastContentTimeType(val timeType:String){
-    object Month: LastContentTimeType("mo")
-    object Week: LastContentTimeType("w")
-    object Hour:LastContentTimeType("h")
+sealed class LastContentTimeType(val timeType: String) {
+    object Month : LastContentTimeType("mo")
+    object Week : LastContentTimeType("w")
+    object Hour : LastContentTimeType("h")
 }

@@ -12,8 +12,8 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
  * @param route
  * @return
  */
-fun topBarConfig(route:String): TopBarItem {
-    val listOfTopBarConfig= listOf(
+fun topBarConfig(route: String): TopBarItem {
+    val listOfTopBarConfig = listOf(
         TopBarItem(
             name = Messages.SNAP_HEADING,
             textColor = ThemeColors.LIGHT_ICON_TINT,
@@ -22,7 +22,7 @@ fun topBarConfig(route:String): TopBarItem {
             route = Screens.SnapMapScreen.route,
             isBackgroundTransparent = true,
             isAvailable = true,
-            lastAction="Setting"
+            lastAction = "Setting"
         ),
         TopBarItem(
             name = Messages.CHAT_HEADING,
@@ -31,7 +31,7 @@ fun topBarConfig(route:String): TopBarItem {
             iconTint = ThemeColors.DARK_ICON_TINT,
             route = Screens.ChatScreen.route,
             isAvailable = true,
-            lastAction="More Action"
+            lastAction = "More Action"
         ),
         TopBarItem(
             name = "",
@@ -41,7 +41,7 @@ fun topBarConfig(route:String): TopBarItem {
             route = Screens.CamaraScreen.route,
             isBackgroundTransparent = true,
             isAvailable = true,
-            lastAction="Camara Rotate"
+            lastAction = "Camara Rotate"
         ),
         TopBarItem(
             name = Messages.STORIES_HEADING,
@@ -50,7 +50,7 @@ fun topBarConfig(route:String): TopBarItem {
             iconTint = ThemeColors.DARK_ICON_TINT,
             route = Screens.StoriesScreen.route,
             isAvailable = true,
-            lastAction="More Action"
+            lastAction = "More Action"
         ),
         TopBarItem(
             name = Messages.SPOTLIGHT_HEADING,
@@ -60,7 +60,7 @@ fun topBarConfig(route:String): TopBarItem {
             route = Screens.SpotlightScreen.route,
             isBackgroundTransparent = true,
             isAvailable = false,
-            lastAction="None"
+            lastAction = "None"
         )
     )
     return listOfTopBarConfig.find { it.route == route }!!

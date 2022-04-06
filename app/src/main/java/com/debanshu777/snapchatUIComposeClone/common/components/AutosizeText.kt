@@ -23,22 +23,22 @@ import androidx.compose.ui.text.style.TextAlign
  */
 @Composable
 fun AutoSizeText(
-    modifier:Modifier=Modifier,
-    factor: Float=1f,
+    modifier: Modifier = Modifier,
+    factor: Float = 1f,
     text: String,
     textColor: Color,
-    fontWeight:FontWeight=FontWeight.Normal,
-    textAlign:TextAlign=TextAlign.Start,
+    fontWeight: FontWeight = FontWeight.Normal,
+    textAlign: TextAlign = TextAlign.Start,
     textStyle: TextStyle,
     configuration: Configuration
-    ) {
+) {
     Text(
         text,
         modifier,
-        fontWeight=fontWeight,
-        color=textColor,
-        textAlign=textAlign,
-        fontSize=textStyle.fontSize*(configuration.fontScale*factor),
+        fontWeight = fontWeight,
+        color = textColor,
+        textAlign = textAlign,
+        fontSize = textStyle.fontSize * (configuration.fontScale * factor),
         softWrap = false,
     )
 }

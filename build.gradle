@@ -12,13 +12,12 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
         classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.6.10"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-plugins {
-    id("io.gitlab.arturbosch.detekt").version("1.18.0")
-}
+apply plugin: "io.gitlab.arturbosch.detekt"
 
 detekt {
     config = files("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior

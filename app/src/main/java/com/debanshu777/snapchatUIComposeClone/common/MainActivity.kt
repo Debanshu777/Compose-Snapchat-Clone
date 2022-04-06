@@ -22,40 +22,38 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.topBarFormatter
 import com.debanshu777.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
-
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalFoundationApi::class,ExperimentalCoilApi::class,ExperimentalAnimationApi::class,ExperimentalPermissionsApi::class,ExperimentalMaterialApi::class)
+    @OptIn(ExperimentalFoundationApi::class, ExperimentalCoilApi::class, ExperimentalAnimationApi::class, ExperimentalPermissionsApi::class, ExperimentalMaterialApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_ComposeCameraX)
         setContent {
-            ComposeSnapChatUITheme{
+            ComposeSnapChatUITheme {
                 val navController = rememberNavController()
                 val backStack = navController.currentBackStackEntryAsState()
                 Scaffold(
-                        topBar= {
-                            Box {
-                                Navigation(navController = navController)
-                                CustomTopBar(
-                                    modifier = Modifier
-                                        .fillMaxWidth(),
-                                    topBarItem = topBarFormatter(backStack.value?.destination?.route)
-                                )
-                            }
-
-                        },
-                        bottomBar = {
-                            CustomBottomNavigation(
-                                items = navigationConfig(),
-                                navController = navController,
-                                modifier = Modifier,
-                                onItemClick = {
-                                    navController.navigate(it.route)
-                                }
+                    topBar = {
+                        Box {
+                            Navigation(navController = navController)
+                            CustomTopBar(
+                                modifier = Modifier
+                                    .fillMaxWidth(),
+                                topBarItem = topBarFormatter(backStack.value?.destination?.route)
                             )
-                        },
-                    ){}
-                }
+                        }
+                    },
+                    bottomBar = {
+                        CustomBottomNavigation(
+                            items = navigationConfig(),
+                            navController = navController,
+                            modifier = Modifier,
+                            onItemClick = {
+                                navController.navigate(it.route)
+                            }
+                        )
+                    },
+                ) {}
+            }
         }
     }
 }
