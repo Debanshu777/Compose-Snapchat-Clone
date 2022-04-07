@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id "org.jetbrains.dokka"
+    id "io.gitlab.arturbosch.detekt"
+    id "org.jlleitschuh.gradle.ktlint" version "10.2.1"
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
@@ -111,4 +113,7 @@ dependencies {
 
     implementation 'com.google.android.exoplayer:exoplayer:2.17.1'
     implementation "io.coil-kt:coil-compose:1.4.0"
+
+    //Image Picker
+    implementation 'com.himanshoe:pluck:1.0.0-RC1'
 }

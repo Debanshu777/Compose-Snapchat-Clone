@@ -36,59 +36,55 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.mo
 @ExperimentalCoilApi
 @Composable
 fun RectangularStoryView(
-    shadowHeight:Float,
-    isLarge:Boolean,
-    height:Dp,
+    shadowHeight: Float,
+    isLarge: Boolean,
+    height: Dp,
     modifier: Modifier,
     subscription: Subscription
-){
+) {
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(5.dp),
-        elevation=5.dp
-    ){
+        elevation = 5.dp
+    ) {
         Box(Modifier.height(height)) {
             Image(
                 painter = rememberImagePainter(
-                    data=subscription.coverImageURL,
+                    data = subscription.coverImageURL,
                     builder = {
-
                     }
                 ),
-                contentScale= ContentScale.Crop,
+                contentScale = ContentScale.Crop,
                 contentDescription = "Content",
             )
-            Box(modifier = Modifier
-                .matchParentSize()
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(
-                            Color.Transparent,
-                            Color.Black
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Transparent,
+                                Color.Black
+                            ),
+                            startY = shadowHeight
                         ),
-                        startY = shadowHeight
-                    ),
-                )
+                    )
             )
             Box(
                 Modifier
                     .fillMaxSize()
-                    .padding(if(!isLarge) 5.dp else 10.dp),
+                    .padding(if (!isLarge) 5.dp else 10.dp),
                 contentAlignment = Alignment.BottomStart
             ) {
                 Text(
                     text = subscription.title,
                     maxLines = 4,
-                    color=Color.White,
-                    fontWeight= FontWeight.W800,
-                    fontSize= if(!isLarge) 12.sp else 20.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.W800,
+                    fontSize = if (!isLarge) 12.sp else 20.sp,
                     overflow = TextOverflow.Ellipsis,
                 )
             }
         }
-
     }
-   
-    
-
 }

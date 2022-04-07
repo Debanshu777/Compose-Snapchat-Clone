@@ -1,7 +1,13 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -29,7 +35,7 @@ import com.google.accompanist.permissions.rememberPermissionState
 @Composable
 fun FeatureThatRequiresCameraPermission(
     navigateToSettingsScreen: () -> Unit,
-    content: @Composable ()->Unit
+    content: @Composable () -> Unit
 ) {
     var doNotShowRationale by rememberSaveable { mutableStateOf(false) }
     val cameraPermissionState = rememberPermissionState(android.Manifest.permission.CAMERA)
@@ -45,7 +51,7 @@ fun FeatureThatRequiresCameraPermission(
                     verticalArrangement = Arrangement.Bottom
                 ) {
                     Text(
-                        text="The camera is important for this app. Please grant the permission."
+                        text = "The camera is important for this app. Please grant the permission."
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row {
@@ -68,8 +74,8 @@ fun FeatureThatRequiresCameraPermission(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text ="Camera permission denied. See this FAQ with information about why we " +
-                            "need this permission. Please, grant us access on the Settings screen."
+                    text = "Camera permission denied. See this FAQ with information about why we " +
+                        "need this permission. Please, grant us access on the Settings screen."
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = navigateToSettingsScreen) {
@@ -77,6 +83,6 @@ fun FeatureThatRequiresCameraPermission(
                 }
             }
         },
-        content=content
+        content = content
     )
 }

@@ -31,16 +31,16 @@ import androidx.compose.ui.unit.Dp
 fun AutoSizeIcon(
     modifier: Modifier = Modifier,
     size: Dp,
-    tint:Color?=null,
-    factor:Float=1f,
-    icon:ImageVector,
+    tint: Color? = null,
+    factor: Float = 1f,
+    icon: ImageVector,
     badgeColor: Color,
     configuration: Configuration,
-    isBadge: Boolean=false,
-    contentDescription:String,
+    isBadge: Boolean = false,
+    contentDescription: String,
 ) {
-    val factorValue = configuration.screenWidthDp/factor
-    if(isBadge) {
+    val factorValue = configuration.screenWidthDp / factor
+    if (isBadge) {
         BadgedBox(
             badge = { Badge(backgroundColor = badgeColor) },
         ) {
@@ -48,10 +48,10 @@ fun AutoSizeIcon(
                 Icon(
                     modifier = modifier.size(size * factorValue),
                     imageVector = icon,
-                    tint=tint,
+                    tint = tint,
                     contentDescription = contentDescription
                 )
-            }else{
+            } else {
                 Icon(
                     modifier = modifier.size(size * factorValue),
                     imageVector = icon,
@@ -59,24 +59,23 @@ fun AutoSizeIcon(
                 )
             }
         }
-    }else {
+    } else {
         if (tint != null) {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 imageVector = icon,
-                tint=tint,
+                tint = tint,
                 contentDescription = contentDescription
             )
-        }else{
+        } else {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 imageVector = icon,
                 contentDescription = contentDescription
             )
         }
-        }
+    }
 }
-
 
 /**
  * Custom Element Auto size icon with painter
@@ -96,16 +95,16 @@ fun AutoSizeIcon(
 fun AutoSizeIconWithPainter(
     modifier: Modifier = Modifier,
     size: Dp,
-    tint:Color?=null,
-    factor:Float=1f,
-    painter:Painter,
+    tint: Color? = null,
+    factor: Float = 1f,
+    painter: Painter,
     badgeColor: Color,
     configuration: Configuration,
-    isBadge: Boolean=false,
-    contentDescription:String,
+    isBadge: Boolean = false,
+    contentDescription: String,
 ) {
-    val factorValue = configuration.screenWidthDp/factor
-    if(isBadge) {
+    val factorValue = configuration.screenWidthDp / factor
+    if (isBadge) {
         BadgedBox(
             badge = { Badge(backgroundColor = badgeColor) },
         ) {
@@ -113,10 +112,10 @@ fun AutoSizeIconWithPainter(
                 Icon(
                     modifier = modifier.size(size * factorValue),
                     painter = painter,
-                    tint=tint,
+                    tint = tint,
                     contentDescription = contentDescription
                 )
-            }else{
+            } else {
                 Icon(
                     modifier = modifier.size(size * factorValue),
                     painter = painter,
@@ -124,15 +123,15 @@ fun AutoSizeIconWithPainter(
                 )
             }
         }
-    }else {
+    } else {
         if (tint != null) {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 painter = painter,
-                tint=tint,
+                tint = tint,
                 contentDescription = contentDescription
             )
-        }else{
+        } else {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 painter = painter,

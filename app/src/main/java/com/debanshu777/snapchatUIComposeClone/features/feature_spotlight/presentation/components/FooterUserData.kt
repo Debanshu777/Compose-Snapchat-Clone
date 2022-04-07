@@ -2,7 +2,15 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.presen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -42,7 +50,7 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
             horizontalArrangement = Arrangement.Center,
         ) {
             Box(
-                modifier=Modifier.height(28.dp).width(28.dp),
+                modifier = Modifier.height(28.dp).width(28.dp),
                 contentAlignment = Alignment.Center
             ) {
                 val painter = rememberImagePainter(
@@ -62,18 +70,18 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
             Text(
                 text = "@${spotlight.userName}",
                 color = Color.White,
-                fontWeight= FontWeight.Bold,
+                fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.h6
             )
 
             Spacer(modifier = Modifier.width(horizontalPadding))
             Icon(
-                modifier= Modifier.size(20.dp),
+                modifier = Modifier.size(20.dp),
                 imageVector = Icons.Outlined.BookmarkBorder,
                 contentDescription = "Bookmark"
             )
             Icon(
-                modifier= Modifier.size(15.dp),
+                modifier = Modifier.size(15.dp),
                 imageVector = Icons.Outlined.Add,
                 contentDescription = ""
             )
@@ -90,7 +98,7 @@ fun FooterUserData(spotlight: Spotlight, modifier: Modifier) {
             horizontalArrangement = Arrangement.Center,
         ) {
             Icon(
-                modifier= Modifier.size(15.dp),
+                modifier = Modifier.size(15.dp),
                 imageVector = Icons.Outlined.GraphicEq,
                 contentDescription = "Bookmark"
             )

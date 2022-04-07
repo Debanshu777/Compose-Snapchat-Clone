@@ -3,6 +3,5 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_authentication.p
 import androidx.compose.runtime.Composable
 
 @Composable
-fun LoginScreen(){
-
+fun LoginScreen() {
 }

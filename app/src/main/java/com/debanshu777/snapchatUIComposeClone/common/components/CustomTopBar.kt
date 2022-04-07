@@ -2,7 +2,14 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.TopAppBar
@@ -32,33 +39,33 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
 @ExperimentalMaterialApi
 @Composable
 fun CustomTopBar(
-    modifier: Modifier=Modifier,
+    modifier: Modifier = Modifier,
     topBarItem: TopBarItem
-){
+) {
     val configuration = LocalConfiguration.current
 
     TopAppBar(
-        contentPadding= PaddingValues(top=10.dp, start=10.dp, end=10.dp),
+        contentPadding = PaddingValues(top = 10.dp, start = 10.dp, end = 10.dp),
         modifier = modifier,
-        elevation= 0.dp,
+        elevation = 0.dp,
         backgroundColor =
-            if(topBarItem.isBackgroundTransparent)
-                Color.Transparent
-            else
-                Color.White,
+        if (topBarItem.isBackgroundTransparent)
+            Color.Transparent
+        else
+            Color.White,
         content = {
             Box(
-               modifier= Modifier
-                   .fillMaxSize()
-                   .align(Alignment.CenterVertically),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.CenterVertically),
             ) {
-                Row{
+                Row {
                     Box(
                         modifier = Modifier
                             .size(40.dp)
                             .clip(CircleShape)
                             .background(topBarItem.backgroundTintForIcon)
-                    ){
+                    ) {
                         Image(
                             modifier = Modifier
                                 .size(40.dp)
@@ -78,8 +85,8 @@ fun CustomTopBar(
                         AutoSizeIcon(
                             size = 1.dp,
                             icon = Icons.Default.Search,
-                            factor=17f,
-                            tint= topBarItem.iconTint,
+                            factor = 17f,
+                            tint = topBarItem.iconTint,
                             badgeColor = Color.White,
                             configuration = configuration,
                             contentDescription = "Search",
@@ -87,22 +94,22 @@ fun CustomTopBar(
                     }
                 }
                 AutoSizeText(
-                    factor=0.85f,
+                    factor = 0.85f,
                     text = topBarItem.name,
-                    modifier= Modifier
-                         .fillMaxSize()
-                         .padding(top = 5.dp),
-                    textColor = topBarItem.textColor ,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 5.dp),
+                    textColor = topBarItem.textColor,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
                     textStyle = TextStyle(fontSize = 22.sp),
-                    configuration=configuration
+                    configuration = configuration
                 )
                 Box(
                     Modifier.align(Alignment.TopEnd)
                 ) {
-                    if(topBarItem.isAvailable) {
-                        CustomActionBar(topBarItem,configuration)
+                    if (topBarItem.isAvailable) {
+                        CustomActionBar(topBarItem, configuration)
                     }
                 }
             }

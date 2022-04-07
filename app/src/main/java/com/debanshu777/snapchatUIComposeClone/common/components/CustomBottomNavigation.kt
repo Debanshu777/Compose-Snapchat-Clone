@@ -35,11 +35,11 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 fun CustomBottomNavigation(
     items: List<BottomNavItem>,
     navController: NavController,
-    modifier: Modifier =Modifier,
-    onItemClick: (BottomNavItem)-> Unit
-){
+    modifier: Modifier = Modifier,
+    onItemClick: (BottomNavItem) -> Unit
+) {
     val configuration = LocalConfiguration.current
-    val backStackEntry =navController.currentBackStackEntryAsState()
+    val backStackEntry = navController.currentBackStackEntryAsState()
     BottomNavigation(
         modifier = modifier,
         backgroundColor = Color.Black,
@@ -47,55 +47,53 @@ fun CustomBottomNavigation(
         items.forEach { item ->
             val selected = item.route == backStackEntry.value?.destination?.route
             BottomNavigationItem(
-                modifier=Modifier.padding(),
+                modifier = Modifier.padding(),
                 selected = selected,
                 onClick = { onItemClick(item) },
-                selectedContentColor =item.onSelectedColor,
+                selectedContentColor = item.onSelectedColor,
                 unselectedContentColor = ThemeColors.LIGHT_ICON_TINT,
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
-                        if (item.onSelectedBatchVisible){
+                        if (item.onSelectedBatchVisible) {
                             AutoSizeIcon(
                                 size = 1.dp,
                                 icon = item.icon,
-                                factor=15f,
+                                factor = 15f,
                                 badgeColor = item.onSelectedColor,
                                 configuration = configuration,
                                 contentDescription = item.name,
                                 isBadge = true,
                             )
-                        }else{
-                            if(selected && item.name=="Camara"){
+                        } else {
+                            if (selected && item.name == "Camara") {
                                 CustomCamaraOnSelectItem(
                                     item.onSelectedColor,
                                     configuration,
                                     item.name
                                 )
-                            }else {
+                            } else {
                                 AutoSizeIcon(
                                     size = 1.dp,
                                     icon = item.icon,
-                                    factor=15f,
+                                    factor = 15f,
                                     badgeColor = item.onSelectedColor,
                                     configuration = configuration,
                                     contentDescription = item.name,
                                 )
                             }
                         }
-                        if(selected && item.name!="Camara"){
+                        if (selected && item.name != "Camara") {
                             Icon(
                                 modifier = Modifier.height(15.dp),
                                 imageVector = Icons.Default.ArrowDropUp,
                                 contentDescription = item.name
                             )
-                        }else{
+                        } else {
                             Spacer(modifier = Modifier.height(15.dp))
                         }
                     }
-
                 }
             )
         }
     }
 }
-
