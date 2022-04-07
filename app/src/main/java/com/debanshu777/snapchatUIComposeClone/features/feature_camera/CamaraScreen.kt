@@ -29,18 +29,18 @@ fun CamaraScreen() {
     val lifecycleOwner = LocalLifecycleOwner.current
     Surface(
         modifier = Modifier
-            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart =10.dp)),
+            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp)),
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-                SimpleCameraPreview(
-                    modifier = Modifier.fillMaxSize(),
-                    context = context,
-                    lifecycleOwner = lifecycleOwner,
-                    onMediaCaptured = { url -> }
-                )
-            }
+            SimpleCameraPreview(
+                modifier = Modifier.fillMaxSize(),
+                context = context,
+                lifecycleOwner = lifecycleOwner,
+                onMediaCaptured = { url -> }
+            )
         }
     }
+}

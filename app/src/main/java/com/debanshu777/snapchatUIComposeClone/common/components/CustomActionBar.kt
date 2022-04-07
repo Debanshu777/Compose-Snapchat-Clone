@@ -2,7 +2,11 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
@@ -26,8 +30,8 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
  */
 @ExperimentalMaterialApi
 @Composable
-fun CustomActionBar(topBarItem:TopBarItem, configuration:Configuration){
-    if(topBarItem.lastAction=="Setting"){
+fun CustomActionBar(topBarItem: TopBarItem, configuration: Configuration) {
+    if (topBarItem.lastAction == "Setting") {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -38,14 +42,14 @@ fun CustomActionBar(topBarItem:TopBarItem, configuration:Configuration){
             AutoSizeIcon(
                 size = 1.dp,
                 icon = Icons.Default.Settings,
-                factor=17f,
-                tint= topBarItem.iconTint,
+                factor = 17f,
+                tint = topBarItem.iconTint,
                 badgeColor = Color.White,
                 configuration = configuration,
                 contentDescription = "Setting",
             )
         }
-    }else{
+    } else {
         Row {
             Box(
                 contentAlignment = Alignment.Center,
@@ -57,8 +61,8 @@ fun CustomActionBar(topBarItem:TopBarItem, configuration:Configuration){
                 AutoSizeIcon(
                     size = 1.dp,
                     icon = Icons.Default.PersonAdd,
-                    factor=17f,
-                    tint= topBarItem.iconTint,
+                    factor = 17f,
+                    tint = topBarItem.iconTint,
                     badgeColor = Color.White,
                     configuration = configuration,
                     contentDescription = "Add Person",
@@ -75,12 +79,12 @@ fun CustomActionBar(topBarItem:TopBarItem, configuration:Configuration){
                 AutoSizeIcon(
                     size = 1.dp,
                     icon =
-                    if(topBarItem.lastAction == "More Action")
+                    if (topBarItem.lastAction == "More Action")
                         Icons.Default.MoreHoriz
                     else
                         Icons.Default.Cameraswitch,
-                    factor=17f,
-                    tint= topBarItem.iconTint,
+                    factor = 17f,
+                    tint = topBarItem.iconTint,
                     badgeColor = Color.White,
                     configuration = configuration,
                     contentDescription = "More Actions",

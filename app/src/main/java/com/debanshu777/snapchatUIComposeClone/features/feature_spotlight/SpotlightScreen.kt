@@ -22,13 +22,13 @@ fun SpotlightScreen() {
     val spotlights = DummySpotlightData.spotlight
     Box(
         Modifier
-            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart =10.dp))
-            .background(color = Color.Black))
-    {
+            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
+            .background(color = Color.Black)
+    ) {
         LazyColumn {
-            items(spotlights.size) {index ->
+            items(spotlights.size) { index ->
                 Box(
-                    modifier=Modifier
+                    modifier = Modifier
                         .fillParentMaxSize()
                 ) {
                     VideoPlayer(uri = spotlights[index].getVideoUrl())

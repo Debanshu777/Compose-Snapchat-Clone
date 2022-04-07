@@ -31,6 +31,6 @@ data class Spotlight(
      * @return
      */
     fun getVideoUrl(): Uri {
-        return Uri.parse("asset:///${video}")
+        return Uri.parse("asset:///$video")
     }
 }

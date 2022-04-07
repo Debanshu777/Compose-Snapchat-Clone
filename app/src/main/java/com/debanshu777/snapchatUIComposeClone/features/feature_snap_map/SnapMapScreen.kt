@@ -1,7 +1,11 @@
 package com.debanshu777.snapchatUIComposeClone.features.feature_snap_map
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,7 +28,6 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapUiSettings
 
-
 @Composable
 @Preview
 fun SnapMapScreen() {
@@ -43,41 +46,47 @@ fun SnapMapScreen() {
         ) {
             val context = LocalContext.current
             GoogleMap(
-                modifier=Modifier.fillMaxSize(),
-                uiSettings = MapUiSettings(zoomControlsEnabled = true),
+                modifier = Modifier.fillMaxSize(),
+                uiSettings = MapUiSettings(zoomControlsEnabled = false),
                 properties = MapProperties(
-                    mapStyleOptions = MapStyleOptions.loadRawResourceStyle(context,R.raw.style_json)
+                    mapStyleOptions = MapStyleOptions.loadRawResourceStyle(context, R.raw.style_json)
                 ),
-                cameraPositionState = CameraPositionState(CameraPosition(LatLng(22.5726,88.3639),12f,0f,0f))
-            )
-            Box(modifier = Modifier
-                .rotate(180f)
-                .fillMaxWidth()
-                .height(160.dp)
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(
-                            Color.Transparent,
-                            ThemeColors.MAP_DARK_GRADIENT
-                        ),
-                        startY = 10f
-                    ),
+                cameraPositionState = CameraPositionState(
+                    CameraPosition(
+                        LatLng(22.5726, 88.3639), 12f, 0f, 0f
+                    )
                 )
             )
-            Box(modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .fillMaxWidth()
-                .height(100.dp)
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(
-                            Color.Transparent,
-                            Color(0x6F202020)
+            Box(
+                modifier = Modifier
+                    .rotate(180f)
+                    .fillMaxWidth()
+                    .height(160.dp)
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Transparent,
+                                ThemeColors.MAP_DARK_GRADIENT
+                            ),
+                            startY = 10f
+                        ),
+                    )
+            )
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .fillMaxWidth()
+                    .height(100.dp)
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Transparent,
+                                Color(0x6F202020)
+                            ),
                         ),
                     ),
-                ),
                 contentAlignment = Alignment.BottomCenter,
-            ){
+            ) {
                 MapBottomNavigation()
             }
         }

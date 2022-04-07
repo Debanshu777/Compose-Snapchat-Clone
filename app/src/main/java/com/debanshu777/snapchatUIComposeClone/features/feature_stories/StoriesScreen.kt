@@ -2,7 +2,12 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -30,7 +35,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Composable
 @Preview
 fun StoriesScreen() {
-    val subscriptionList= mockDataSubscription()
+    val subscriptionList = mockDataSubscription()
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
@@ -38,24 +43,24 @@ fun StoriesScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn(
-            modifier = Modifier.padding(start=10.dp,top=30.dp).fillMaxWidth()
+            modifier = Modifier.padding(start = 10.dp, top = 30.dp).fillMaxWidth()
         ) {
-            item{
+            item {
                 FriendStories()
             }
-            item{
+            item {
                 SubscriptionView()
             }
-            item{
+            item {
                 Text(
                     text = Messages.DISCOVER_SUB_HEADING,
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 10.dp,top= 20.dp)
+                    modifier = Modifier.padding(bottom = 10.dp, top = 20.dp)
                 )
             }
-            if(subscriptionList.size%2 == 0) {
+            if (subscriptionList.size % 2 == 0) {
                 items(subscriptionList.size / 2) { row ->
                     Row {
                         RectangularStoryView(
@@ -81,10 +86,9 @@ fun StoriesScreen() {
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
                     }
-
                 }
-            }else{
-                items(subscriptionList.size / 2 + 1 ) { row ->
+            } else {
+                items(subscriptionList.size / 2 + 1) { row ->
                     Row {
                         RectangularStoryView(
                             shadowHeight = 230f,
@@ -97,7 +101,7 @@ fun StoriesScreen() {
                                 .padding(end = 10.dp, bottom = 10.dp)
                                 .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
                         )
-                        if(row*2+1 < subscriptionList.size) {
+                        if (row * 2 + 1 < subscriptionList.size) {
                             RectangularStoryView(
                                 shadowHeight = 230f,
                                 height = 200.dp,

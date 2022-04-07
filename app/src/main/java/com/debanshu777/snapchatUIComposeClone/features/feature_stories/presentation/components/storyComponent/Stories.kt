@@ -36,11 +36,10 @@ fun Stories(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        //Full screen content behind the indicator
+        // Full screen content behind the indicator
         StoryImage(pagerState = pagerState, onTap = {
             if (touchToPause)
                 pauseTimer = it
         }, content)
     }
-
 }

@@ -2,7 +2,16 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentatio
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
@@ -35,26 +44,26 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.LastC
  */
 @Preview
 @Composable
-fun ChatItemPreview(){
+fun ChatItemPreview() {
     ChatItem(
-        modifier= Modifier
+        modifier = Modifier
             .background(color = Color.White)
             .padding(10.dp),
         item =
         ChatView(
             sender = "John Doe",
             senderUserId = 1234,
-            senderImage= R.drawable.bit1,
+            senderImage = R.drawable.bit1,
             lastContentType = ContentType.Chat,
             isChatUnseenBySender = false,
-            isLastContentSendToSender=false,
-            isChatOpened=false,
+            isLastContentSendToSender = false,
+            isChatOpened = false,
             lastChat = "Hi there",
             lastContentTimeType = LastContentTimeType.Month,
             lastContentTime = "1",
-    ))
+        )
+    )
 }
-
 
 /**
  * Chat item
@@ -79,7 +88,7 @@ fun ChatItem(
                     .size(53.25.dp)
                     .clip(CircleShape)
                     .background(color = Color.White)
-            ){
+            ) {
                 Image(
                     modifier = Modifier
                         .size(53.25.dp)
@@ -91,9 +100,9 @@ fun ChatItem(
             Spacer(modifier = Modifier.width(20.dp))
             Column {
                 AutoSizeText(
-                    factor=0.85f,
+                    factor = 0.85f,
                     text = item.sender,
-                    textColor = ThemeColors.DARK_TINT_TEXT ,
+                    textColor = ThemeColors.DARK_TINT_TEXT,
                     fontWeight = FontWeight.W600,
                     textStyle = TextStyle(fontSize = 20.sp),
                     configuration = configuration
@@ -102,7 +111,7 @@ fun ChatItem(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    ChatTypeItem(item,configuration)
+                    ChatTypeItem(item, configuration)
                     Spacer(Modifier.width(10.dp))
                     Box(
                         modifier = Modifier
@@ -112,8 +121,8 @@ fun ChatItem(
                     )
                     Spacer(Modifier.width(10.dp))
                     AutoSizeText(
-                        factor=0.85f,
-                        text = item.lastContentTime+item.lastContentTimeType.timeType,
+                        factor = 0.85f,
+                        text = item.lastContentTime + item.lastContentTimeType.timeType,
                         textColor = ThemeColors.LIGHT_TINT_TEXT,
                         textStyle = TextStyle(fontSize = 14.sp),
                         configuration = configuration
@@ -124,7 +133,7 @@ fun ChatItem(
         Row(
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            if(!item.isChatOpened) Divider(
+            if (!item.isChatOpened) Divider(
                 modifier = Modifier
                     .background(color = ThemeColors.LIGHTER_ICON_TINT)
                     .height(40.dp)
@@ -134,7 +143,7 @@ fun ChatItem(
                 modifier = Modifier
                     .size(50.dp)
                     .padding(start = 20.dp, end = 5.dp),
-                imageVector = if(item.isChatOpened)
+                imageVector = if (item.isChatOpened)
                     Icons.Outlined.CameraAlt
                 else
                     Icons.Outlined.ChatBubbleOutline,
@@ -144,7 +153,7 @@ fun ChatItem(
             Spacer(modifier = Modifier.width(5.dp))
         }
     }
-    Divider(color=Color(0xFFE4E4E4), thickness = 0.1.dp)
+    Divider(color = Color(0xFFE4E4E4), thickness = 0.1.dp)
 }
 
 /**
@@ -153,7 +162,7 @@ fun ChatItem(
  * @param item
  * @return
  */
-fun giveColor(item: ChatView) :Color = if(item.lastContentType==ContentType.Image)
+fun giveColor(item: ChatView): Color = if (item.lastContentType == ContentType.Image)
     ThemeColors.RED
 else {
     if (item.lastContentType == ContentType.Video)

@@ -22,17 +22,17 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_chat.presentation
 @Composable
 @Preview
 fun ChatScreen() {
-    val chatList= dummyDataChatViewList()
+    val chatList = dummyDataChatViewList()
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
             .background(color = Color.White)
             .fillMaxSize(),
     ) {
-        LazyColumn{
-            items(chatList.size) { index->
+        LazyColumn {
+            items(chatList.size) { index ->
                 ChatItem(
-                    modifier=Modifier.padding(top=5.dp,bottom=5.dp,start=10.dp,end=10.dp),
+                    modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, start = 10.dp, end = 10.dp),
                     chatList[index]
                 )
             }

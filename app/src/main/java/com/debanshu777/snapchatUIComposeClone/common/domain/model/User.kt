@@ -21,9 +21,9 @@ data class User(
     val username: String,
     val avatar: ImageVector,
     val zodiac: String,
-    val phoneNumber:Long,
-    val snapCount:Long,
-    val snapCode:Long,
+    val phoneNumber: Long,
+    val snapCount: Long,
+    val snapCode: Long,
     val email: String,
     val birthday: String,
 )

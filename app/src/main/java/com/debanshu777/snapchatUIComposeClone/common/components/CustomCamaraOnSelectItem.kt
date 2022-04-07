@@ -28,21 +28,22 @@ import com.debanshu777.snapchatUIComposeClone.R
 @Composable
 fun CustomCamaraOnSelectItem(
     color: Color,
-    configuration:Configuration,
-    description:String
-){
+    configuration: Configuration,
+    description: String
+) {
     Box(
-        contentAlignment= Alignment.Center,
+        contentAlignment = Alignment.Center,
         modifier = Modifier
             .width(60.dp)
             .height(30.dp)
             .clip(RoundedCornerShape(30.dp))
-            .background(Color.DarkGray)) {
+            .background(Color.DarkGray)
+    ) {
         AutoSizeIconWithPainter(
-            modifier=Modifier.padding(top=4.dp,bottom = 4.dp),
+            modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
             size = 1.dp,
             painter = painterResource(id = R.drawable.ic_camara),
-            factor=15f,
+            factor = 15f,
             badgeColor = color,
             configuration = configuration,
             contentDescription = description,

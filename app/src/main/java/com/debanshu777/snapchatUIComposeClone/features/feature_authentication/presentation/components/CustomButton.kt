@@ -20,24 +20,26 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 @Preview
 @Composable
 fun CustomButton(
-    onClick: () -> Unit ={}
-){
+    onClick: () -> Unit = {}
+) {
     Button(
-        modifier= Modifier
+        modifier = Modifier
             .width(200.dp)
             .height(50.dp)
             .clip(RoundedCornerShape(30.dp)),
         colors = ButtonDefaults.buttonColors(backgroundColor = ThemeColors.BLUE),
-        elevation= ButtonDefaults.elevation(
+        elevation = ButtonDefaults.elevation(
             defaultElevation = 40.dp,
             pressedElevation = 0.dp,
             disabledElevation = 40.dp
         ),
-        onClick = onClick) {
-        Text(text = "Log In",
+        onClick = onClick
+    ) {
+        Text(
+            text = "Log In",
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
-            color= Color.White,
+            color = Color.White,
             fontSize = 20.sp
         )
     }

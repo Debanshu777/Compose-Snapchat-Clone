@@ -36,7 +36,7 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(
-        modifier= Modifier
+        modifier = Modifier
             .clip(
                 RoundedCornerShape(
                     bottomStart = 5.dp,
@@ -51,14 +51,14 @@ fun Navigation(navController: NavHostController) {
         composable(Screens.SnapMapScreen.route) {
             FeaturesThatRequireLocationPermission(
                 navigateToSettingsScreen = {},
-                content= {SnapMapScreen()}
+                content = { SnapMapScreen() }
             )
         }
         composable(Screens.ChatScreen.route) {
             ChatScreen()
         }
         composable(Screens.CamaraScreen.route) {
-            FeatureThatRequiresCameraPermission (
+            FeatureThatRequiresCameraPermission(
                 navigateToSettingsScreen = {},
                 content = { CamaraScreen() }
             )

@@ -1,7 +1,13 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import android.Manifest
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,8 +34,8 @@ import com.google.accompanist.permissions.rememberPermissionState
 @Composable
 fun FeaturesThatRequireLocationPermission(
     navigateToSettingsScreen: () -> Unit,
-    content: @Composable ()->Unit
-){
+    content: @Composable () -> Unit
+) {
     var doNotShowRationale by rememberSaveable { mutableStateOf(false) }
     val locationPermissionState = rememberPermissionState(Manifest.permission.ACCESS_COARSE_LOCATION)
     PermissionRequired(
@@ -44,7 +50,7 @@ fun FeaturesThatRequireLocationPermission(
                     verticalArrangement = Arrangement.Bottom
                 ) {
                     Text(
-                        text="The location is important for this app. Please grant the permission."
+                        text = "The location is important for this app. Please grant the permission."
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row {
@@ -67,8 +73,8 @@ fun FeaturesThatRequireLocationPermission(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text ="Location permission denied. See this FAQ with information about why we " +
-                            "need this permission. Please, grant us access on the Settings screen."
+                    text = "Location permission denied. See this FAQ with information about why we " +
+                        "need this permission. Please, grant us access on the Settings screen."
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = navigateToSettingsScreen) {

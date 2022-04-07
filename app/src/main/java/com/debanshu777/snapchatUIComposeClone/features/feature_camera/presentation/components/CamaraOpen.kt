@@ -2,18 +2,38 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_camera.presentat
 
 import android.content.Context
 import android.net.Uri
-import androidx.camera.core.*
+import androidx.camera.core.Camera
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.filled.Filter
+import androidx.compose.material.icons.filled.FlashOff
+import androidx.compose.material.icons.filled.FlashOn
+import androidx.compose.material.icons.filled.InsertEmoticon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,7 +46,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.debanshu777.snapchatUIComposeClone.common.components.AutoSizeIcon
 import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
-import java.util.*
 
 /**
  * Simple camera preview
@@ -112,8 +131,8 @@ fun SimpleCameraPreview(
                 AutoSizeIcon(
                     size = 1.dp,
                     icon = Icons.Default.Filter,
-                    factor=15f,
-                    tint=ThemeColors.LIGHT_ICON_TINT,
+                    factor = 15f,
+                    tint = ThemeColors.LIGHT_ICON_TINT,
                     badgeColor = ThemeColors.RED,
                     configuration = configuration,
                     contentDescription = "Memories",
@@ -131,9 +150,8 @@ fun SimpleCameraPreview(
                     .shadow(4.dp, CircleShape)
                     .clip(CircleShape)
                     .border(5.dp, ThemeColors.LIGHT_ICON_TINT, CircleShape),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
             ) {
-
             }
             Spacer(modifier = Modifier.width(20.dp))
             IconButton(
@@ -156,8 +174,8 @@ fun SimpleCameraPreview(
                 AutoSizeIcon(
                     size = 1.dp,
                     icon = Icons.Default.InsertEmoticon,
-                    factor=15f,
-                    tint=ThemeColors.LIGHT_ICON_TINT,
+                    factor = 15f,
+                    tint = ThemeColors.LIGHT_ICON_TINT,
                     badgeColor = Color.White,
                     configuration = configuration,
                     contentDescription = "Filters",
@@ -166,4 +184,3 @@ fun SimpleCameraPreview(
         }
     }
 }
-

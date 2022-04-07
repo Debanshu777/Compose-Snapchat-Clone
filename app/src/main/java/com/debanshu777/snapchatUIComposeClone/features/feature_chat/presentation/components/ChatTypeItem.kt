@@ -32,8 +32,8 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_chat.domain.Conte
  * @param configuration
  */
 @Composable
-fun ChatTypeItem(item:ChatView,configuration: Configuration){
-    if(!item.isChatOpened && !item.isLastContentSendToSender) {
+fun ChatTypeItem(item: ChatView, configuration: Configuration) {
+    if (!item.isChatOpened && !item.isLastContentSendToSender) {
         Box(
             modifier = Modifier
                 .size(10.dp)
@@ -42,14 +42,15 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
         )
         Spacer(modifier = Modifier.width(5.dp))
         AutoSizeText(
-            factor=0.85f,
+            factor = 0.85f,
             text = "New Snap",
             textColor = giveColor(item),
-            fontWeight=FontWeight.W400,
+            fontWeight = FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
-            configuration = configuration)
+            configuration = configuration
+        )
     }
-    if(!item.isChatOpened && item.isLastContentSendToSender) {
+    if (!item.isChatOpened && item.isLastContentSendToSender) {
         Box(
             modifier = Modifier
                 .size(10.dp)
@@ -58,88 +59,91 @@ fun ChatTypeItem(item:ChatView,configuration: Configuration){
         )
         Spacer(modifier = Modifier.width(5.dp))
         AutoSizeText(
-            factor=0.85f,
+            factor = 0.85f,
             text = "New Snap",
             textColor = giveColor(item),
-            fontWeight=FontWeight.W400,
+            fontWeight = FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
-            configuration = configuration)
+            configuration = configuration
+        )
     }
-    if(item.isChatOpened && !item.isLastContentSendToSender){
-        if(item.lastContentType!= ContentType.Chat) {
+    if (item.isChatOpened && !item.isLastContentSendToSender) {
+        if (item.lastContentType != ContentType.Chat) {
             Box(
                 modifier = Modifier
                     .size(10.dp)
                     .clip(RoundedCornerShape(3.dp))
                     .border(border = BorderStroke(2.dp, giveColor(item)))
             )
-        }else{
+        } else {
             Icon(
-                modifier= Modifier.size(14.dp),
+                modifier = Modifier.size(14.dp),
                 imageVector = Icons.Outlined.Send,
                 contentDescription = "",
-                tint= giveColor(item)
+                tint = giveColor(item)
             )
         }
         Spacer(modifier = Modifier.width(5.dp))
         AutoSizeText(
-            factor=0.85f,
+            factor = 0.85f,
             text = "Opened",
             textColor = ThemeColors.LIGHT_TINT_TEXT,
-            fontWeight=FontWeight.W400,
+            fontWeight = FontWeight.W400,
             textStyle = TextStyle(fontSize = 14.sp),
-            configuration = configuration)
+            configuration = configuration
+        )
     }
-    if(item.isChatOpened && item.isLastContentSendToSender){
-        if(item.isChatUnseenBySender) {
-            if(item.lastContentType != ContentType.Chat) {
+    if (item.isChatOpened && item.isLastContentSendToSender) {
+        if (item.isChatUnseenBySender) {
+            if (item.lastContentType != ContentType.Chat) {
                 Box(
                     modifier = Modifier
                         .size(10.dp)
                         .clip(RoundedCornerShape(3.dp))
                         .background(color = giveColor(item))
                 )
-            }else{
+            } else {
                 Icon(
-                    modifier= Modifier.size(14.dp),
+                    modifier = Modifier.size(14.dp),
                     imageVector = Icons.Default.Send,
                     contentDescription = "",
-                    tint= giveColor(item)
+                    tint = giveColor(item)
                 )
             }
             Spacer(modifier = Modifier.width(5.dp))
             AutoSizeText(
-                factor=0.85f,
+                factor = 0.85f,
                 text = "Delivered",
                 textColor = ThemeColors.LIGHT_TINT_TEXT,
-                fontWeight=FontWeight.W400,
+                fontWeight = FontWeight.W400,
                 textStyle = TextStyle(fontSize = 14.sp),
-                configuration = configuration)
-        }else{
-            if(item.lastContentType != ContentType.Chat) {
+                configuration = configuration
+            )
+        } else {
+            if (item.lastContentType != ContentType.Chat) {
                 Box(
                     modifier = Modifier
                         .size(10.dp)
                         .clip(RoundedCornerShape(3.dp))
                         .border(border = BorderStroke(2.dp, giveColor(item)))
                 )
-            }else{
+            } else {
                 Icon(
-                    modifier= Modifier.size(14.dp),
+                    modifier = Modifier.size(14.dp),
                     imageVector = Icons.Outlined.Send,
                     contentDescription = "",
-                    tint= giveColor(item)
+                    tint = giveColor(item)
                 )
             }
             Spacer(modifier = Modifier.width(5.dp))
             AutoSizeText(
-                factor=0.85f,
+                factor = 0.85f,
                 text = "Opened",
                 textColor = ThemeColors.LIGHT_TINT_TEXT,
-                fontWeight=FontWeight.W400,
+                fontWeight = FontWeight.W400,
                 textStyle = TextStyle(fontSize = 14.sp),
-                configuration = configuration)
+                configuration = configuration
+            )
         }
-
     }
 }

@@ -17,18 +17,18 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
  *
  * @return
  */
-fun navigationConfig():List<BottomNavItem> {
+fun navigationConfig(): List<BottomNavItem> {
     return listOf(
         BottomNavItem(
-            name= Messages.SNAP_HEADING,
+            name = Messages.SNAP_HEADING,
             route = Screens.SnapMapScreen.route,
             icon = Icons.Outlined.LocationOn,
             onSelectedBatchVisible = false,
             onSelectedColor = ThemeColors.GREEN,
-            onSelectIcon =  Icons.Outlined.LocationOn,
+            onSelectIcon = Icons.Outlined.LocationOn,
         ),
         BottomNavItem(
-            name= Messages.CHAT_HEADING,
+            name = Messages.CHAT_HEADING,
             route = Screens.ChatScreen.route,
             icon = Icons.Default.ChatBubbleOutline,
             onSelectedBatchVisible = true,
@@ -36,28 +36,28 @@ fun navigationConfig():List<BottomNavItem> {
             onSelectIcon = Icons.Default.ChatBubbleOutline,
         ),
         BottomNavItem(
-            name= Messages.CAMARA_HEADING,
+            name = Messages.CAMARA_HEADING,
             route = Screens.CamaraScreen.route,
             icon = Icons.Outlined.CameraAlt,
             onSelectedBatchVisible = false,
             onSelectedColor = ThemeColors.YELLOW,
-            onSelectIcon =  Icons.Default.CameraAlt,
+            onSelectIcon = Icons.Default.CameraAlt,
         ),
         BottomNavItem(
-            name= Messages.STORIES_HEADING,
+            name = Messages.STORIES_HEADING,
             route = Screens.StoriesScreen.route,
             icon = Icons.Outlined.Group,
             onSelectedBatchVisible = true,
             onSelectedColor = ThemeColors.PURPLE,
-            onSelectIcon =  Icons.Outlined.Group,
+            onSelectIcon = Icons.Outlined.Group,
         ),
         BottomNavItem(
-            name= Messages.SPOTLIGHT_HEADING,
+            name = Messages.SPOTLIGHT_HEADING,
             route = Screens.SpotlightScreen.route,
             icon = Icons.Outlined.PlayArrow,
             onSelectedBatchVisible = false,
             onSelectedColor = ThemeColors.RED,
-            onSelectIcon =  Icons.Outlined.PlayArrow,
+            onSelectIcon = Icons.Outlined.PlayArrow,
         )
     )
 }
