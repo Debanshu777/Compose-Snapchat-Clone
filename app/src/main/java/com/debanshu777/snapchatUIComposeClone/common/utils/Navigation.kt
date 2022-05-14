@@ -5,6 +5,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.BottomSheetScaffoldState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,6 +23,7 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_snap_map.SnapMapS
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.SpotlightScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import kotlinx.coroutines.CoroutineScope
 
 /**
  * Navigation
@@ -34,7 +36,7 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 @ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
-fun Navigation(navController: NavHostController) {
+fun Navigation(navController: NavHostController,scope:CoroutineScope,bottomSheetScaffoldState: BottomSheetScaffoldState) {
     NavHost(
         modifier = Modifier
             .clip(
@@ -60,7 +62,7 @@ fun Navigation(navController: NavHostController) {
         composable(Screens.CamaraScreen.route) {
             FeatureThatRequiresCameraPermission(
                 navigateToSettingsScreen = {},
-                content = { CamaraScreen() }
+                content = { CamaraScreen(bottomSheetScaffoldState,scope) }
             )
         }
         composable(Screens.StoriesScreen.route) {
