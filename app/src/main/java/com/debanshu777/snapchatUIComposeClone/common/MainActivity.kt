@@ -27,6 +27,7 @@ import com.debanshu777.snapchatUIComposeClone.common.components.CustomTopBar
 import com.debanshu777.snapchatUIComposeClone.common.config.navigationConfig
 import com.debanshu777.snapchatUIComposeClone.common.utils.Navigation
 import com.debanshu777.snapchatUIComposeClone.common.utils.topBarFormatter
+import com.debanshu777.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
 import com.debanshu777.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
@@ -42,14 +43,12 @@ class MainActivity : ComponentActivity() {
                 val scope = rememberCoroutineScope()
                 BottomSheetScaffold(
                     sheetContent = {
-                        Box(
-                            modifier=Modifier.fillMaxSize()
-                        ){}
+                        MemoriesScreen()
                     },
                     scaffoldState = bottomSheetScaffoldState,
                     sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
                     sheetBackgroundColor = colorResource(id = R.color.white),
-                     sheetPeekHeight = 0.dp,
+                    sheetPeekHeight = 0.dp,
                 ) {
                     val navController = rememberNavController()
                     val backStack = navController.currentBackStackEntryAsState()
