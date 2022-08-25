@@ -3,25 +3,26 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_stories.presenta
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.model.Subscription
 
 /**
@@ -38,21 +39,19 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.domain.mo
 fun RectangularStoryView(
     shadowHeight: Float,
     isLarge: Boolean,
-    height: Dp,
     modifier: Modifier,
     subscription: Subscription
 ) {
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(5.dp),
-        elevation = 5.dp
     ) {
-        Box(Modifier.height(height)) {
+        Box(Modifier.fillMaxHeight()) {
             Image(
-                painter = rememberImagePainter(
-                    data = subscription.coverImageURL,
-                    builder = {
-                    }
+                painter = rememberAsyncImagePainter(
+                    ImageRequest.Builder(LocalContext.current)
+                        .data(data = subscription.coverImageURL)
+                        .build()
                 ),
                 contentScale = ContentScale.Crop,
                 contentDescription = "Content",
@@ -78,7 +77,7 @@ fun RectangularStoryView(
             ) {
                 Text(
                     text = subscription.title,
-                    maxLines = 4,
+                    maxLines = if (!isLarge) 2 else 4,
                     color = Color.White,
                     fontWeight = FontWeight.W800,
                     fontSize = if (!isLarge) 12.sp else 20.sp,

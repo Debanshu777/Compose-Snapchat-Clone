@@ -11,8 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Divider
-import androidx.compose.material.Text
+import androidx.compose.material3.Divider
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,12 +65,16 @@ fun AuthenticationView() {
 @Composable
 fun BottomSwitch() {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(20.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(20.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
-            modifier = Modifier.padding(20.dp).weight(0.5f),
+            modifier = Modifier
+                .padding(20.dp)
+                .weight(0.5f),
             text = "Sign Up",
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center,
@@ -83,7 +87,9 @@ fun BottomSwitch() {
                 .width(1.dp),
         )
         Text(
-            modifier = Modifier.padding(20.dp).weight(0.5f),
+            modifier = Modifier
+                .padding(20.dp)
+                .weight(0.5f),
             text = "Switch Account",
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center,

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Cameraswitch
 import androidx.compose.material.icons.filled.MoreHoriz
@@ -28,7 +27,6 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
  * @param topBarItem
  * @param configuration
  */
-@ExperimentalMaterialApi
 @Composable
 fun CustomActionBar(topBarItem: TopBarItem, configuration: Configuration) {
     if (topBarItem.lastAction == "Setting") {

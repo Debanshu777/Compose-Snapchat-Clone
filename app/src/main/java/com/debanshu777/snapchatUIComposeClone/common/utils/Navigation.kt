@@ -2,14 +2,11 @@ package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -28,7 +25,6 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
  *
  * @param navController
  */
-@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @ExperimentalCoilApi
 @ExperimentalAnimationApi
@@ -43,8 +39,7 @@ fun Navigation(navController: NavHostController) {
                     bottomEnd = 5.dp
                 )
             )
-            .padding(bottom = 55.dp)
-            .background(color = Color.Black),
+            .padding(bottom = 65.dp),
         navController = navController,
         startDestination = Screens.CamaraScreen.route
     ) {

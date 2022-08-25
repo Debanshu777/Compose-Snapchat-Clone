@@ -3,9 +3,9 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_authentication.p
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Text
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,17 +22,12 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
 fun CustomButton(
     onClick: () -> Unit = {}
 ) {
-    Button(
+    ElevatedButton(
         modifier = Modifier
             .width(200.dp)
             .height(50.dp)
             .clip(RoundedCornerShape(30.dp)),
-        colors = ButtonDefaults.buttonColors(backgroundColor = ThemeColors.BLUE),
-        elevation = ButtonDefaults.elevation(
-            defaultElevation = 40.dp,
-            pressedElevation = 0.dp,
-            disabledElevation = 40.dp
-        ),
+        colors = ButtonDefaults.buttonColors(ThemeColors.BLUE),
         onClick = onClick
     ) {
         Text(

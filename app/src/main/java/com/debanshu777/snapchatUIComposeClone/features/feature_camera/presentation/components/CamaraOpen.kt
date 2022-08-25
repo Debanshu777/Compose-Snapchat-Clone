@@ -20,15 +20,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Filter
 import androidx.compose.material.icons.filled.FlashOff
 import androidx.compose.material.icons.filled.FlashOn
 import androidx.compose.material.icons.filled.InsertEmoticon
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -56,7 +55,6 @@ import com.debanshu777.snapchatUIComposeClone.common.utils.ThemeColors
  * @param onMediaCaptured
  * @receiver
  */
-@ExperimentalMaterialApi
 @Composable
 fun SimpleCameraPreview(
     modifier: Modifier = Modifier,
@@ -150,7 +148,7 @@ fun SimpleCameraPreview(
                     .shadow(4.dp, CircleShape)
                     .clip(CircleShape)
                     .border(5.dp, ThemeColors.LIGHT_ICON_TINT, CircleShape),
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+                colors = ButtonDefaults.buttonColors(Color.Transparent),
             ) {
             }
             Spacer(modifier = Modifier.width(20.dp))

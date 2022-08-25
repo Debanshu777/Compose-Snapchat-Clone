@@ -3,18 +3,18 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,7 +22,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -36,7 +35,7 @@ import com.debanshu777.snapchatUIComposeClone.common.domain.model.TopBarItem
  * @param modifier
  * @param topBarItem
  */
-@ExperimentalMaterialApi
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTopBar(
     modifier: Modifier = Modifier,
@@ -44,75 +43,90 @@ fun CustomTopBar(
 ) {
     val configuration = LocalConfiguration.current
 
-    TopAppBar(
-        contentPadding = PaddingValues(top = 10.dp, start = 10.dp, end = 10.dp),
+    CenterAlignedTopAppBar(
         modifier = modifier,
-        elevation = 0.dp,
-        backgroundColor =
-        if (topBarItem.isBackgroundTransparent)
-            Color.Transparent
-        else
-            Color.White,
-        content = {
-            Box(
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = if (topBarItem.isBackgroundTransparent)
+                Color.Transparent
+            else
+                Color.White,
+        ),
+        title = {
+            Text(
+                text = topBarItem.name,
                 modifier = Modifier
-                    .fillMaxSize()
-                    .align(Alignment.CenterVertically),
-            ) {
-                Row {
-                    Box(
-                        modifier = Modifier
-                            .size(40.dp)
-                            .clip(CircleShape)
-                            .background(topBarItem.backgroundTintForIcon)
-                    ) {
-                        Image(
-                            modifier = Modifier
-                                .size(40.dp)
-                                .clip(CircleShape),
-                            painter = painterResource(R.drawable.bitmoji),
-                            contentDescription = "Content description for visually bitmoji"
-                        )
-                    }
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Box(
-                        contentAlignment = Alignment.Center,
-                        modifier = Modifier
-                            .size(40.dp)
-                            .clip(CircleShape)
-                            .background(topBarItem.backgroundTintForIcon)
-                    ) {
-                        AutoSizeIcon(
-                            size = 1.dp,
-                            icon = Icons.Default.Search,
-                            factor = 17f,
-                            tint = topBarItem.iconTint,
-                            badgeColor = Color.White,
-                            configuration = configuration,
-                            contentDescription = "Search",
-                        )
-                    }
-                }
-                AutoSizeText(
-                    factor = 0.85f,
-                    text = topBarItem.name,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = 5.dp),
-                    textColor = topBarItem.textColor,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    textStyle = TextStyle(fontSize = 22.sp),
-                    configuration = configuration
-                )
+                    .padding(top = 5.dp),
+                color = topBarItem.textColor,
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+            )
+        },
+        actions = {
+            if (topBarItem.isAvailable) {
+                CustomActionBar(topBarItem, configuration)
+            }
+        },
+        navigationIcon = {
+            Row {
                 Box(
-                    Modifier.align(Alignment.TopEnd)
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(CircleShape)
+                        .background(topBarItem.backgroundTintForIcon)
                 ) {
-                    if (topBarItem.isAvailable) {
-                        CustomActionBar(topBarItem, configuration)
-                    }
+                    Image(
+                        modifier = Modifier
+                            .size(40.dp)
+                            .clip(CircleShape),
+                        painter = painterResource(R.drawable.bitmoji),
+                        contentDescription = "Content description for visually bitmoji"
+                    )
+                }
+                Spacer(modifier = Modifier.width(10.dp))
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(CircleShape)
+                        .background(topBarItem.backgroundTintForIcon)
+                ) {
+                    AutoSizeIcon(
+                        size = 1.dp,
+                        icon = Icons.Default.Search,
+                        factor = 17f,
+                        tint = topBarItem.iconTint,
+                        badgeColor = Color.White,
+                        configuration = configuration,
+                        contentDescription = "Search",
+                    )
                 }
             }
         }
     )
 }
+//    TopAppBar(
+//        contentPadding = PaddingValues(top = 10.dp, start = 10.dp, end = 10.dp),
+//        modifier = modifier,
+//        elevation = 0.dp,
+//        backgroundColor =
+//        if (topBarItem.isBackgroundTransparent)
+//            Color.Transparent
+//        else
+//            Color.White,
+//        content = {
+//            Box(
+//                modifier = Modifier
+//                    .fillMaxSize()
+//                    .align(Alignment.CenterVertically),
+//            ) {
+//
+//
+//                Box(
+//                    Modifier.align(Alignment.TopEnd)
+//                ) {
+//
+//                }
+//            }
+//        }
+//    )

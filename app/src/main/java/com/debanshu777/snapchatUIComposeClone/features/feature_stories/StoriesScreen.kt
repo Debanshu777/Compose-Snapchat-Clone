@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,7 +43,9 @@ fun StoriesScreen() {
             .fillMaxSize(),
     ) {
         LazyColumn(
-            modifier = Modifier.padding(start = 10.dp, top = 30.dp).fillMaxWidth()
+            modifier = Modifier
+                .padding(start = 10.dp, top = 30.dp)
+                .fillMaxWidth()
         ) {
             item {
                 FriendStories()
@@ -65,7 +67,6 @@ fun StoriesScreen() {
                     Row {
                         RectangularStoryView(
                             shadowHeight = 230f,
-                            height = 200.dp,
                             isLarge = true,
                             subscription = subscriptionList[(row * 2)],
                             modifier = Modifier
@@ -76,7 +77,6 @@ fun StoriesScreen() {
                         )
                         RectangularStoryView(
                             shadowHeight = 230f,
-                            height = 200.dp,
                             isLarge = true,
                             subscription = subscriptionList[(row * 2) + 1],
                             modifier = Modifier
@@ -92,7 +92,6 @@ fun StoriesScreen() {
                     Row {
                         RectangularStoryView(
                             shadowHeight = 230f,
-                            height = 200.dp,
                             isLarge = true,
                             subscription = subscriptionList[(row * 2)],
                             modifier = Modifier
@@ -104,7 +103,6 @@ fun StoriesScreen() {
                         if (row * 2 + 1 < subscriptionList.size) {
                             RectangularStoryView(
                                 shadowHeight = 230f,
-                                height = 200.dp,
                                 isLarge = true,
                                 subscription = subscriptionList[(row * 2) + 1],
                                 modifier = Modifier
