@@ -1,15 +1,18 @@
 package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -46,15 +49,23 @@ fun FeatureThatRequiresCameraPermission(
                 Text("Feature not available")
             } else {
                 Column(
-                    modifier = Modifier.padding(10.dp).height(150.dp),
+                    modifier = Modifier
+                        .height(200.dp)
+                        .background(MaterialTheme.colorScheme.primaryContainer)
+                        .padding(10.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Bottom
                 ) {
                     Text(
+                        modifier = Modifier.padding(bottom = 10.dp),
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
                         text = "The camera is important for this app. Please grant the permission."
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Row {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Start
+                    ) {
                         Button(onClick = {
                             cameraPermissionState.launchPermissionRequest()
                         }) {
@@ -70,7 +81,10 @@ fun FeatureThatRequiresCameraPermission(
         },
         permissionNotAvailableContent = {
             Column(
-                modifier = Modifier.padding(10.dp),
+                modifier = Modifier
+                    .height(200.dp)
+                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(

@@ -2,10 +2,10 @@ package com.debanshu777.snapchatUIComposeClone.common.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Badge
-import androidx.compose.material.BadgedBox
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.Dp
  * @param isBadge
  * @param contentDescription
  */
-@ExperimentalMaterialApi
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AutoSizeIcon(
     modifier: Modifier = Modifier,
@@ -42,7 +42,7 @@ fun AutoSizeIcon(
     val factorValue = configuration.screenWidthDp / factor
     if (isBadge) {
         BadgedBox(
-            badge = { Badge(backgroundColor = badgeColor) },
+            badge = { Badge(containerColor = badgeColor) },
         ) {
             if (tint != null) {
                 Icon(
@@ -90,7 +90,7 @@ fun AutoSizeIcon(
  * @param isBadge
  * @param contentDescription
  */
-@ExperimentalMaterialApi
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AutoSizeIconWithPainter(
     modifier: Modifier = Modifier,
@@ -106,7 +106,7 @@ fun AutoSizeIconWithPainter(
     val factorValue = configuration.screenWidthDp / factor
     if (isBadge) {
         BadgedBox(
-            badge = { Badge(backgroundColor = badgeColor) },
+            badge = { Badge(containerColor = badgeColor) },
         ) {
             if (tint != null) {
                 Icon(
