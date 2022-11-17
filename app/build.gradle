@@ -103,7 +103,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
     // Accompanist
-    implementation "com.google.accompanist:accompanist-permissions:0.23.1"
+    implementation "com.google.accompanist:accompanist-permissions:0.27.1"
     implementation "com.google.accompanist:accompanist-pager:0.25.1"
 
     //Map
