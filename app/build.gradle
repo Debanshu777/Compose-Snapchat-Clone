@@ -107,7 +107,7 @@ dependencies {
     implementation "com.google.accompanist:accompanist-pager:0.25.1"
 
     //Map
-    implementation "com.google.maps.android:maps-compose:2.1.0"
+    implementation "com.google.maps.android:maps-compose:2.8.0"
     implementation "com.google.android.gms:play-services-maps:18.1.0"
 
     implementation 'androidx.media3:media3-exoplayer:1.0.0-beta02'
