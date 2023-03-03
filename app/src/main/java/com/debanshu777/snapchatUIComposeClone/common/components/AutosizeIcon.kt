@@ -1,6 +1,7 @@
 package com.debanshu777.snapchatUIComposeClone.common.components
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
@@ -12,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 /**
  * Custom Element Auto size icon
@@ -31,7 +33,7 @@ import androidx.compose.ui.unit.Dp
 fun AutoSizeIcon(
     modifier: Modifier = Modifier,
     size: Dp,
-    tint: Color? = null,
+    tint: Color = Color.White,
     factor: Float = 1f,
     icon: ImageVector,
     badgeColor: Color,
@@ -42,38 +44,29 @@ fun AutoSizeIcon(
     val factorValue = configuration.screenWidthDp / factor
     if (isBadge) {
         BadgedBox(
-            badge = { Badge(containerColor = badgeColor) },
+            badge = {
+                Badge(
+                    modifier = Modifier
+                        .size(15.dp)
+                        .offset(x = (-8).dp, y = (8).dp),
+                    containerColor = badgeColor
+                )
+            },
         ) {
-            if (tint != null) {
-                Icon(
-                    modifier = modifier.size(size * factorValue),
-                    imageVector = icon,
-                    tint = tint,
-                    contentDescription = contentDescription
-                )
-            } else {
-                Icon(
-                    modifier = modifier.size(size * factorValue),
-                    imageVector = icon,
-                    contentDescription = contentDescription
-                )
-            }
-        }
-    } else {
-        if (tint != null) {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 imageVector = icon,
                 tint = tint,
                 contentDescription = contentDescription
             )
-        } else {
-            Icon(
-                modifier = modifier.size(size * factorValue),
-                imageVector = icon,
-                contentDescription = contentDescription
-            )
         }
+    } else {
+        Icon(
+            modifier = modifier.size(size * factorValue),
+            imageVector = icon,
+            tint = tint,
+            contentDescription = contentDescription
+        )
     }
 }
 

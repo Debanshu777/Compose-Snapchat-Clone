@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -41,6 +42,7 @@ fun CustomBottomNavigation(
     val backStackEntry = navController.currentBackStackEntryAsState()
     BottomAppBar(
         modifier = modifier,
+        containerColor = Color.Transparent,
     ) {
         items.forEach { item ->
             val selected = item.route == backStackEntry.value?.destination?.route
@@ -48,7 +50,7 @@ fun CustomBottomNavigation(
                 modifier = modifier
                     .fillMaxSize()
                     .weight(1f)
-                    .padding(0.dp)
+                    .padding(top = 15.dp)
                     .clickable { onItemClick(item) },
                 contentAlignment = Center
             ) {
@@ -56,7 +58,7 @@ fun CustomBottomNavigation(
                     if (item.onSelectedBatchVisible) {
                         AutoSizeIcon(
                             size = 1.dp,
-                            tint = if (selected) item.onSelectedColor else null,
+                            tint = if (selected) item.onSelectedColor else Color.White,
                             icon = item.icon,
                             factor = 15f,
                             badgeColor = item.onSelectedColor,
@@ -65,28 +67,22 @@ fun CustomBottomNavigation(
                             isBadge = true,
                         )
                     } else {
-                        if (selected && item.name == "Camara") {
-                            CustomCamaraOnSelectItem(
-                                item.onSelectedColor,
-                                configuration,
-                                item.name
-                            )
-                        } else {
-                            AutoSizeIcon(
-                                size = 1.dp,
-                                icon = item.icon,
-                                factor = 15f,
-                                badgeColor = item.onSelectedColor,
-                                configuration = configuration,
-                                contentDescription = item.name,
-                            )
-                        }
+                        AutoSizeIcon(
+                            size = 1.dp,
+                            tint = if (selected) item.onSelectedColor else Color.White,
+                            icon = item.icon,
+                            factor = 15f,
+                            badgeColor = item.onSelectedColor,
+                            configuration = configuration,
+                            contentDescription = item.name,
+                        )
                     }
-                    if (selected && item.name != "Camara") {
+                    if (selected) {
                         Icon(
                             modifier = Modifier.height(15.dp),
                             imageVector = Icons.Default.ArrowDropUp,
-                            contentDescription = item.name
+                            contentDescription = item.name,
+                            tint = item.onSelectedColor
                         )
                     } else {
                         Spacer(modifier = Modifier.height(15.dp))

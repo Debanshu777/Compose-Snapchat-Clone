@@ -71,7 +71,9 @@ fun SimpleCameraPreview(
     var flashEnabled by remember { mutableStateOf(false) }
     var flashRes by remember { mutableStateOf(Icons.Default.FlashOff) }
     val executor = ContextCompat.getMainExecutor(context)
-    var cameraSelector: CameraSelector?
+    var cameraSelector: CameraSelector = CameraSelector.Builder()
+        .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+        .build()
     val cameraProvider = cameraProviderFuture.get()
 
     Box {
@@ -82,10 +84,6 @@ fun SimpleCameraPreview(
                 cameraProviderFuture.addListener({
                     imageCapture = ImageCapture.Builder()
                         .setTargetRotation(previewView.display.rotation)
-                        .build()
-
-                    val cameraSelector = CameraSelector.Builder()
-                        .requireLensFacing(CameraSelector.LENS_FACING_BACK)
                         .build()
 
                     cameraProvider.unbindAll()
@@ -163,7 +161,7 @@ fun SimpleCameraPreview(
                     cameraProvider.unbindAll()
                     cameraProvider.bindToLifecycle(
                         lifecycleOwner,
-                        cameraSelector as CameraSelector,
+                        cameraSelector,
                         imageCapture,
                         preview
                     )

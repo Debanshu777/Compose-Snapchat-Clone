@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import coil.annotation.ExperimentalCoilApi
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val backStack = navController.currentBackStackEntryAsState()
                 Scaffold(
+                    containerColor = Color.Black,
                     topBar = {
                         Box {
                             Navigation(navController = navController)
@@ -54,7 +56,6 @@ class MainActivity : ComponentActivity() {
                         CustomBottomNavigation(
                             items = navigationConfig(),
                             navController = navController,
-                            modifier = Modifier,
                             onItemClick = {
                                 navController.navigate(it.route)
                             }
