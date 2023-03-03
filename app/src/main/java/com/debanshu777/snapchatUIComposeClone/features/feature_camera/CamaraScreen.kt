@@ -3,6 +3,7 @@ package com.debanshu777.snapchatUIComposeClone.features.feature_camera
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -27,6 +28,7 @@ fun CamaraScreen() {
     val lifecycleOwner = LocalLifecycleOwner.current
     Surface(
         modifier = Modifier
+            .padding(bottom = 20.dp)
             .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp)),
     ) {
         Column(
