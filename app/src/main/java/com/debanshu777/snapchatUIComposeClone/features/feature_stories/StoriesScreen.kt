@@ -36,45 +36,66 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_stories.presentat
 @Preview
 fun StoriesScreen() {
     val subscriptionList = mockDataSubscription()
-    Box(
+
+    LazyColumn(
         modifier = Modifier
-            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
-            .background(Color.White)
-            .fillMaxSize(),
+            .padding(start = 10.dp, top = 30.dp)
+            .fillMaxWidth()
     ) {
-        LazyColumn(
-            modifier = Modifier
-                .padding(start = 10.dp, top = 30.dp)
-                .fillMaxWidth()
-        ) {
-            item {
-                FriendStories()
+        item {
+            FriendStories()
+        }
+        item {
+            SubscriptionView()
+        }
+        item {
+            Text(
+                text = Messages.DISCOVER_SUB_HEADING,
+                color = Color.Black,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 10.dp, top = 20.dp)
+            )
+        }
+        if (subscriptionList.size % 2 == 0) {
+            items(subscriptionList.size / 2) { row ->
+                Row {
+                    RectangularStoryView(
+                        shadowHeight = 230f,
+                        isLarge = true,
+                        subscription = subscriptionList[(row * 2)],
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth(0.5f)
+                            .padding(end = 10.dp, bottom = 10.dp)
+                            .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                    )
+                    RectangularStoryView(
+                        shadowHeight = 230f,
+                        isLarge = true,
+                        subscription = subscriptionList[(row * 2) + 1],
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth()
+                            .padding(end = 10.dp, bottom = 10.dp)
+                            .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                    )
+                }
             }
-            item {
-                SubscriptionView()
-            }
-            item {
-                Text(
-                    text = Messages.DISCOVER_SUB_HEADING,
-                    color = Color.Black,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 10.dp, top = 20.dp)
-                )
-            }
-            if (subscriptionList.size % 2 == 0) {
-                items(subscriptionList.size / 2) { row ->
-                    Row {
-                        RectangularStoryView(
-                            shadowHeight = 230f,
-                            isLarge = true,
-                            subscription = subscriptionList[(row * 2)],
-                            modifier = Modifier
-                                .height(300.dp)
-                                .fillMaxWidth(0.5f)
-                                .padding(end = 10.dp, bottom = 10.dp)
-                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
-                        )
+        } else {
+            items(subscriptionList.size / 2 + 1) { row ->
+                Row {
+                    RectangularStoryView(
+                        shadowHeight = 230f,
+                        isLarge = true,
+                        subscription = subscriptionList[(row * 2)],
+                        modifier = Modifier
+                            .height(300.dp)
+                            .fillMaxWidth(0.5f)
+                            .padding(end = 10.dp, bottom = 10.dp)
+                            .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
+                    )
+                    if (row * 2 + 1 < subscriptionList.size) {
                         RectangularStoryView(
                             shadowHeight = 230f,
                             isLarge = true,
@@ -87,34 +108,8 @@ fun StoriesScreen() {
                         )
                     }
                 }
-            } else {
-                items(subscriptionList.size / 2 + 1) { row ->
-                    Row {
-                        RectangularStoryView(
-                            shadowHeight = 230f,
-                            isLarge = true,
-                            subscription = subscriptionList[(row * 2)],
-                            modifier = Modifier
-                                .height(300.dp)
-                                .fillMaxWidth(0.5f)
-                                .padding(end = 10.dp, bottom = 10.dp)
-                                .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
-                        )
-                        if (row * 2 + 1 < subscriptionList.size) {
-                            RectangularStoryView(
-                                shadowHeight = 230f,
-                                isLarge = true,
-                                subscription = subscriptionList[(row * 2) + 1],
-                                modifier = Modifier
-                                    .height(300.dp)
-                                    .fillMaxWidth()
-                                    .padding(end = 10.dp, bottom = 10.dp)
-                                    .background(color = Color.DarkGray, RoundedCornerShape(5.dp))
-                            )
-                        }
-                    }
-                }
             }
         }
+
     }
 }

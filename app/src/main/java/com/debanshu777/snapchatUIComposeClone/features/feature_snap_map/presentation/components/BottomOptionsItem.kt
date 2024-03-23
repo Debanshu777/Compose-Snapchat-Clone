@@ -42,7 +42,6 @@ fun BottomOptionItem(
         Box(
             modifier = Modifier
                 .size(50.dp)
-                // .padding(bottom = 15.dp)
                 .clip(CircleShape)
                 .align(Alignment.BottomCenter)
                 .background(color = Color.White)

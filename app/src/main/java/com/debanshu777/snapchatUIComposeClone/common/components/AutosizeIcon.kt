@@ -7,6 +7,7 @@ import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -48,7 +49,7 @@ fun AutoSizeIcon(
                 Badge(
                     modifier = Modifier
                         .size(15.dp)
-                        .offset(x = (-8).dp, y = (8).dp),
+                        .offset(x = (-7).dp, y = (0).dp),
                     containerColor = badgeColor
                 )
             },
@@ -88,7 +89,7 @@ fun AutoSizeIcon(
 fun AutoSizeIconWithPainter(
     modifier: Modifier = Modifier,
     size: Dp,
-    tint: Color? = null,
+    tint: Color = LocalContentColor.current,
     factor: Float = 1f,
     painter: Painter,
     badgeColor: Color,
@@ -101,35 +102,19 @@ fun AutoSizeIconWithPainter(
         BadgedBox(
             badge = { Badge(containerColor = badgeColor) },
         ) {
-            if (tint != null) {
-                Icon(
-                    modifier = modifier.size(size * factorValue),
-                    painter = painter,
-                    tint = tint,
-                    contentDescription = contentDescription
-                )
-            } else {
-                Icon(
-                    modifier = modifier.size(size * factorValue),
-                    painter = painter,
-                    contentDescription = contentDescription
-                )
-            }
-        }
-    } else {
-        if (tint != null) {
             Icon(
                 modifier = modifier.size(size * factorValue),
                 painter = painter,
                 tint = tint,
                 contentDescription = contentDescription
             )
-        } else {
-            Icon(
-                modifier = modifier.size(size * factorValue),
-                painter = painter,
-                contentDescription = contentDescription
-            )
         }
+    } else {
+        Icon(
+            modifier = modifier.size(size * factorValue),
+            painter = painter,
+            tint = tint,
+            contentDescription = contentDescription
+        )
     }
 }

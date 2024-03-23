@@ -12,12 +12,5 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MemoriesScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp)),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Memories screen")
-    }
+    Text(text = "Memories screen")
 }

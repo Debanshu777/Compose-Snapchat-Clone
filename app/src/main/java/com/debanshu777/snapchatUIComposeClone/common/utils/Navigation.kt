@@ -2,11 +2,15 @@ package com.debanshu777.snapchatUIComposeClone.common.utils
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -39,6 +43,7 @@ fun Navigation(navController: NavHostController) {
                     bottomEnd = 5.dp
                 )
             )
+            .background(color = Color.Black)
             .padding(bottom = 65.dp),
         navController = navController,
         startDestination = Screens.CamaraScreen.route
@@ -46,26 +51,90 @@ fun Navigation(navController: NavHostController) {
         composable(Screens.SnapMapScreen.route) {
             FeaturesThatRequireLocationPermission(
                 navigateToSettingsScreen = {},
-                content = { SnapMapScreen() }
+                content = {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clip(
+                                RoundedCornerShape(
+                                    bottomEnd = 10.dp,
+                                    bottomStart = 10.dp
+                                )
+                            )
+                            .background(Color.White),
+                    ) { SnapMapScreen() }
+                }
             )
         }
         composable(Screens.ChatScreen.route) {
-            ChatScreen()
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp
+                        )
+                    )
+                    .background(Color.White),
+            ) { ChatScreen() }
         }
         composable(Screens.CamaraScreen.route) {
             FeatureThatRequiresCameraPermission(
                 navigateToSettingsScreen = {},
-                content = { CamaraScreen() }
+                content = {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clip(
+                                RoundedCornerShape(
+                                    bottomEnd = 10.dp,
+                                    bottomStart = 10.dp
+                                )
+                            )
+                            .background(Color.White),
+                    ) { CamaraScreen() }
+                }
             )
         }
         composable(Screens.StoriesScreen.route) {
-            StoriesScreen()
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp
+                        )
+                    )
+                    .background(Color.White),
+            ) { StoriesScreen() }
         }
         composable(Screens.SpotlightScreen.route) {
-            SpotlightScreen()
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp
+                        )
+                    )
+                    .background(Color.White),
+            ) { SpotlightScreen() }
         }
         composable(Screens.MemoriesScreen.route) {
-            MemoriesScreen()
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp
+                        )
+                    )
+                    .background(Color.White),
+            ) { MemoriesScreen() }
         }
     }
 }

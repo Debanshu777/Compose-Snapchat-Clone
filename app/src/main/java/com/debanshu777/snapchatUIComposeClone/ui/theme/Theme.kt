@@ -78,7 +78,7 @@ private val LightColorPalette = lightColorScheme(
 @Composable
 fun ComposeSnapChatUITheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
+    content: @Composable () -> Unit
 ) {
     val useDynamicColors = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
     val colors = when {
@@ -91,7 +91,6 @@ fun ComposeSnapChatUITheme(
     MaterialTheme(
         colorScheme = colors,
         typography = Typography,
-        // shapes = Shapes,
         content = content
     )
 }

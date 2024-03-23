@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,27 +18,23 @@ import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.present
 import com.debanshu777.snapchatUIComposeClone.features.feature_spotlight.presentation.components.VideoPlayer
 
 val horizontalPadding = 10.dp
+
 @Composable
 fun SpotlightScreen() {
     val spotlights = DummySpotlightData.spotlight
-    Box(
-        Modifier
-            .clip(RoundedCornerShape(bottomEnd = 10.dp, bottomStart = 10.dp))
-            .background(color = Color.Black)
-    ) {
-        LazyColumn {
-            items(spotlights.size) { index ->
-                Box(
-                    modifier = Modifier
-                        .fillParentMaxSize()
-                ) {
-                    VideoPlayer(uri = spotlights[index].getVideoUrl())
-                    Column(Modifier.align(Alignment.BottomStart)) {
-                        SpotlightFooter(spotlights[index])
-                        Divider()
-                    }
+    LazyColumn {
+        items(spotlights.size) { index ->
+            Box(
+                modifier = Modifier
+                    .fillParentMaxSize()
+            ) {
+                VideoPlayer(uri = spotlights[index].getVideoUrl())
+                Column(Modifier.align(Alignment.BottomStart)) {
+                    SpotlightFooter(spotlights[index])
+                    HorizontalDivider()
                 }
             }
         }
     }
+
 }

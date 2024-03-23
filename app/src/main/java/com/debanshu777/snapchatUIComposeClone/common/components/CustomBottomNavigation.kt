@@ -55,28 +55,16 @@ fun CustomBottomNavigation(
                 contentAlignment = Center
             ) {
                 Column(horizontalAlignment = CenterHorizontally) {
-                    if (item.onSelectedBatchVisible) {
-                        AutoSizeIcon(
-                            size = 1.dp,
-                            tint = if (selected) item.onSelectedColor else Color.White,
-                            icon = item.icon,
-                            factor = 15f,
-                            badgeColor = item.onSelectedColor,
-                            configuration = configuration,
-                            contentDescription = item.name,
-                            isBadge = true,
-                        )
-                    } else {
-                        AutoSizeIcon(
-                            size = 1.dp,
-                            tint = if (selected) item.onSelectedColor else Color.White,
-                            icon = item.icon,
-                            factor = 15f,
-                            badgeColor = item.onSelectedColor,
-                            configuration = configuration,
-                            contentDescription = item.name,
-                        )
-                    }
+                    AutoSizeIcon(
+                        size = 1.dp,
+                        tint = if (selected) item.onSelectedColor else Color.White,
+                        icon = item.icon,
+                        factor = 15f,
+                        badgeColor = item.onSelectedColor,
+                        configuration = configuration,
+                        contentDescription = item.name,
+                        isBadge = item.onSelectedBatchVisible,
+                    )
                     if (selected) {
                         Icon(
                             modifier = Modifier.height(15.dp),
