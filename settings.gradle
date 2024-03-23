@@ -3,7 +3,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        }
+    }
 }
 rootProject.name = "Snapchat_Clone"
 include ':app'
