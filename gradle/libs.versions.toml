@@ -20,7 +20,7 @@ navigationCompose = "2.8.9"
 camerax = "1.4.1"
 
 # Accompanist
-accompanistPermissions = "0.37.0"
+accompanistPermissions = "0.37.2"
 accompanistPager = "0.25.1"
 
 # Maps
