@@ -34,7 +34,7 @@ media3 = "1.5.1"
 coil = "2.7.0"
 
 # Image Picker
-pluck = "1.0.0-RC1"
+pluck = "1.0.0"
 
 # Building Tools
 dokka = "1.7.10"
