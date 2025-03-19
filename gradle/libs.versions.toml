@@ -43,7 +43,7 @@ ktlint = "10.3.0"
 secrets = "2.0.1"
 
 # Dagger / Hilt
-hilt = "2.54"
+hilt = "2.56"
 hiltAndroid = "1.2.0"
 
 # Room
