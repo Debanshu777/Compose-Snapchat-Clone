@@ -24,7 +24,7 @@ accompanistPermissions = "0.37.0"
 accompanistPager = "0.25.1"
 
 # Maps
-mapsCompose = "2.1.0"
+mapsCompose = "6.5.2"
 playServicesMaps = "19.1.0"
 
 # Media
