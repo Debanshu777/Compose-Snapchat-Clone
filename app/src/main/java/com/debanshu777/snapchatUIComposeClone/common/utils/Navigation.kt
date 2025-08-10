@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import coil.annotation.ExperimentalCoilApi
-import com.debanshu777.snapchatUIComposeClone.features.feature_camera.CamaraScreen
+import com.debanshu777.snapchatUIComposeClone.features.featureCamera.CamaraScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_chat.ChatScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
 import com.debanshu777.snapchatUIComposeClone.features.feature_snap_map.SnapMapScreen
