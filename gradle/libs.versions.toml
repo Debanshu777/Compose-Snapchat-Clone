@@ -49,7 +49,7 @@ hiltAndroid = "1.2.0"
 # Room
 room = "2.7.2"
 sqlite = "2.5.0-SNAPSHOT"
-ksp = "2.1.10-1.0.31"
+ksp = "2.3.0"
 workRuntimeKtx = "2.10.3"
 
 [libraries]
